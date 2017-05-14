@@ -138,14 +138,35 @@
   <data name="Close" xml:space="preserve">
     <value>Close</value>
   </data>
+  <data name="Continue" xml:space="preserve">
+    <value>Continue</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
   <data name="HowToUse" xml:space="preserve">
     <value>How to use</value>
   </data>
+  <data name="InsertPlayerLoot" xml:space="preserve">
+    <value>Insert all the loot (use look action on items)</value>
+  </data>
+  <data name="InsertPlayerQuantity" xml:space="preserve">
+    <value>Insert the player quantity:</value>
+  </data>
   <data name="LanguageStr" xml:space="preserve">
     <value>Language:</value>
+  </data>
+  <data name="LootSplitterResult" xml:space="preserve">
+    <value>Loot Counter and Splitter - Result</value>
+  </data>
+  <data name="LootSplitterStepOne" xml:space="preserve">
+    <value>Loot Counter and Splitter - Step 1</value>
+  </data>
+  <data name="LootSplitterStepTwo" xml:space="preserve">
+    <value>Loot Counter and Splitter - Step 2</value>
+  </data>
+  <data name="MoneySpentPlayerNun" xml:space="preserve">
+    <value>Gold spent of player {0}:</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
@@ -164,5 +185,8 @@
   </data>
   <data name="SuccefullSavedConfig" xml:space="preserve">
     <value>Your configuration was saved succefull!</value>
+  </data>
+  <data name="ValueOfItem" xml:space="preserve">
+    <value>Value of each {0}:</value>
   </data>
 </root>

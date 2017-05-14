@@ -66,7 +66,6 @@ namespace TibiaTools.Application.Forms.Options
             this.MinimizeBox = false;
             this.Name = "Saved";
             this.Text = "Saved";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Saved_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

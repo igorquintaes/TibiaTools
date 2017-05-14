@@ -1,6 +1,6 @@
-﻿namespace TibiaTools.Application.Forms.Help
+﻿namespace TibiaTools.Application.Forms.LootSplitter
 {
-    partial class HowToUse
+    partial class LootSplitterResult
     {
         /// <summary>
         /// Required designer variable.
@@ -28,23 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelHowToUse = new System.Windows.Forms.Label();
             this.closeBtn = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // labelHowToUse
-            // 
-            this.labelHowToUse.AutoSize = true;
-            this.labelHowToUse.Location = new System.Drawing.Point(13, 13);
-            this.labelHowToUse.MaximumSize = new System.Drawing.Size(260, 0);
-            this.labelHowToUse.MinimumSize = new System.Drawing.Size(260, 0);
-            this.labelHowToUse.Name = "labelHowToUse";
-            this.labelHowToUse.Size = new System.Drawing.Size(260, 13);
-            this.labelHowToUse.TabIndex = 0;
-            this.labelHowToUse.Text = "Under construction! :)";
-            // 
-            // closeBtn
-            // 
+
             this.closeBtn.Location = new System.Drawing.Point(103, 226);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(75, 23);
@@ -52,24 +37,14 @@
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // HowToUse
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.closeBtn);
-            this.Controls.Add(this.labelHowToUse);
-            this.Name = "HowToUse";
-            this.Text = "HowToUse";
-            this.ResumeLayout(false);
-            this.PerformLayout();
 
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Text = "LootSplitterResult";
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label labelHowToUse;
         private System.Windows.Forms.Button closeBtn;
+
+        #endregion
     }
 }

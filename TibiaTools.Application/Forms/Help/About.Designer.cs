@@ -82,9 +82,7 @@ namespace TibiaTools.Application.Forms.Help
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "About";
-            this.Text = "About";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.About_FormClosing);
-            this.ResumeLayout(false);
+            this.Text = "About";this.ResumeLayout(false);
             this.PerformLayout();
 
         }

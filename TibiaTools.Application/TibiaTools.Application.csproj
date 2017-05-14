@@ -62,6 +62,24 @@
     <Compile Include="Forms\Help\HowToUse.Designer.cs">
       <DependentUpon>HowToUse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterResult.Designer.cs">
+      <DependentUpon>LootSplitterResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterStepOne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterStepOne.Designer.cs">
+      <DependentUpon>LootSplitterStepOne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterStepTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LootSplitter\LootSplitterStepTwo.Designer.cs">
+      <DependentUpon>LootSplitterStepTwo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +98,8 @@
     <Compile Include="Forms\Options\Saved.Designer.cs">
       <DependentUpon>Saved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\Contracts\IFormOpener.cs" />
+    <Compile Include="Helpers\FormOpener.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectSettings\LanguageSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Help\HowToUse.resx">
       <DependentUpon>HowToUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LootSplitter\LootSplitterStepOne.resx">
+      <DependentUpon>LootSplitterStepOne.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

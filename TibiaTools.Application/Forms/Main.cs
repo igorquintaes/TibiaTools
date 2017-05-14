@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TibiaTools.Application.Forms.Help;
+using TibiaTools.Application.Forms.LootSplitter;
 using TibiaTools.Application.Forms.Options;
+using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Application.ProjectSettings;
 using TibiaTools.Application.Resources;
 
@@ -16,8 +18,12 @@ namespace TibiaTools.Application.Forms
 {
     public partial class Main : Form
     {
-        public Main()
+        private readonly IFormOpener _formOpener;
+
+        public Main(IFormOpener formOpener)
         {
+            _formOpener = formOpener;
+
             LanguageSettings.Initialize();
 
             InitializeComponent();
@@ -46,41 +52,29 @@ namespace TibiaTools.Application.Forms
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void lootSplitterBtn_Click(object sender, EventArgs e)
         {
-
+             _formOpener.ShowModelessForm<LootSplitterStepOne>();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void lastDeathsBtn_Click(object sender, EventArgs e)
         {
 
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = Configuration.GetInstance();
-            if (!form.Visible)
-                form.Show();
-            else
-                form.BringToFront();
+            _formOpener.ShowModelessForm<Configuration>();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = About.GetInstance();
-            if (!form.Visible)
-                form.Show();
-            else
-                form.BringToFront();
+            _formOpener.ShowModelessForm<About>();
         }
 
         private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var form = HowToUse.GetInstance();
-            if (!form.Visible)
-                form.Show();
-            else
-                form.BringToFront();
+            _formOpener.ShowModelessForm<HowToUse>();
         }
     }
 }

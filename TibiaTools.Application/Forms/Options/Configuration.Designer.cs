@@ -88,7 +88,6 @@
             this.MinimizeBox = false;
             this.Name = "Configuration";
             this.Text = "Settings";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Configuration_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

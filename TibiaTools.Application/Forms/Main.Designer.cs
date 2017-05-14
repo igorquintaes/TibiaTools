@@ -52,7 +52,6 @@
             this.labelTitle.TabIndex = 0;
             this.labelTitle.Text = "Tibia Tools";
             this.labelTitle.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelTitle.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelChooseOption
             // 
@@ -74,7 +73,7 @@
             this.buttonLootSplitter.TabIndex = 2;
             this.buttonLootSplitter.Text = "Loot Counter and Splitter";
             this.buttonLootSplitter.UseVisualStyleBackColor = true;
-            this.buttonLootSplitter.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLootSplitter.Click += new System.EventHandler(this.lootSplitterBtn_Click);
             // 
             // buttonPlayersDeaths
             // 
@@ -84,7 +83,7 @@
             this.buttonPlayersDeaths.TabIndex = 3;
             this.buttonPlayersDeaths.Text = "Last Players Deaths (soon!)";
             this.buttonPlayersDeaths.UseVisualStyleBackColor = true;
-            this.buttonPlayersDeaths.Click += new System.EventHandler(this.button1_Click);
+            this.buttonPlayersDeaths.Click += new System.EventHandler(this.lastDeathsBtn_Click);
             // 
             // menuStrip1
             // 

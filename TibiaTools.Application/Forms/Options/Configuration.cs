@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Application.ProjectSettings;
 using TibiaTools.Application.Resources;
 
@@ -14,20 +15,16 @@ namespace TibiaTools.Application.Forms.Options
 {
     public partial class Configuration : Form
     {
-        public static Configuration _instance;
+        private readonly IFormOpener _formOpener;
 
-        public Configuration()
+        public Configuration(IFormOpener formOpener)
         {
+            _formOpener = formOpener;
+
             InitializeComponent();
             LoadTexts();
             ManageLanguageList();
             ManageEvents();
-        }
-
-        public static Configuration GetInstance()
-        {
-            if (_instance == null) _instance = new Configuration();
-            return _instance;
         }
 
         private void LoadTexts()
@@ -59,13 +56,7 @@ namespace TibiaTools.Application.Forms.Options
             UserSettings.RememberLanguage(language);
             LanguageSettings.ChangeLanguage(language);
 
-
-            var form = Saved.GetInstance();
-            if (!form.Visible)
-                form.Show();
-            else
-                form.BringToFront();
-
+            _formOpener.ShowModelessForm<Saved>();
             this.Close();
         }
 
@@ -83,11 +74,6 @@ namespace TibiaTools.Application.Forms.Options
                     break;
                 }
             }
-        }
-
-        private void Configuration_FormClosing(object sender, FormClosedEventArgs e)
-        {
-            _instance = null;
         }
     }
 }

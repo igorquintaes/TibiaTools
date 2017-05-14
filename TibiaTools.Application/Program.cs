@@ -2,6 +2,9 @@
 using System;
 using System.Windows.Forms;
 using TibiaTools.Application.Forms;
+using TibiaTools.Application.Forms.LootSplitter;
+using TibiaTools.Application.Helpers;
+using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Core.Services;
 using TibiaTools.Core.Services.Contracts;
 using TibiaTools.Database.Repositories;
@@ -11,7 +14,7 @@ namespace TibiaTools.Application
 {
     static class Program
     {
-        private static Container _container;
+        internal static Container _container;
 
         [STAThread]
         static void Main()
@@ -27,6 +30,7 @@ namespace TibiaTools.Application
         {
             _container = new Container();
             _container.RegisterSingleton<Main>();
+            _container.RegisterSingleton<IFormOpener, FormOpener>();
             _container.RegisterSingleton<IGroupCalculatorService, GroupCalculatorService>();
             _container.RegisterSingleton<IItemRepository, ItemRepository>();
             _container.Verify();

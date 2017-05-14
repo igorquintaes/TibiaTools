@@ -123,13 +123,13 @@ namespace TibiaTools.Core.Services
         /// memberA will reicive 4k (total waste = 1k), while memberB will reicive 1k (total waste = 1k)
         /// 
         /// Example 3: memberA wasted 5k in supplies, memberB wasted 2k in supplies, total value loot was 1k only
-        /// In this case, the loot value is VERY FUCKING lower and impossible to balance the waste. 
+        /// In this case, the loot value is VERY FUCKING low and impossible to balance the waste. 
         /// So the member who wasted more in supplies will reicive the loot just to pay the most expansive waste
         /// memberA will reicive 1k (total waste = 4k), while memberB will reicive nothing (total waste = 2k)
         /// </summary>
-        /// <param name="itemsResult"></param>
-        /// <param name="members"></param>
-        /// <returns></returns>
+        /// <param name="itemsResult">Item list with value and quantity updated</param>
+        /// <param name="members">List of members and updated wasted value</param>
+        /// <returns>aAn object with a list of items that each member will reicive</returns>
         public GroupCalculatorResultDTO SplitItemsToMembers(List<ItemResultDTO> itemsResult, List<MemberDTO> members)
         {
             var model = new GroupCalculatorResultDTO

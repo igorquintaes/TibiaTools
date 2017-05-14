@@ -124,6 +124,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Continue.
+        /// </summary>
+        internal static string Continue {
+            get {
+                return ResourceManager.GetString("Continue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string Help {
@@ -142,11 +151,65 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insert all the loot (use look action on items).
+        /// </summary>
+        internal static string InsertPlayerLoot {
+            get {
+                return ResourceManager.GetString("InsertPlayerLoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert the player quantity:.
+        /// </summary>
+        internal static string InsertPlayerQuantity {
+            get {
+                return ResourceManager.GetString("InsertPlayerQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Language:.
         /// </summary>
         internal static string LanguageStr {
             get {
                 return ResourceManager.GetString("LanguageStr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loot Counter and Splitter - Result.
+        /// </summary>
+        internal static string LootSplitterResult {
+            get {
+                return ResourceManager.GetString("LootSplitterResult", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loot Counter and Splitter - Step 1.
+        /// </summary>
+        internal static string LootSplitterStepOne {
+            get {
+                return ResourceManager.GetString("LootSplitterStepOne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loot Counter and Splitter - Step 2.
+        /// </summary>
+        internal static string LootSplitterStepTwo {
+            get {
+                return ResourceManager.GetString("LootSplitterStepTwo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Gold spent of player {0}:.
+        /// </summary>
+        internal static string MoneySpentPlayerNun {
+            get {
+                return ResourceManager.GetString("MoneySpentPlayerNun", resourceCulture);
             }
         }
         
@@ -201,6 +264,15 @@ namespace TibiaTools.Application.Resources {
         internal static string SuccefullSavedConfig {
             get {
                 return ResourceManager.GetString("SuccefullSavedConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value of each {0}:.
+        /// </summary>
+        internal static string ValueOfItem {
+            get {
+                return ResourceManager.GetString("ValueOfItem", resourceCulture);
             }
         }
     }
