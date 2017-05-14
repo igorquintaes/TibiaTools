@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Domain", "TibiaTools.Domain\TibiaTools.Domain.csproj", "{03025E84-EF64-4BF4-AF54-427541D0C26E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Core", "TibiaTools.Core\TibiaTools.Core.csproj", "{6C85C119-9BD7-430D-B50A-B22D1707B70A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Database", "TibiaTools.Database\TibiaTools.Database.csproj", "{71C69982-6CB4-4479-BE00-CE97ED406E73}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03025E84-EF64-4BF4-AF54-427541D0C26E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03025E84-EF64-4BF4-AF54-427541D0C26E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03025E84-EF64-4BF4-AF54-427541D0C26E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03025E84-EF64-4BF4-AF54-427541D0C26E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C85C119-9BD7-430D-B50A-B22D1707B70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C85C119-9BD7-430D-B50A-B22D1707B70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C85C119-9BD7-430D-B50A-B22D1707B70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C85C119-9BD7-430D-B50A-B22D1707B70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
