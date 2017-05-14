@@ -4,11 +4,12 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TibiaTools.Domain.Contracts.Repositories;
 using TibiaTools.Domain.Entities;
 
 namespace TibiaTools.Database.Repositories
 {
-    public class ItemRepository
+    public class ItemRepository : IItemRepository
     {
         public List<Item> GetAll()
         {

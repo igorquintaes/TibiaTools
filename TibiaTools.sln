@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Core", "TibiaToo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Database", "TibiaTools.Database\TibiaTools.Database.csproj", "{71C69982-6CB4-4479-BE00-CE97ED406E73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TibiaTools.Application", "TibiaTools.Application\TibiaTools.Application.csproj", "{7F0B3F69-6A86-43B6-9F85-335480B10BDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71C69982-6CB4-4479-BE00-CE97ED406E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0B3F69-6A86-43B6-9F85-335480B10BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0B3F69-6A86-43B6-9F85-335480B10BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0B3F69-6A86-43B6-9F85-335480B10BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0B3F69-6A86-43B6-9F85-335480B10BDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,7 +18,7 @@ namespace TibiaTools.Core.Services
         /// Items database. Work into memory because read and compare informations ton of times
         /// Damn text comparation and exclusive cases
         /// </summary>
-        private List<Item> _tibiaItems { get; set; }
+        private static List<Item> _tibiaItems { get; set; }
 
         /// <summary>
         /// Repository were we are able to obtain the data
@@ -30,9 +30,12 @@ namespace TibiaTools.Core.Services
         {
             _itemRepository = itemRepository;
 
-            _tibiaItems = _itemRepository.GetAll()
-                .OrderBy(x => x.Name)
-                .ToList();
+            if (_tibiaItems == null || !_tibiaItems.Any())
+            {
+                _tibiaItems = _itemRepository.GetAll()
+                    .OrderBy(x => x.Name)
+                    .ToList();
+            }
         }
 
         /// <summary>
