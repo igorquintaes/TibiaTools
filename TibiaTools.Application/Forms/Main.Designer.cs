@@ -1,4 +1,6 @@
-﻿namespace TibiaTools.Application.Forms
+﻿using System.Windows.Forms;
+
+namespace TibiaTools.Application.Forms
 {
     partial class Main
     {
@@ -128,6 +130,7 @@
             // 
             // Main
             // 
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 220);

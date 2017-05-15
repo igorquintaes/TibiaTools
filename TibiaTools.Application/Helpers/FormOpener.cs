@@ -27,6 +27,7 @@ namespace TibiaTools.Application.Helpers
         {
             var form = GetModelessForm<TForm>();
 
+            form.StartPosition = FormStartPosition.CenterScreen;
             form.Show();
             form.BringToFront();
         }
@@ -48,6 +49,7 @@ namespace TibiaTools.Application.Helpers
                 // Remove it from the cached instances so it can be recreated
                 form.Closed += (s, e) => this.openedForms.Remove(form.GetType());
 
+                form.StartPosition = FormStartPosition.CenterScreen;
                 return form;
             }
         }

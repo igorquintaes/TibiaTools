@@ -133,10 +133,12 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 this.Controls.Add(lb);
                 if (data.ItemsUnsplited != null && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
                 {
+                    position += 40;
                     lb.Text = String.Format(Language.ItensToPlayerWastedAditional, member.Waste.ToString(), (member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum()).ToString());
                 }
                 else
                 {
+                    position += 25;
                     lb.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
                 }
             }
@@ -202,22 +204,22 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             this.closeBtn = new System.Windows.Forms.Button();
 
-            this.closeBtn.Location = new Point(9, position + 30);
+            this.closeBtn.Location = new Point(335, 30);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(75, 23);
             this.closeBtn.TabIndex = 1;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            position += 50;
 
+            var YScreenSize = Math.Min(position + 10, 600);
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Text = Language.LootSplitterResult;
             this.Controls.Add(closeBtn);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(500, position + 10);
+            this.ClientSize = new System.Drawing.Size(500, YScreenSize);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "LootSplitterResult";
 

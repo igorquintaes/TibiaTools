@@ -169,7 +169,8 @@
     <value>Items to player that wasted {0} gps.</value>
   </data>
   <data name="ItensToPlayerWastedAditional" xml:space="preserve">
-    <value>Items to player that wasted {0} gps. As does not be possible to split some items, this player need to reicive an additional of {1} gps.</value>
+    <value>Items to player that wasted {0} gps.
+As does not be possible to split some items, this player need to reicive an additional of {1} gps.</value>
   </data>
   <data name="LanguageStr" xml:space="preserve">
     <value>Language:</value>

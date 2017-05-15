@@ -214,7 +214,8 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Items to player that wasted {0} gps. As does not be possible to split some items, this player need to reicive an additional of {1} gps..
+        ///   Looks up a localized string similar to Items to player that wasted {0} gps.
+        ///As does not be possible to split some items, this player need to reicive an additional of {1} gps..
         /// </summary>
         internal static string ItensToPlayerWastedAditional {
             get {
