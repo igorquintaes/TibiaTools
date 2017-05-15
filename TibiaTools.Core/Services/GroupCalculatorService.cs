@@ -278,13 +278,17 @@ namespace TibiaTools.Core.Services
                 }
             }
 
-            // Tratamento de item em plural para início de palavra
+            // plural word at the middle or start of the string
             if (!tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
             {
                 onlyLettersItem = onlyLettersItem.Replace("ies ", "y ");
                 onlyLettersItem = onlyLettersItem.Replace("ves ", "f ");
                 onlyLettersItem = onlyLettersItem.Replace("es ", " ");
+
+                // workaround to replace "s " without aphostroph
+                onlyLettersItem = onlyLettersItem.Replace("'s ", "#");
                 onlyLettersItem = onlyLettersItem.Replace("s ", " ");
+                onlyLettersItem = onlyLettersItem.Replace("#", "'s ");
             }
 
             return onlyLettersItem;
