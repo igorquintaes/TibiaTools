@@ -147,11 +147,29 @@
   <data name="HowToUse" xml:space="preserve">
     <value>How to use</value>
   </data>
+  <data name="HuntPaid" xml:space="preserve">
+    <value>Hunt PAID, but without profit or waste.</value>
+  </data>
+  <data name="IndividualProfit" xml:space="preserve">
+    <value>Each member will recive {0} gps as individual profit.</value>
+  </data>
+  <data name="IndividualWaste" xml:space="preserve">
+    <value>Each member lost {0} gps as individual waste.</value>
+  </data>
   <data name="InsertPlayerLoot" xml:space="preserve">
     <value>Insert all the loot (use look action on items)</value>
   </data>
   <data name="InsertPlayerQuantity" xml:space="preserve">
     <value>Insert the player quantity:</value>
+  </data>
+  <data name="ItemsUnsplited" xml:space="preserve">
+    <value>Items that was not possible to split between the players:</value>
+  </data>
+  <data name="ItensToPlayerWasted" xml:space="preserve">
+    <value>Items to player that wasted {0} gps.</value>
+  </data>
+  <data name="ItensToPlayerWastedAditional" xml:space="preserve">
+    <value>Items to player that wasted {0} gps. As does not be possible to split some items, this player need to reicive an additional of {1} gps.</value>
   </data>
   <data name="LanguageStr" xml:space="preserve">
     <value>Language:</value>
@@ -166,13 +184,19 @@
     <value>Loot Counter and Splitter - Step 2</value>
   </data>
   <data name="MoneySpentPlayerNun" xml:space="preserve">
-    <value>Gold spent of player {0}:</value>
+    <value>Player {0} gold spent:</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantity</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
@@ -185,6 +209,21 @@
   </data>
   <data name="SuccefullSavedConfig" xml:space="preserve">
     <value>Your configuration was saved succefull!</value>
+  </data>
+  <data name="TotalProfit" xml:space="preserve">
+    <value>PROFIT! Total profit was {0} gps!</value>
+  </data>
+  <data name="TotalValue" xml:space="preserve">
+    <value>Total Value</value>
+  </data>
+  <data name="TotalValueObtained" xml:space="preserve">
+    <value>Total value obtained: {0} gps.</value>
+  </data>
+  <data name="TotalValueSpent" xml:space="preserve">
+    <value>Total value spent: {0} gps.</value>
+  </data>
+  <data name="TotalWaste" xml:space="preserve">
+    <value>WASTE! Total waste was {0} gps!</value>
   </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Value of each {0}:</value>

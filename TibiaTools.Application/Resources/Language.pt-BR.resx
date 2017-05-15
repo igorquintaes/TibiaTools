@@ -147,11 +147,29 @@
   <data name="HowToUse" xml:space="preserve">
     <value>Como utilizar</value>
   </data>
+  <data name="HuntPaid" xml:space="preserve">
+    <value>O loot PAGOU. Não ouve nem lucro nem prejuízo.</value>
+  </data>
+  <data name="IndividualProfit" xml:space="preserve">
+    <value>O lucro de cada membro foi de {0} gps.</value>
+  </data>
+  <data name="IndividualWaste" xml:space="preserve">
+    <value>O prejuízo de cada membro foi de {0} gps.</value>
+  </data>
   <data name="InsertPlayerLoot" xml:space="preserve">
     <value>Insira todos os loots (dê look nos items)</value>
   </data>
   <data name="InsertPlayerQuantity" xml:space="preserve">
     <value>Insira a quantidade de jogadores:</value>
+  </data>
+  <data name="ItemsUnsplited" xml:space="preserve">
+    <value>Itens que não foram possíveis de dividir:</value>
+  </data>
+  <data name="ItensToPlayerWasted" xml:space="preserve">
+    <value>Itens para o jogador que gastou {0} gps.</value>
+  </data>
+  <data name="ItensToPlayerWastedAditional" xml:space="preserve">
+    <value>Itens para o jogador que gastou {0} gps. Como houve itens impossíveis de dividir igualmente, sugere que este jogador receba um adicional de {1} gps.</value>
   </data>
   <data name="LanguageStr" xml:space="preserve">
     <value>Idioma:</value>
@@ -166,13 +184,19 @@
     <value>Divisor e Contador de Loot - Passo 2</value>
   </data>
   <data name="MoneySpentPlayerNun" xml:space="preserve">
-    <value>Dinheiro gasto do jogaror {0}:</value>
+    <value>Dinheiro gasto pelo jogador {0}:</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nome</value>
   </data>
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
   </data>
   <data name="Options" xml:space="preserve">
     <value>Opções</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Quantidade</value>
   </data>
   <data name="Save" xml:space="preserve">
     <value>Salvar</value>
@@ -185,6 +209,21 @@
   </data>
   <data name="SuccefullSavedConfig" xml:space="preserve">
     <value>Sua configuração foi salva com sucesso!</value>
+  </data>
+  <data name="TotalProfit" xml:space="preserve">
+    <value>LUCRO! Lucro total de {0} gps.</value>
+  </data>
+  <data name="TotalValue" xml:space="preserve">
+    <value>Valor Total</value>
+  </data>
+  <data name="TotalValueObtained" xml:space="preserve">
+    <value>Valor total obtido: {0} gps.</value>
+  </data>
+  <data name="TotalValueSpent" xml:space="preserve">
+    <value>Valor total gasto: {0} gps.</value>
+  </data>
+  <data name="TotalWaste" xml:space="preserve">
+    <value>PREJUÍZO! O prejuízo total foi de {0} gps.</value>
   </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Valor de cada {0}:</value>

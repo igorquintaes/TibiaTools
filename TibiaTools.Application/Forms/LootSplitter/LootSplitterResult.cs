@@ -21,8 +21,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         public void InitializeForm(GroupCalculatorResultDTO resultData)
         {
-            // todo
-            //InitializeComponent(resultData);
+            InitializeComponent(resultData);
             LoadTexts();
             ManageEvents();
 

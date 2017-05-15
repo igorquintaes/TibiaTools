@@ -26,6 +26,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 var labelItem = new System.Windows.Forms.Label();
                 this.SuspendLayout();
 
+                // todo: add item image
+
                 textBoxItem.Location = new System.Drawing.Point(12, (i * 50) + 30);
                 textBoxItem.Name = listItems[i].Item.Name.Replace(" ", "");
                 textBoxItem.Size = new System.Drawing.Size(100, 20);
@@ -59,17 +61,17 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 var labelPlayer = new System.Windows.Forms.Label();
                 this.SuspendLayout();
 
-                textBoxPlayer.Location = new System.Drawing.Point(558, (countplayers * 50) + 30);
-                textBoxPlayer.Name = "member" + (countplayers + 1).ToString();
+                textBoxPlayer.Location = new System.Drawing.Point(253, (countplayers * 50) + 30);
+                textBoxPlayer.Name = "member" + countplayers.ToString();
                 textBoxPlayer.Size = new System.Drawing.Size(100, 20);
                 textBoxPlayer.TabIndex = 3;
 
                 labelPlayer.AutoSize = true;
-                labelPlayer.Location = new System.Drawing.Point(555, (countplayers * 50) + 14);
+                labelPlayer.Location = new System.Drawing.Point(250, (countplayers * 50) + 14);
                 labelPlayer.Name = countplayers.ToString() + "lp";
                 labelPlayer.Size = new System.Drawing.Size(35, 13);
                 labelPlayer.TabIndex = 2;
-                labelPlayer.Text = String.Format(Language.MoneySpentPlayerNun, countplayers.ToString());
+                labelPlayer.Text = String.Format(Language.MoneySpentPlayerNun, (countplayers + 1).ToString());
 
                 this.Controls.Add(textBoxPlayer);
                 this.Controls.Add(labelPlayer);
@@ -81,7 +83,10 @@ namespace TibiaTools.Application.Forms.LootSplitter
             continueBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
 
-            continueBtn.Location = new System.Drawing.Point(558, (countplayers * 50) + 30);
+            var higherYSize = Math.Max(countplayers + 1, listItems.Count); //+1 button, same column
+            var YScreenSize = Math.Min(higherYSize * 50 + 15, 600);
+
+            continueBtn.Location = new System.Drawing.Point(253, (countplayers * 50) + 28);
             continueBtn.Name = "continueBtn";
             continueBtn.Size = new System.Drawing.Size(75, 23);
             continueBtn.TabIndex = 0;
@@ -91,7 +96,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             this.Controls.Add(continueBtn);
 
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(815, 322);
+            this.ClientSize = new System.Drawing.Size(410, YScreenSize);
             this.Name = "Form2";
 
             this.ResumeLayout(false);

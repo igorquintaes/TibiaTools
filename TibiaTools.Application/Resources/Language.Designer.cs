@@ -151,6 +151,33 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hunt PAID, but without profit or waste..
+        /// </summary>
+        internal static string HuntPaid {
+            get {
+                return ResourceManager.GetString("HuntPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each member will recive {0} gps as individual profit..
+        /// </summary>
+        internal static string IndividualProfit {
+            get {
+                return ResourceManager.GetString("IndividualProfit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Each member lost {0} gps as individual waste..
+        /// </summary>
+        internal static string IndividualWaste {
+            get {
+                return ResourceManager.GetString("IndividualWaste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insert all the loot (use look action on items).
         /// </summary>
         internal static string InsertPlayerLoot {
@@ -165,6 +192,33 @@ namespace TibiaTools.Application.Resources {
         internal static string InsertPlayerQuantity {
             get {
                 return ResourceManager.GetString("InsertPlayerQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items that was not possible to split between the players:.
+        /// </summary>
+        internal static string ItemsUnsplited {
+            get {
+                return ResourceManager.GetString("ItemsUnsplited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items to player that wasted {0} gps..
+        /// </summary>
+        internal static string ItensToPlayerWasted {
+            get {
+                return ResourceManager.GetString("ItensToPlayerWasted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Items to player that wasted {0} gps. As does not be possible to split some items, this player need to reicive an additional of {1} gps..
+        /// </summary>
+        internal static string ItensToPlayerWastedAditional {
+            get {
+                return ResourceManager.GetString("ItensToPlayerWastedAditional", resourceCulture);
             }
         }
         
@@ -205,11 +259,20 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Gold spent of player {0}:.
+        ///   Looks up a localized string similar to Player {0} gold spent:.
         /// </summary>
         internal static string MoneySpentPlayerNun {
             get {
                 return ResourceManager.GetString("MoneySpentPlayerNun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
             }
         }
         
@@ -228,6 +291,15 @@ namespace TibiaTools.Application.Resources {
         internal static string Options {
             get {
                 return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quantity.
+        /// </summary>
+        internal static string Quantity {
+            get {
+                return ResourceManager.GetString("Quantity", resourceCulture);
             }
         }
         
@@ -264,6 +336,51 @@ namespace TibiaTools.Application.Resources {
         internal static string SuccefullSavedConfig {
             get {
                 return ResourceManager.GetString("SuccefullSavedConfig", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PROFIT! Total profit was {0} gps!.
+        /// </summary>
+        internal static string TotalProfit {
+            get {
+                return ResourceManager.GetString("TotalProfit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total Value.
+        /// </summary>
+        internal static string TotalValue {
+            get {
+                return ResourceManager.GetString("TotalValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total value obtained: {0} gps..
+        /// </summary>
+        internal static string TotalValueObtained {
+            get {
+                return ResourceManager.GetString("TotalValueObtained", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total value spent: {0} gps..
+        /// </summary>
+        internal static string TotalValueSpent {
+            get {
+                return ResourceManager.GetString("TotalValueSpent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WASTE! Total waste was {0} gps!.
+        /// </summary>
+        internal static string TotalWaste {
+            get {
+                return ResourceManager.GetString("TotalWaste", resourceCulture);
             }
         }
         
