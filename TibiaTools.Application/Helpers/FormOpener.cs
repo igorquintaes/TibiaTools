@@ -54,15 +54,10 @@ namespace TibiaTools.Application.Helpers
 
         public DialogResult ShowModalForm<TForm>() where TForm : Form
         {
-            using (var form = this.GetForm<TForm>())
+            using (var form = this.GetTForm<TForm>())
             {
                 return form.ShowDialog();
             }
-        }
-
-        private Form GetForm<TForm>() where TForm : Form
-        {
-            return this.container.GetInstance<TForm>();
         }
 
         private TForm GetTForm<TForm>() where TForm : Form

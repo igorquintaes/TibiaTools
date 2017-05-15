@@ -230,7 +230,7 @@ namespace TibiaTools.Core.Services
             }
 
             // Rules for rings
-            if (tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
+            if (!tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
             {
                 if (onlyLettersItem.Length > 14 &&
                     onlyLettersItem.Substring(onlyLettersItem.Length - 14) == " that is brand")
@@ -245,7 +245,7 @@ namespace TibiaTools.Core.Services
             }
 
             // Rules for plural words only at the end of the string
-            if (tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
+            if (!tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
             {
                 if (onlyLettersItem.Substring(onlyLettersItem.Length - 3) == "ies")
                 {
@@ -266,7 +266,7 @@ namespace TibiaTools.Core.Services
             }
 
             // Rules for words that ends with char "E" in middle of the name
-            if (tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
+            if (!tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
             {
                 var provisoryItemName = onlyLettersItem;
                 provisoryItemName = provisoryItemName.Replace("es ", "e ");
@@ -279,7 +279,7 @@ namespace TibiaTools.Core.Services
             }
 
             // Tratamento de item em plural para início de palavra
-            if (tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
+            if (!tibiaItems.Any(x => x.Name.ToLower() == onlyLettersItem.ToLower()))
             {
                 onlyLettersItem = onlyLettersItem.Replace("ies ", "y ");
                 onlyLettersItem = onlyLettersItem.Replace("ves ", "f ");

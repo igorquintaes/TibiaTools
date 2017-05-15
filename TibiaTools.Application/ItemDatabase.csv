@@ -1,6 +1,6 @@
 1,Focus Cape,6000,,11fca0614dcf9454daa7d565fb4e83753.gif
 2,Serpent Sword,900,,257b8651573884291ba53efe85e17f0cf.gif
-3,Iron Ore,,NULL,3f603723b7db14f60a2191578cddae3a4.gif
+3,Iron Ore,,2.00,3f603723b7db14f60a2191578cddae3a4.gif
 4,Frazzle Tongue,700,,4a90a02df05b243208481f7e095dbe0a3.gif
 5,Knight Legs,5000,,54acc8ccea1124cb184b333b29f400921.gif
 6,Terra Mantle,11000,,6aec0e408ed37407b84d713b5c615dee0.gif
@@ -71,7 +71,7 @@
 72,Soul Orb,,,65d83c77b8724f2da1978bba422286a7.gif
 73,Yellow Gem,1000,,c1875c781ecf49b9966f0f3bc2def8e3.gif
 74,Red Gem,1000,,d1b367805ecf408a82afb80dfba5a9d5.gif
-75,Minotaur Leather,,NULL,1bfb5e49801a4527b047e95abcb095d0.gif
+75,Minotaur Leather,,0.4,1bfb5e49801a4527b047e95abcb095d0.gif
 76,Mino Shield,3000,,3a8bff5daef648fdbb1ba29ea5342644.gif
 77,Stealth Ring,,,0531590f079244a6a2efdc95157adc97.gif
 78,Blue Piece of Cloth,,,5ee4139d97314adda799ab54c2b7bfe2.gif
@@ -91,7 +91,7 @@
 92,Fiery Heart,375,,245f518c3f114852bef940ef34058789.gif
 93,Piece of Hellfire Armor,550,,abbdbd9463d44bc786900751f7bf4e3e.gif
 94,Wand of Inferno,3000,,a4eb085c926f4ad480a9de8fc1beb083.gif
-95,Demonic Essence,,NULL,9758808ecd1f4b88916450dd260d797e.gif
+95,Demonic Essence,,1.00,9758808ecd1f4b88916450dd260d797e.gif
 96,Emerald Bangle,800,,3875470b0ef64d88bd4fbc2a22ad3a5e.gif
 97,Fire Sword,4000,,0d6fdb5254bb428eb4af2003bd8f4757.gif
 98,Fire Axe,8000,,f79529f25a6449f18b5493a96031c157.gif
@@ -124,7 +124,7 @@
 125,Assassin Dagger,20000,,66cd1853634e4f4383f5e8d4c91533d1.gif
 126,Haunted Blade,8000,,ed5e0e85b3da4112b72861970c904ac1.gif
 127,Cluster of Solace,,,b29d8749271f415c8ee1d7039607187a.gif
-128,Silencer Claws,390,,6e0396f2787f461b849ab42b1227f0f2.gif
+128,Silencer Claws,390,4.2,6e0396f2787f461b849ab42b1227f0f2.gif
 129,Terra Boots,2500,,f19b11f04fce43198699dc84306f7e0e.gif
 130,Glorious Axe,3000,,fff46fd4510b482ea1999acdcd14a3d1.gif
 131,Diamond Sceptre,3000,,3fcd231c154e4fd1810bcabf55d77920.gif
@@ -147,7 +147,7 @@
 148,White Pearl,160,,04d1e59fe850496885e97a3681158bf9.gif
 149,Acorn,10,,dcb129724f4f4b4ab59c038f90c0d2e0.gif
 150,Antlers,50,,347942cd95d64037bd5f954953c9b05d.gif
-151,Ape Fur,,,dadccbad2314486782a1b676875238ea.gif
+151,Ape Fur,,1.3,dadccbad2314486782a1b676875238ea.gif
 152,Badger Fur,15,,326544d277144dbfb4cc5cc2ebef3675.gif
 153,Banana Sash,55,,1b97f8089fab4e838665e5635e57eaa9.gif
 154,Basalt Fetish,210,,3f42906ff3da48e0b1767f72b1f76281.gif
@@ -155,7 +155,7 @@
 156,Bat Wing,,,650b3043bdc143389118767e5b414112.gif
 157,Black Hood,190,,8d9b274536784b0c9f55e019a45e74de.gif
 158,Blazing Bone,610,,bcb39bd5d5584486959645d1ae8621ab.gif
-159,Blood Preservation,310,,0671cc793aa64e11aef07c2d9cb2d451.gif
+159,Blood Preservation,310,0.8,0671cc793aa64e11aef07c2d9cb2d451.gif
 160,Blood Tincture in a Vial,360,,fdaa55e3c88f4447a34ef65bf5afa15d.gif
 161,Bloody Dwarven Beard,110,,d89dcca9a58a4b35b96325cc97b87a8b.gif
 162,Bola,35,,143fb9f2db4a435b8e1f6a9fd87a7a47.gif
@@ -196,7 +196,7 @@
 197,Cultish Mask,280,,25ec259b1e054fb3878c8db28cb71705.gif
 198,Cultish Robe,150,,2500b402164c4cd08dea4165de9c96a2.gif
 199,Cultish Symbol,500,,55b243b235bd40fa9b0b65451b2b1323.gif
-200,Cursed Shoulder Spikes,320,,c73d4590d70b44f98b11a92d9dee3a98.gif
+200,Cursed Shoulder Spikes,320,0.97,c73d4590d70b44f98b11a92d9dee3a98.gif
 201,Cyclops Toe,55,,744efb7679f64a93ab56faf505dd3bcb.gif
 202,Damselfly Eye,25,,b9646e8c13ad4ef3a7e34706a058728b.gif
 203,Damselfly Wing,20,,67cd11f763c14df1b3738c61254c96f6.gif
@@ -208,7 +208,7 @@
 209,Deepling Scales,80,,92a0e3d0b87d4b4696dbdc1be24ef031.gif
 210,Deepling Warts,180,,4c22301c44944123a3ae292a6ec2fe88.gif
 211,Deeptags,290,,bed1a602affc40deac4f8f080dd2e57e.gif
-212,Demon Dust,,NULL,d56bab1b069d4f4580e4381ca4fd4ca6.gif
+212,Demon Dust,,1.00,d56bab1b069d4f4580e4381ca4fd4ca6.gif
 213,Demon Horn,1000,,1b0bcd0bcd9b426b829b361a1b68eb83.gif
 214,Demonic Finger,1000,,5034d049a2bd4bf69d08ab9c8a14567b.gif
 215,Demonic Skeletal Hand,80,,8f738a5552b74a419ecc5baec81c42dd.gif
@@ -219,7 +219,7 @@
 220,Dracoyle Statue,5000,,7ee1dba93e314041a91ef99fec88b947.gif
 221,Dragon Priest\'s Wandtip,175,,a7e33e2b1aa54644afeaa50dc61dc38f.gif
 222,Dragon\'s Tail,100,,a38ae480e7b74f939b743b520fad6fda.gif
-223,Draken Sulphur,550,550,45fc498a2ffb4c469043057fca602733.gif
+223,Draken Sulphur,550,2.04,45fc498a2ffb4c469043057fca602733.gif
 224,Draken Wristbands,430,,5f8b35baf3e3486b99f5db31d3c90605.gif
 225,Dung Ball,130,,43e0eb4185ee4e50911d9f0c51ceac54.gif
 226,Earflap,40,,89a1218d79b34bab82cfbc1b24ae6b7b.gif
@@ -249,7 +249,7 @@
 250,Glob of Mercury,20,,c4beb33330af459f8d3ae862412f70cd.gif
 251,Glob of Tar,30,,417a96b2c6514edeadc93a7ab3ddc3a7.gif
 252,Goblin Ear,20,,90d8fe23527843a5b3267dc399bf38f1.gif
-253,Green Dragon Leather,100,100,fd43b402a0de46c498093bc2a3d57299.gif
+253,Green Dragon Leather,100,0.60,fd43b402a0de46c498093bc2a3d57299.gif
 254,Green Dragon Scale,100,,5d99c836ea824bc981c85fbd2e28cadd.gif
 255,Hair of a Banshee,350,,c1dd0aa0c0f74c0b9fe8835fe49cfc20.gif
 256,Half-Digested Piece of Meat,55,,2931e6889073439b87af0c5535a24a6f.gif
@@ -262,7 +262,7 @@
 263,Hemp Rope,350,,8b4e6b5834bc49d4bd4e25ed7e4265a1.gif
 264,Hideous Chunk,510,,4aea91ed06f94baaa739062a0d928c29.gif
 265,High Guard Flag,550,,2fd116c5229e4227acba0c961285d2c2.gif
-266,High Guard Shoulderplates,130,,2ea2e738da9c40c2b9c32348acc76ee5.gif
+266,High Guard Shoulderplates,130,1.03,2ea2e738da9c40c2b9c32348acc76ee5.gif
 267,Holy Ash,160,,ff1eeabc8a1d495ea9e769b6b78aa74d.gif
 268,Holy Orchid,,,c3acbca109ee4aaebc6ce8903ce67934.gif
 269,Honeycomb,,,5add88e90ccc45009750133d6ddf1c46.gif
@@ -279,7 +279,7 @@
 280,Legionnaire Flags,500,,036c40d1c2834f8a97fae586ada0d321.gif
 281,Lion\'s Mane,60,,99d4d1611619448f8d87a84cd8f3d6a9.gif
 282,Lizard Essence,300,,2b6f2058cb2d440fbe0321f414e48f97.gif
-283,Lizard Leather,,NULL,31a1dd81d3f84f9b87783c9004cee58e.gif
+283,Lizard Leather,,0.5,31a1dd81d3f84f9b87783c9004cee58e.gif
 284,Lizard Scale,,,138cd7cad8944bfcbf3da896d38df250.gif
 285,Lost Basher\'s Spike,280,,cd0fd12c9e884823ae833e7e89a74892.gif
 286,Lost Bracers,140,,8f33fb7e9d6c4c2eb377c107ce6b0072.gif
@@ -322,7 +322,7 @@
 323,Quara Eye,350,,0026ab32dd7e4e21b8c065ec989b0ddf.gif
 324,Quara Pincers,410,,3e9e058696bc4a4abd557978e8c982c2.gif
 325,Quara Tentacle,140,,c702be030ed8438e89a99373b8306da4.gif
-326,Red Dragon Leather,,NULL,47fa68f0516d4f35a4e12647d07cd452.gif
+326,Red Dragon Leather,,0.60,47fa68f0516d4f35a4e12647d07cd452.gif
 327,Red Dragon Scale,,NULL,0756651321d141d094c6112c7775d717.gif
 328,Red Hair Dye,80,,745a8b9e1c3040e19694d4e79ee14c2b.gif
 329,Rope Belt,66,,60fe2f9906bf4aa489e15140b0916066.gif
@@ -361,7 +361,7 @@
 362,Star Herb,15,,7a8f4d2af1e4499695b15b66ec94a49a.gif
 363,Stone Herb,20,,4f77bf853fcc4f4aa4c3670990765c11.gif
 364,Stone Wing,120,,003bfb40b37f466f8e3a73d7574a974f.gif
-365,Striped Fur,50,,049d5c1db16c42c2aa694d68baa59fec.gif
+365,Striped Fur,50,1.2,049d5c1db16c42c2aa694d68baa59fec.gif
 366,Swamp Grass,20,,71e56e046a7d4350801cf43fd1a20ef6.gif
 367,Swampling Moss,20,,9c27319665034063baba878dfe65046e.gif
 368,Swarmer Antenna,130,,e5d2bcf23fcb413395099baf41ab020a.gif
@@ -382,12 +382,12 @@
 383,Tusk,,,8237e535860446d890730c35a46da8a1.gif
 384,Undead Heart,200,,f8a6e3f7e7e64ba88789c6795fa570d5.gif
 385,Unholy Bone,480,,79f869aeca124a1da9b0a0bb13b68bbb.gif
-386,Vampire Dust,,NULL,6b29f816a7914d8f81760fa4d70bdf15.gif
-387,Vampire Teeth,275,275,b6cc6f0ee93e46c7ac3fe15cf6217559.gif
+386,Vampire Dust,,1.00,6b29f816a7914d8f81760fa4d70bdf15.gif
+387,Vampire Teeth,275,0.50,b6cc6f0ee93e46c7ac3fe15cf6217559.gif
 388,Vampire\'s Cape Chain,150,,beed7a286b954c599aa5925cebfa38a2.gif
 389,Venison,55,,e875064702464c19aebe9ecc2d550f25.gif
-390,Warmaster\'s Wristguards,200,200,290be69bf66849fdabe568a0295f1bb6.gif
-391,Warwolf Fur,30,,4be9d8b3db644871abb6109eebb6225b.gif
+390,Warmaster\'s Wristguards,200,1.2,290be69bf66849fdabe568a0295f1bb6.gif
+391,Warwolf Fur,30,1.05,4be9d8b3db644871abb6109eebb6225b.gif
 392,Waspoid Claw,320,,53812d2e878f4e03a9b2b6f87804babc.gif
 393,Waspoid Wing,190,,d2f355612d92435389a68f39892980e0.gif
 394,Weaver\'s Wandtip,250,,746f6e9a70b04eabb30c90fb17a3fd48.gif
@@ -481,199 +481,199 @@
 482,Ring of the Sky,,,81ae16c607ab4598a1ac95967416f14a.gif
 483,Ruby Necklace,2000,,9f46d5a89c8543c49f884cac6756b2bc.gif
 484,Sacred Tree Amulet,3000,,5bf0af4f7724427bb86fb4e7300e82c1.gif
-485,Sapphire Hammer,7000,,6797f2617d4040399c4c169039e400a2.gif
-486,Scarab Amulet,200,,41637d33b7b84f0ab15108a6bad26819.gif
-487,Scarab Shield,2000,,d3d2373bbee8425f8c635fc8ce84cb7e.gif
-488,Shockwave Amulet,3000,,27071d9436d346d5984a445bbd1c7386.gif
-489,Silver Brooch,150,,90eeee36115d426082af1c40d4c80088.gif
-490,Silver Dagger,500,,c6749ce6636246a48223a4071cfbdb9f.gif
-491,Skull Helmet,40000,,585ef5bf480b4f57a88a03eca7edc10a.gif
-492,Spiked Squelcher,5000,,9411773c3dc544aeabb133b94bbb551e.gif
-493,Coal,20,20,e8bca06057b44f65b50644251545df40.gif
-494,Knight Armor,5000,,bc136185efa149b1bad1c58ac4d9f630.gif
-495,Steel Helmet,293,,3a67df9810164bf99964766195f4ee39.gif
-496,Ice Cube,,,600680f47bc848a99e29e9d890d5fac3.gif
-497,Time Ring,,,a3aef8b45e7c45e09d6b8dff27a0a0bc.gif
-498,Ice Rapier,1000,,839363d8709a4f68aa986454862472e9.gif
-499,Jewelled Backpack,,,4fc2111adf534623b176ad2dd448b25e.gif
-500,Terra Hood,2500,,fc95e8bed58b40b784b12a39130bbe1d.gif
-501,Tortoise Shield,150,,f7c975d63814470a8023a61a5200dc30.gif
-502,Vile Axe,35000,,903b1198fc724a1c816aa43fd9b9f695.gif
-503,War Horn,8000,,7aad5c47f0754ab0a9d3465cb1bbe48f.gif
-504,Wyvern Fang,1500,,9b21865294a24803b379cd5ae5b67e58.gif
-505,Angelic Axe,5000,,f54d2c2ba43d45c3a18ef7c3f4b7df29.gif
-506,Bonelord Shield,1200,,5d0d45674d5144daade6aeffa1052777.gif
-507,Broadsword,500,,9fa6126310a24cbd8087a186d793bf30.gif
-508,Butcher\'s Axe,18000,,8caf6fba985a4bb282dd9dc7c98ad3f7.gif
-509,Crown Armor,12000,,eb260198ab8342a4b983c6073f473de1.gif
-510,Crown Helmet,2500,,f2e75c6a18ee4ddeb2bb64ade8b4e6bb.gif
-511,Crown Legs,12000,,07eea88791dd4c6eb6b925b0633e5cdd.gif
-512,Crown Shield,8000,,de1e8fba10c04ffc844351d39f902722.gif
-513,Crusader Helmet,6000,,8672118813bb4929a9b415c5363575fa.gif
-514,Dragon Lance,9000,,d57def7b75a5401b9bf7493875ebee1c.gif
-515,Dragon Shield,4000,,f3b2f0f1f3824ae38e48505b34a3f3fa.gif
-516,Noble Armor,900,,9b20f1764d104863bddd62b23c958f10.gif
-517,Obsidian Lance,500,,c89f73aab3f54734905ee10d6711d4f9.gif
-518,Spike Sword,1000,,2bcccde837844392871185f64163eaba.gif
-519,War Hammer,1200,,871bab0e74ed42e59f70c81f1dfeb2b0.gif
-520,Orb,750,,779c91a0ee4d4e8bb81d4429fca6bbb6.gif
-521,Wand of Decay,1000,,647d923ed1204cd6b3333021f1fadea8.gif
-522,Wand of Draconia,1500,,35946eaf540e4ca3a8d0db6df4b0226d.gif
-523,Wand of Dragonbreath,200,,d133687b93a8497bb3ce2eabb4658e5b.gif
-524,Wand of Starstorm,3600,,131456ae68cb4b77b0cf32313d48049c.gif
-525,Wand of Voodoo,4400,,9aea3a26233c4e71ad03452ede011ebf.gif
-526,Ancient Shield,900,,07cef368ffbe4d2cbb14a5a501ebfbc2.gif
-527,Black Shield,800,,9ed1a5ec4090420f8cd07fe62ef7e3fb.gif
-528,Bonebreaker,10000,,4b92c0c410e54766adb29cd6dfee26f9.gif
-529,Dark Helmet,250,,2bb6260908b543acaec607bc2a873e4a.gif
-530,Dragon Hammer,2000,,00a4b92948c84d2681d94cdd030940cb.gif
-531,Knight Axe,2000,,39233342e8c6408a8288770750558d51.gif
-532,Onyx Flail,22000,,9bf343ac1c0c4990bf121734b03d0449.gif
-533,Poison Dagger,50,,98b2afe748d4461183c3c15c4f1bb281.gif
-534,Scimitar,150,,0db485f5faab4ffe8badf1af43a6eb91.gif
-535,Skull Staff,6000,,bce41475ba33439eb06705fdc67f96ee.gif
-536,Strange Helmet,500,,1370821eedc84e2ea537490954b015b2.gif
-537,Vampire Shield,15000,,631e9c50420a4342bb8887443c9c7ea1.gif
-538,Hailstorm Rod,3000,,48c62ed5c1b3483f9ec89a97f74a6ba5.gif
-539,Might Ring,250,,d4b702147e9544d890f58fdaf95ba75c.gif
-540,Moonlight Rod,200,,b863b56a3513468aab5414f3d30e3d2d.gif
-541,Mysterious Fetish,50,,08119c608e80456e8d1ce7b0aec05e0c.gif
-542,Necrotic Rod,1000,,a291714ebb4342f3a760bb09b8e53b83.gif
-543,Northwind Rod,1500,,c65798d761934b569d98ddaeb796d37c.gif
-544,Protection Amulet,100,,65a8bf780af345e3b888b2270da1a231.gif
-545,Terra Rod,2000,,48397d545a1147b3b61dc65a59fbbe2e.gif
-546,Draken Boots,,,b7f178ebac8d4a53bd53c4065e98aafd.gif
-547,Drakinata,10000,,725cd969e800421c9b7a6f78289f2667.gif
-548,Elite Draken Mail,50000,,67ded7a4932647f0b083b0cf1673fe4e.gif
-549,Guardian Boots,,,3dbfdf9f643f4f4588099f2a2327b2bc.gif
-550,Twiceslicer,28000,,91297cfdff1948ecb4a1b654e05ab266.gif
-551,Twin Hooks,500,,ab86c1571d9c4e3d83d8ce25a7e21217.gif
-552,Wailing Widow\'s Necklace,3000,,2fb0f58e2acd40adad64bbdf880843b5.gif
-553,Zaoan Armor,14000,,041f8e28620f4432b7ccc487dadf4eb0.gif
-554,Zaoan Halberd,500,,c38be3356f6d44d9b2750c8517d256f8.gif
-555,Zaoan Helmet,,,f372e0e37197486092f988ee1f309732.gif
-556,Zaoan Legs,14000,,dd281bcc44d64814b85106c38a577830.gif
-557,Zaoan Shoes,5000,,593482cb1aa7414d97f59d08aaf73d64.gif
-558,Zaoan Sword,30000,,9af4b3c6027e4263ab6377c77c0e454d.gif
-559,Bonebeast Trophy,6000,,28494a9e35fe427d81d429f22fc7eaf9.gif
-560,Cyclops Trophy,500,,10eba81580cd4fbd983b6aed5e215c06.gif
-561,Draken Trophy,15000,,d5793bcad4fe460f83e295989aeb06ca.gif
-562,Hollow Stampor Hoof,,,80c9e3609876499fb30fcd1ba1c0b8d9.gif
-563,Lizard Trophy,8000,,12992f24fe7e40fdb56d5a5b852c1c90.gif
-564,Stampor Horn,,,c68ca626c7b047ec8ca055d4117db7a9.gif
-565,Stampor Talons,,,2602f16832b84f6e837d091e6e899066.gif
-566,Lion Trophy,3000,,420956d583f6403891fc9dbdfe4e0b7f.gif
-567,Wolf Trophy,3000,,1e28ec40c2ab423ebad7403740f287fa.gif
-568,Demon Trophy,40000,,9bab5137b8c84dcf816d27ab457e4b0d.gif
-569,Dragon Lord Trophy,10000,,ea13b7a125a943c4bd2d116fe5341f52.gif
-570,Bag of Apple Slices,,,33349ff280e64cb19cc42b01f706ac11.gif
-571,Bamboo Leaves,,,63810f1d69274eadaeefc5425117f129.gif
-572,Carrot on a Stick,,,abdab05402d84e92aa4f88dadbf01f2e.gif
-573,Decorative Ribbon,,,6e2e08e94cc546bfb5f72e2836732a47.gif
-574,Fist on a Stick,,,a37203c1e59f43408c2aaebc4d99a764.gif
-575,Foxtail,,,eba5c40f74034fbb9ded5fcb191ce628.gif
-576,Giant Shrimp,,,af086bce069542419ba6f152ddf1c992.gif
-577,Golden Can of Oil,,,1d1d374a3f2c4ff7bcb28a37f09e5a10.gif
-578,Golden Fir Cone,,,c0af5d75c77c4b7e81fde57dd2ca8da8.gif
-579,Harness,,,f85721af5e7e40aeb96f6f8c1041f910.gif
-580,Leather Whip,,,56f73604901d411087659b40c7d80b49.gif
-581,Maxilla Maximus,,,0158eba4b3954e569bd3c08b9fee1fc5.gif
-582,Nightmare Horn,,,7c32164086cc49c18efe178f26fe9791.gif
-583,Reins,,,1ea41cd1cf074eafad2a3c8ee48e8443.gif
-584,Slingshot,,,d2280ce56350464bae8f541c6e97cb85.gif
-585,Sweet Smelling Bait,,,0f6385d13a3140fba9985e100ddb4f9c.gif
-586,Tin Key,,,98a8434415604227b45af978fa178a5e.gif
-587,Broken Gladiator Shield,190,,5d70c0e0ab534116bc6e88ddcb530240.gif
-588,Crystal of Balance,1000,,07fac8075d3d41d69361fca6be67d3f0.gif
-589,Crystal of Focus,2000,,661ef18418a54aaaa4a1c3d6a00e52f1.gif
-590,Crystal Pedestal,500,,90e2fbc8fba549b185bca14234bfae34.gif
-591,Crystal of Power,3000,,5a5fb73140024fe0b751c9dd5106fc4e.gif
-592,Crystalline Spikes,440,,dfd0dcb135cf487a9eded29c81421d31.gif
-593,Flintstone,800,,35f3721667f14012b1836e25855df048.gif
-594,Gear Crystal,200,,cd019e92a0f145d9b0fa3dd6065bb2b2.gif
-595,Gear Wheel,,,1fa3211f70de4292b2d5584ce47212cb.gif
-596,Huge Chunk of Crude Iron,,,7a8a835998844b3bbcfc159b1003a1d8.gif
-597,Magma Clump,570,,112b5e14ccc448f3b0c297dc1cd8c736.gif
-598,Metal Spike,320,,684ff0ad266e4990879793ceaac6474f.gif
-599,Piece of Draconian Steel,,,4db4fa85a1184643ae150eccd29f316b.gif
-600,Piece of Hell Steel,,,8cb7e945979944c8bfd57ef95dee5c73.gif
-601,Piece of Royal Steel,,,98772fec2baa4c9d8c7f0761d450e9c0.gif
-602,Pulverized Ore,400,,d3b649779bc84cf2b99d4496131e3f61.gif
-603,Stone Nose,590,,c1a4414439634437a9345bab2c0735bf.gif
-604,Sulphurous Stone,100,,226be7c37e0247e29c721783da89451a.gif
-605,Vein of Ore,330,,d5719c95e2004c5285583e96ba86de2e.gif
-606,War Crystal,460,,944fcd4065c04a5a8fbd7e3a37c50e98.gif
-607,Banana Staff,,,5efd72a1af8649aea38e2d3487163479.gif
-608,Bast Skirt,,,6ae27078b95947d8a309e5054330f6d7.gif
-609,Charmer\'s Tiara,900,,0103d1d8e1f045a0aef3c4e3a34a981e.gif
-610,Feather Headdress,850,,2bd1625d7b3d4a9480ee769addc4230d.gif
-611,Halberd,400,,eac3e9317be643dda4536c790ee85b3f.gif
-612,Horseman Helmet,280,,ffd48f7704914fa6a3d8a238e25ae440.gif
-613,Salamander Shield,280,,201ba83e66ff42da89b3b422a76058a8.gif
-614,Tusk Shield,850,,931b52eca4524133933ef4c122ada1da.gif
-615,Bonelord Eye,,,0b747ec2315f48a39bb1916b6a60db15.gif
-616,Eye Patch,,,e66553d3d8644cecb73f3be1432cab74.gif
-617,Flask of Warrior\'s Sweat*,,,86d962664ca745bf9b40a37e832549e5.gif
-618,Hook,,,9664220495a04f34b37ad4955b433465.gif
-619,Peg Leg,,,10bd86fcad1140c7ac768d6c90399d75.gif
-620,Slime Mould,,,c74c8c77a6194798be2126a75e333691.gif
-621,Yellow Piece of Cloth,,,b562909650b74ca58fbc6aeca62035e1.gif
-622,Small Enchanted Amethyst,,,1b9583e116e5400688ce1b978cd108ae.gif
-623,Small Enchanted Ruby,,,a7838e2715be4fb3a6ceacdd1e1b16c7.gif
-624,Crystal Ball,190,,2087f9dd524b48d296a3f0692c2db9be.gif
-625,Flawless Ice Crystal,5000,,e37f651a4f2e41478240ac2a57c288fc.gif
-626,Bar of Chocolate,,,4da82907c121420c8ac55835a01fb222.gif
-627,Piggy Bank,,,73cfabbe604241c6a92c9cb8eeab4017.gif
-628,Talon,,,12d08c4eca5c47c6a505dd711d5823f8.gif
-629,Blue Gem,5000,,aac32114ac5a4318b71adfcd7ff90fb1.gif
-630,Golden Mug,250,,102ef17a2af54c13ae91bd0edcfbe79b.gif
-631,Green Gem,5000,,180304aaaa364822823886c787ddbe0c.gif
-632,Violet Gem,10000,,2455711d546f4517b44144cdcd771ca5.gif
-633,Carapace Shield,,,117c02de9eb548eeb3e094c8e04d1684.gif
-634,Grasshopper Legs,,,ab81d8da8c87421f808f371b83dddd02.gif
-635,Calopteryx Cape,,,d77694b90d8e4a8f9d6ec961a6fd39a6.gif
-636,Deepling Squelcher,,,a2cbb5c1f6a4488aa8161027fcb5e9d1.gif
-637,Deepling Staff,4000,,3d94ff504f7e4fa7bbdbb86a7d9293d9.gif
-638,Guardian Axe,9000,,7aa5c83dec344925b52ce3d14136b251.gif
-639,Hive Bow,,,35d3a22f36d9429b88e012bdebb91aca.gif
-640,Hive Scythe,,,536c249ebdc24c1cabfef1c08140fe0d.gif
-641,Necklace of the Deep,3000,,d95fc7d540be4217ac90703e42690cfa.gif
-642,Ornate Crossbow,,,b61783e6fe1b4b1d89d092311346440d.gif
-643,Warrior\'s Axe,,,550ad970108e490198e841f37fdb89f5.gif
-644,Warrior\'s Shield,,,981ec009b19e4fa7a0df4bbda262c91b.gif
-645,Clay Lump,,,a578d6a394314603954dd536c4fa6ffa.gif
-646,Piece of Marble Rock,,,8bdd9d3d27254d7d8f1c1186d4a2b3f9.gif
-647,Spellbook of Enlightenment,4000,,69d9cf944d4e4d0ab4a09acfac176988.gif
-648,Spellbook of Warding,,,15a9cb30fedb4ddaa9b6443450fcebf7.gif
-649,Spellbook of Mind Control,,,34d5b8fd55fe400b938a3bfaf708d887.gif
-650,Mind Stone,170,,9eff7fa918344a4bb08166244c0e567d.gif
-651,Batwing Hat,,,ad2b0c1ed4f34d7694efb211ba5906ac.gif
-652,Jade Hat,9000,,57a342c8be1f48a8ba7e940598aa0b3d.gif
-653,Spellweaver\'s Robe,12000,,796e63890f8f4ae5a9071d87b1c0cd4f.gif
-654,Spirit Cloak,350,,ba83f841e9d74ab387561fdcd3ecc85f.gif
-655,Zaoan Robe,12000,,a507c42ef8bb4aad93251156b078792f.gif
-656,Belted Cape,500,,b65b33715c1d4816b6eebcbbcae8329a.gif
-657,Alloy Legs,11000,,d5f999ec5bb54badaa86664aa54d43ff.gif
-658,Execowtioner Axe,12000,,b3cff24bd9074b81904996ca6b451e33.gif
-659,Gearwheel Chain,5000,,31a920ab4c77400e93d2f910f7f2cc5c.gif
-660,Glooth Cape,7000,,cefa9ab59dd04378b708af26dfd14249.gif
-661,Glooth Whip,2500,,23c6e2bd5ece4006a67001760ff32aa8.gif
-662,Heat Core,10000,,d940f1ced3b14f84884771e37fe0170c.gif
-663,Metal Bat,9000,,2f96d9864bb94e20a65db93f4462753d.gif
-664,Metal Spats,2000,,7c8367dc21b1496b8228fe8e270f1a5d.gif
-665,Mino Lance,7000,,fd7ff77bcc8e4b778420b4d63cb1909e.gif
-666,Moohtant Cudgel,14000,,6c247e1385ff4de5bb8efb7e4f2d8828.gif
-667,Rubber Cap,11000,,bd46f6c36c834729a3dd92f048bc05a5.gif
-668,Cowbell,210,,44f1249eab944be78ea3695644c885c8.gif
-669,Execowtioner Mask,240,,a1d81e3ef01c4c06bb92674a489ae7d3.gif
-670,Giant Pacifier,170,,82d665b3802f482c8aa573de01f6152d.gif
-671,Glob of Glooth,150,,63da077b6d7b43e49b2da4f7e93b975e.gif
-672,Glooth Injection Tube,350,,29c03b4d021b420ea71c246d16691c33.gif
-673,Metal Jaw,260,,cd3edab835d44990abe90828ab41c596.gif
-674,Metal Toe,430,,c079f53df49548f685f7a06ec2bff940.gif
-675,Moohtant Horn,140,,c64bf8cf95c2481b98646fdb850c8565.gif
-676,Necromantic Rust,390,,7c001d2426c74734a801fef4a0acae1b.gif
-677,Seacrest Hair,260,,2020f30e2df84dcba18a6781ca52cd98.gif
-678,Seacrest Pearl,400,,c3e7725d01324b15b28935653a673940.gif
-679,Seacrest Scale,150,,981871c865194a26955d88579583ce4e.gif
-680,Slimy Leaf Tentacle,320,,f2650084665a45ce8fe2244a35dbbcd5.gif
+485,Sapphire Hammer,7000,
+486,Scarab Amulet,200,
+487,Scarab Shield,2000,
+488,Shockwave Amulet,3000,
+489,Silver Brooch,150,
+490,Silver Dagger,500,
+491,Skull Helmet,40000,
+492,Spiked Squelcher,5000,
+493,Coal,20,5
+494,Knight Armor,5000,
+495,Steel Helmet,293,
+496,Ice Cube,,
+497,Time Ring,,
+498,Ice Rapier,1000,
+499,Jewelled Backpack,,
+500,Terra Hood,2500,
+501,Tortoise Shield,150,
+502,Vile Axe,35000,
+503,War Horn,8000,
+504,Wyvern Fang,1500,
+505,Angelic Axe,5000,
+506,Bonelord Shield,1200,
+507,Broadsword,500,
+508,Butcher\'s Axe,18000,
+509,Crown Armor,12000,
+510,Crown Helmet,2500,
+511,Crown Legs,12000,
+512,Crown Shield,8000,
+513,Crusader Helmet,6000,
+514,Dragon Lance,9000,
+515,Dragon Shield,4000,
+516,Noble Armor,900,
+517,Obsidian Lance,500,
+518,Spike Sword,1000,
+519,War Hammer,1200,
+520,Orb,750,
+521,Wand of Decay,1000,
+522,Wand of Draconia,1500,
+523,Wand of Dragonbreath,200,
+524,Wand of Starstorm,3600,
+525,Wand of Voodoo,4400,
+526,Ancient Shield,900,
+527,Black Shield,800,
+528,Bonebreaker,10000,
+529,Dark Helmet,250,
+530,Dragon Hammer,2000,
+531,Knight Axe,2000,
+532,Onyx Flail,22000,
+533,Poison Dagger,50,
+534,Scimitar,150,
+535,Skull Staff,6000,
+536,Strange Helmet,500,
+537,Vampire Shield,15000,
+538,Hailstorm Rod,3000,
+539,Might Ring,250,
+540,Moonlight Rod,200,
+541,Mysterious Fetish,50,
+542,Necrotic Rod,1000,
+543,Northwind Rod,1500,
+544,Protection Amulet,100,
+545,Terra Rod,2000,
+546,Draken Boots,,
+547,Drakinata,10000,
+548,Elite Draken Mail,50000,
+549,Guardian Boots,,
+550,Twiceslicer,28000,
+551,Twin Hooks,500,
+552,Wailing Widow\'s Necklace,3000,
+553,Zaoan Armor,14000,
+554,Zaoan Halberd,500,
+555,Zaoan Helmet,,
+556,Zaoan Legs,14000,
+557,Zaoan Shoes,5000,
+558,Zaoan Sword,30000,
+559,Bonebeast Trophy,6000,
+560,Cyclops Trophy,500,
+561,Draken Trophy,15000,
+562,Hollow Stampor Hoof,,
+563,Lizard Trophy,8000,
+564,Stampor Horn,,
+565,Stampor Talons,,
+566,Lion Trophy,3000,
+567,Wolf Trophy,3000,
+568,Demon Trophy,40000,
+569,Dragon Lord Trophy,10000,
+570,Bag of Apple Slices,,
+571,Bamboo Leaves,,
+572,Carrot on a Stick,,
+573,Decorative Ribbon,,
+574,Fist on a Stick,,
+575,Foxtail,,
+576,Giant Shrimp,,
+577,Golden Can of Oil,,
+578,Golden Fir Cone,,
+579,Harness,,
+580,Leather Whip,,
+581,Maxilla Maximus,,
+582,Nightmare Horn,,
+583,Reins,,
+584,Slingshot,,
+585,Sweet Smelling Bait,,
+586,Tin Key,,
+587,Broken Gladiator Shield,190,
+588,Crystal of Balance,1000,
+589,Crystal of Focus,2000,
+590,Crystal Pedestal,500,
+591,Crystal of Power,3000,
+592,Crystalline Spikes,440,3.4
+593,Flintstone,800,
+594,Gear Crystal,200,
+595,Gear Wheel,,
+596,Huge Chunk of Crude Iron,,
+597,Magma Clump,570,
+598,Metal Spike,320,
+599,Piece of Draconian Steel,,
+600,Piece of Hell Steel,,
+601,Piece of Royal Steel,,
+602,Pulverized Ore,400,
+603,Stone Nose,590,
+604,Sulphurous Stone,100,
+605,Vein of Ore,330,
+606,War Crystal,460,
+607,Banana Staff,,
+608,Bast Skirt,,
+609,Charmer\'s Tiara,900,
+610,Feather Headdress,850,
+611,Halberd,400,
+612,Horseman Helmet,280,
+613,Salamander Shield,280,
+614,Tusk Shield,850,
+615,Bonelord Eye,,
+616,Eye Patch,,
+617,Flask of Warrior\'s Sweat,,
+618,Hook,,
+619,Peg Leg,,
+620,Slime Mould,,
+621,Yellow Piece of Cloth,,
+622,Small Enchanted Amethyst,,
+623,Small Enchanted Ruby,,
+624,Crystal Ball,190,
+625,Flawless Ice Crystal,5000,
+626,Bar of Chocolate,,
+627,Piggy Bank,,
+628,Talon,,
+629,Blue Gem,5000,
+630,Golden Mug,250,
+631,Green Gem,5000,
+632,Violet Gem,10000,
+633,Carapace Shield,,
+634,Grasshopper Legs,,
+635,Calopteryx Cape,,
+636,Deepling Squelcher,,
+637,Deepling Staff,4000,
+638,Guardian Axe,9000,
+639,Hive Bow,,
+640,Hive Scythe,,
+641,Necklace of the Deep,3000,
+642,Ornate Crossbow,,
+643,Warrior\'s Axe,,
+644,Warrior\'s Shield,,
+645,Clay Lump,,
+646,Piece of Marble Rock,,
+647,Spellbook of Enlightenment,4000,
+648,Spellbook of Warding,,
+649,Spellbook of Mind Control,,
+650,Mind Stone,170,
+651,Batwing Hat,,
+652,Jade Hat,9000,
+653,Spellweaver\'s Robe,12000,
+654,Spirit Cloak,350,
+655,Zaoan Robe,12000,
+656,Belted Cape,500,
+657,Alloy Legs,11000,
+658,Execowtioner Axe,12000,
+659,Gearwheel Chain,5000,
+660,Glooth Cape,7000,
+661,Glooth Whip,2500,
+662,Heat Core,10000,
+663,Metal Bat,9000,
+664,Metal Spats,2000,
+665,Mino Lance,7000,
+666,Moohtant Cudgel,14000,
+667,Rubber Cap,11000,
+668,Cowbell,210,
+669,Execowtioner Mask,240,
+670,Giant Pacifier,170,
+671,Glob of Glooth,150,
+672,Glooth Injection Tube,350,
+673,Metal Jaw,260,
+674,Metal Toe,430,
+675,Moohtant Horn,140,
+676,Necromantic Rust,390,
+677,Seacrest Hair,260,1.8
+678,Seacrest Pearl,400,
+679,Seacrest Scale,150,
+680,Slimy Leaf Tentacle,320,

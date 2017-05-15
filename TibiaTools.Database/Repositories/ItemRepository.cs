@@ -26,7 +26,7 @@ namespace TibiaTools.Database.Repositories
                 item.Name = lineSpl[1];
                 item.Value = String.IsNullOrEmpty(lineSpl[2]) || lineSpl[2].ToUpper() == "NULL" ? (int?)null : Convert.ToInt32(lineSpl[2], CultureInfo.InvariantCulture);
                 item.Weight = String.IsNullOrEmpty(lineSpl[3]) || lineSpl[3].ToUpper() == "NULL" ? (double?)null : Convert.ToDouble(lineSpl[3], CultureInfo.InvariantCulture);
-                item.NeedWeightInCalc = String.IsNullOrEmpty(lineSpl[3]) || lineSpl[3].ToUpper() == "NULL" ? false : true;
+                item.NeedWeightInCalc = item.Weight == null ? false : true;
 
                 allItems.Add(item);
             }

@@ -14,7 +14,7 @@ namespace TibiaTools.Application
 {
     static class Program
     {
-        internal static Container _container;
+        private static Container _container;
 
         [STAThread]
         static void Main()
