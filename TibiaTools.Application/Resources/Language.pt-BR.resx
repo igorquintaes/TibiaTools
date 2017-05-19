@@ -141,6 +141,9 @@
   <data name="Continue" xml:space="preserve">
     <value>Continuar</value>
   </data>
+  <data name="EmptyPlayerItemList" xml:space="preserve">
+    <value>A lista está vazia.</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Ajuda</value>
   </data>
@@ -193,6 +196,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="OneItem" xml:space="preserve">
+    <value>{0} (1 Item)</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Opções</value>
   </data>
@@ -228,5 +234,8 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Valor de cada {0}:</value>
+  </data>
+  <data name="XItems" xml:space="preserve">
+    <value>{0} ({1} Itens)</value>
   </data>
 </root>

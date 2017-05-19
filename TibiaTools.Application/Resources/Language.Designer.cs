@@ -133,6 +133,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This list is empty..
+        /// </summary>
+        internal static string EmptyPlayerItemList {
+            get {
+                return ResourceManager.GetString("EmptyPlayerItemList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
         internal static string Help {
@@ -287,6 +296,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} (1 Item).
+        /// </summary>
+        internal static string OneItem {
+            get {
+                return ResourceManager.GetString("OneItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Options.
         /// </summary>
         internal static string Options {
@@ -391,6 +409,15 @@ namespace TibiaTools.Application.Resources {
         internal static string ValueOfItem {
             get {
                 return ResourceManager.GetString("ValueOfItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} ({1} Items).
+        /// </summary>
+        internal static string XItems {
+            get {
+                return ResourceManager.GetString("XItems", resourceCulture);
             }
         }
     }

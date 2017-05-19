@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BrightIdeasSoftware;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -77,7 +78,107 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             foreach (var member in data.Members)
             {
-                var table = new DataGridView();
+                var groupBoxPlayer = new GroupBox();
+                groupBoxPlayer.SuspendLayout();
+
+                var table = new DataListView();
+                ((System.ComponentModel.ISupportInitialize)(table)).BeginInit();
+
+                var colImage = new OLVColumn();
+                var colName = new OLVColumn();
+                var colQuantity = new OLVColumn();
+                var colValue = new OLVColumn();
+                var imgRender = new ImageRenderer();
+
+                // 
+                // groupBoxPlayer
+                // 
+                groupBoxPlayer.Anchor = 
+                   (((AnchorStyles.Top 
+                    | AnchorStyles.Bottom)
+                    | AnchorStyles.Left)
+                    | AnchorStyles.Right);
+
+                groupBoxPlayer.Location = new Point(9, position + 20);
+                groupBoxPlayer.Name = "groupBoxPlayer";
+                groupBoxPlayer.Size = new Size(117, 44);
+                groupBoxPlayer.TabIndex = 20;
+                groupBoxPlayer.TabStop = false;
+                groupBoxPlayer.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
+                groupBoxPlayer.Controls.Add(table);
+
+                //
+                // Table
+                //
+                table.AllColumns.Add(colImage);
+                table.AllColumns.Add(colName);
+                table.AllColumns.Add(colQuantity);
+                table.AllColumns.Add(colValue);
+                table.AllowColumnReorder = true;
+                table.AllowDrop = true;
+                table.Anchor = 
+                    (((AnchorStyles.Top 
+                     | AnchorStyles.Bottom)
+                     | AnchorStyles.Left)
+                     | AnchorStyles.Right);
+                table.CellEditActivation = ObjectListView.CellEditActivateMode.SingleClick;
+                table.CellEditUseWholeCell = false;
+                table.Columns.AddRange(new ColumnHeader[]
+                {
+                    colImage,
+                    colName,
+                    colQuantity,
+                    colValue
+                });
+                table.Cursor = Cursors.Default;
+
+                table.DataSource = null;
+                table.EmptyListMsg = Language.EmptyPlayerItemList;
+                // todo: search for a better font lol
+                table.EmptyListMsgFont = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                table.FullRowSelect = true;
+                table.GridLines = true;
+                table.GroupWithItemCountFormat = Language.XItems;
+                table.GroupWithItemCountSingularFormat = Language.OneItem;
+                table.HideSelection = false;
+                table.SelectedBackColor = Color.CornflowerBlue;
+                table.SelectedForeColor = Color.MidnightBlue;
+                table.LargeImageList = this.imageListLarge;
+                table.Location = new System.Drawing.Point(6, 19);
+                table.Name = "olvData";
+                table.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.Submenu;
+                table.ShowCommandMenuOnRightClick = true;
+                table.ShowGroups = false;
+                table.ShowImagesOnSubItems = true;
+                table.ShowItemToolTips = true;
+                table.Size = new System.Drawing.Size(677, 259);
+                table.SmallImageList = this.imageListSmall;
+                table.TabIndex = 0;
+                table.UseCellFormatEvents = true;
+                table.UseCompatibleStateImageBehavior = false;
+                table.UseFilterIndicator = true;
+                table.UseFiltering = true;
+                table.UseHotItem = true;
+                table.UseTranslucentHotItem = true;
+                table.View = System.Windows.Forms.View.Details;
+                // 
+                // olvColumn1
+                // 
+
+                this.Controls.Add(lb);
+                if (data.ItemsUnsplited != null && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
+                {
+                    position += 40;
+                    lb.Text = String.Format(Language.ItensToPlayerWastedAditional, member.Waste.ToString(), (member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum()).ToString());
+                }
+                else
+                {
+                    position += 25;
+                    lb.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
+                }
+
+
+
                 this.Controls.Add(table);
 
                 table.ColumnCount = 3; // todo: implement image. It will incrase to 4
@@ -128,19 +229,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 lb.Name = "LabelMember" + position;
                 lb.Size = new Size(30, 13);
                 lb.TabIndex = 1;
-
-
-                this.Controls.Add(lb);
-                if (data.ItemsUnsplited != null && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
-                {
-                    position += 40;
-                    lb.Text = String.Format(Language.ItensToPlayerWastedAditional, member.Waste.ToString(), (member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum()).ToString());
-                }
-                else
-                {
-                    position += 25;
-                    lb.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
-                }
             }
 
             if (data.ItemsUnsplited != null && data.ItemsUnsplited.Any())
