@@ -79,6 +79,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Aditional gold by unsplited items.
+        /// </summary>
+        internal static string AditionalValueByUnsplitedItems {
+            get {
+                return ResourceManager.GetString("AditionalValueByUnsplitedItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Players Deaths (soon!).
         /// </summary>
         internal static string ButtonLastPlayersDeath {
@@ -165,6 +174,15 @@ namespace TibiaTools.Application.Resources {
         internal static string HuntPaid {
             get {
                 return ResourceManager.GetString("HuntPaid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string Image {
+            get {
+                return ResourceManager.GetString("Image", resourceCulture);
             }
         }
         
@@ -400,6 +418,15 @@ namespace TibiaTools.Application.Resources {
         internal static string TotalWaste {
             get {
                 return ResourceManager.GetString("TotalWaste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value.
+        /// </summary>
+        internal static string Value {
+            get {
+                return ResourceManager.GetString("Value", resourceCulture);
             }
         }
         

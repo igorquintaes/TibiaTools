@@ -1,5 +1,7 @@
 ﻿using BrightIdeasSoftware;
 using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -34,6 +36,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
         /// </summary>
         private void InitializeComponent(GroupCalculatorResultDTO data)
         {
+            const int boxTableSeparator = 50;
+
             string textHeader,
                    textIndividualProfit,
                    textTotalValueObtained,
@@ -81,6 +85,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 var groupBoxPlayer = new GroupBox();
                 groupBoxPlayer.SuspendLayout();
 
+                var tableWidth = 0;
                 var table = new DataListView();
                 ((System.ComponentModel.ISupportInitialize)(table)).BeginInit();
 
@@ -93,15 +98,12 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 // 
                 // groupBoxPlayer
                 // 
-                groupBoxPlayer.Anchor = 
-                   (((AnchorStyles.Top 
-                    | AnchorStyles.Bottom)
-                    | AnchorStyles.Left)
-                    | AnchorStyles.Right);
-
+                groupBoxPlayer.Anchor =
+                     ((AnchorStyles.Top
+                     | AnchorStyles.Left)
+                     | AnchorStyles.Right);
                 groupBoxPlayer.Location = new Point(9, position + 20);
                 groupBoxPlayer.Name = "groupBoxPlayer";
-                groupBoxPlayer.Size = new Size(117, 44);
                 groupBoxPlayer.TabIndex = 20;
                 groupBoxPlayer.TabStop = false;
                 groupBoxPlayer.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
@@ -117,8 +119,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 table.AllowColumnReorder = true;
                 table.AllowDrop = true;
                 table.Anchor = 
-                    (((AnchorStyles.Top 
-                     | AnchorStyles.Bottom)
+                    ((AnchorStyles.Top 
                      | AnchorStyles.Left)
                      | AnchorStyles.Right);
                 table.CellEditActivation = ObjectListView.CellEditActivateMode.SingleClick;
@@ -143,16 +144,14 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 table.HideSelection = false;
                 table.SelectedBackColor = Color.CornflowerBlue;
                 table.SelectedForeColor = Color.MidnightBlue;
-                table.LargeImageList = this.imageListLarge;
-                table.Location = new System.Drawing.Point(6, 19);
-                table.Name = "olvData";
-                table.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.Submenu;
+                table.Location = new Point(24, position + boxTableSeparator);
+                table.Name = "olvData" + position;
+                table.RowHeight = 32;
+                table.SelectColumnsOnRightClickBehaviour = ObjectListView.ColumnSelectBehaviour.Submenu;
                 table.ShowCommandMenuOnRightClick = true;
                 table.ShowGroups = false;
                 table.ShowImagesOnSubItems = true;
                 table.ShowItemToolTips = true;
-                table.Size = new System.Drawing.Size(677, 259);
-                table.SmallImageList = this.imageListSmall;
                 table.TabIndex = 0;
                 table.UseCellFormatEvents = true;
                 table.UseCompatibleStateImageBehavior = false;
@@ -160,149 +159,258 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 table.UseFiltering = true;
                 table.UseHotItem = true;
                 table.UseTranslucentHotItem = true;
-                table.View = System.Windows.Forms.View.Details;
+                table.View = View.Details;
                 // 
-                // olvColumn1
+                // colImage
                 // 
-
-                this.Controls.Add(lb);
+                colImage.AspectName = "colImage";
+                colImage.ButtonPadding = new Size(10, 10);
+                colImage.IsTileViewColumn = true;
+                colImage.Text = String.Empty;
+                colImage.UseInitialLetterForGroup = true;
+                colImage.Width = 32;
+                colImage.WordWrap = false;
+                colImage.IsEditable = false;
+                colImage.Searchable = false;
+                colImage.Sortable = false;
+                colImage.UseFiltering = false;
+                colImage.Groupable = false;
+                colImage.Renderer = imgRender;
+                tableWidth += 32;
+                //
+                // colName
+                //
+                colName.AspectName = "colName";
+                colName.ButtonPadding = new Size(10, 10);
+                colName.IsTileViewColumn = true;
+                colName.Text = Language.Name;
+                colName.Width = 230;
+                colName.IsEditable = false;
+                tableWidth += 230;
+                //
+                // colQuantity
+                //
+                colQuantity.AspectName = "colQuantity";
+                colQuantity.ButtonPadding = new Size(10, 10);
+                colQuantity.IsTileViewColumn = true;
+                colQuantity.Text = Language.Quantity;
+                colQuantity.Width = 70;
+                colQuantity.IsEditable = false;
+                tableWidth += 70;
+                //
+                // colValue
+                //
+                colValue.AspectName = "colValue";
+                colValue.ButtonPadding = new Size(10, 10);
+                colValue.IsTileViewColumn = true;
+                colValue.Text = Language.Value;
+                colValue.Width = 80;
+                colValue.IsEditable = false;
+                tableWidth += 80;
+                //
+                // Fill member table
+                //
+                var memberDataTable = DataTableByMember(member);
                 if (data.ItemsUnsplited != null && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
                 {
-                    position += 40;
-                    lb.Text = String.Format(Language.ItensToPlayerWastedAditional, member.Waste.ToString(), (member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum()).ToString());
+                    var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
+
+                    memberDataTable.Rows.Add(
+                        ".\\data\\Images\\default.png",
+                        Language.AditionalValueByUnsplitedItems,
+                        1,
+                        value);
                 }
-                else
-                {
-                    position += 25;
-                    lb.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
-                }
+                table.DataSource = memberDataTable;
+                //
+                // Finally
+                //
+                var tableHeight = memberDataTable.Rows.Count > 0
+                    ? ((memberDataTable.Rows.Count + 1) * 32) + 10
+                    : 64 + 10;
+                var groupBoxheight = tableHeight + 50;
+                position += groupBoxheight + 10;
 
-
-
+                groupBoxPlayer.Size = new Size(400 + boxTableSeparator, groupBoxheight);
+                table.Size = new Size(tableWidth + 10, tableHeight);
+                this.Controls.Add(groupBoxPlayer);
                 this.Controls.Add(table);
-
-                table.ColumnCount = 3; // todo: implement image. It will incrase to 4
-
-                table.Anchor = ((System.Windows.Forms.AnchorStyles)((((
-                    System.Windows.Forms.AnchorStyles.Top
-                  | System.Windows.Forms.AnchorStyles.Bottom)
-                  | System.Windows.Forms.AnchorStyles.Left)
-                  | System.Windows.Forms.AnchorStyles.Right)));
-
-                table.TabIndex = 0;
-                table.Name = "member" + position;
-                table.Location = new Point(9, position + 20);
-                table.AutoSize = false;
-                position += 20;
-
-                //table.Columns[0].Name = "Imagem";
-                table.Columns[0].Name = Language.Name;
-                table.Columns[1].Name = Language.Quantity;
-                table.Columns[2].Name = Language.TotalValue;
-
-                table.Columns[0].DisplayIndex = 0;
-                table.Columns[1].DisplayIndex = 1;
-                table.Columns[2].DisplayIndex = 2;
-
-                foreach (var item in member.Items)
-                {
-                    table.Rows.Add(item.Item.Name, item.Quantity, item.Value * item.Quantity);
-                }
-
-                int height = 0;
-                foreach (var r in table.Rows.Cast<DataGridViewRow>())
-                    height += r.Height;
-
-                table.Height += height;
-                table.MinimumSize = new Size(400, height);
-                table.MaximumSize = new Size(400, height);
-                table.Size = new Size(400, height);
-                table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                table.ScrollBars = ScrollBars.None;
-                position += height;
-
-                var lb = new Label();
-
-                lb.AutoSize = true;
-                lb.Location = new Point(9, position + 10);
-                position += 25;
-                lb.Name = "LabelMember" + position;
-                lb.Size = new Size(30, 13);
-                lb.TabIndex = 1;
+                groupBoxPlayer.ResumeLayout(false);
+                groupBoxPlayer.PerformLayout();
+                groupBoxPlayer.SendToBack();
+                ((System.ComponentModel.ISupportInitialize)(table)).EndInit();
             }
-
+            //
+            // Unsplited Items
+            //
             if (data.ItemsUnsplited != null && data.ItemsUnsplited.Any())
             {
-                var lb = new Label();
 
-                lb.AutoSize = true;
-                lb.Location = new Point(9, position + 50);
-                position += 50;
-                lb.Name = "LabelUnsplitedItens";
-                lb.Size = new Size(30, 13);
-                lb.TabIndex = 1;
-                lb.Text = Language.ItemsUnsplited;
+                var groupBoxPlayer = new GroupBox();
+                groupBoxPlayer.SuspendLayout();
 
-                this.Controls.Add(lb);
+                var tableWidth = 0;
+                var table = new DataListView();
+                ((System.ComponentModel.ISupportInitialize)(table)).BeginInit();
 
-                var table = new DataGridView();
-                this.Controls.Add(table);
+                var colImage = new OLVColumn();
+                var colName = new OLVColumn();
+                var colQuantity = new OLVColumn();
+                var colValue = new OLVColumn();
+                var imgRender = new ImageRenderer();
 
-                table.ColumnCount = 3; // todo: add image. 
+                // 
+                // groupBoxPlayer
+                // 
+                groupBoxPlayer.Anchor =
+                     ((AnchorStyles.Top
+                     | AnchorStyles.Left)
+                     | AnchorStyles.Right);
+                groupBoxPlayer.Location = new Point(9, position + 20);
+                groupBoxPlayer.Name = "groupBoxPlayer";
+                groupBoxPlayer.TabIndex = 20;
+                groupBoxPlayer.TabStop = false;
+                groupBoxPlayer.Text = Language.ItemsUnsplited;
+                groupBoxPlayer.Controls.Add(table);
 
-                table.Anchor = ((AnchorStyles)((((
-                    AnchorStyles.Top
-                  | AnchorStyles.Bottom)
-                  | AnchorStyles.Left)
-                  | AnchorStyles.Right)));
-
-                table.TabIndex = 0;
-                table.Name = "member" + position;
-                table.Location = new Point(9, position + 20);
-                table.AutoSize = false;
-                position += 20;
-
-                //table.Columns[0].Name = "Imagem";
-                table.Columns[0].Name = Language.Name;
-                table.Columns[1].Name = Language.Quantity;
-                table.Columns[2].Name = Language.TotalValue;
-
-                table.Columns[0].DisplayIndex = 0;
-                table.Columns[1].DisplayIndex = 1;
-                table.Columns[2].DisplayIndex = 2;
-
-                foreach (var item in data.ItemsUnsplited)
+                //
+                // Table
+                //
+                table.AllColumns.Add(colImage);
+                table.AllColumns.Add(colName);
+                table.AllColumns.Add(colQuantity);
+                table.AllColumns.Add(colValue);
+                table.AllowColumnReorder = true;
+                table.AllowDrop = true;
+                table.Anchor =
+                    ((AnchorStyles.Top
+                     | AnchorStyles.Left)
+                     | AnchorStyles.Right);
+                table.CellEditActivation = ObjectListView.CellEditActivateMode.SingleClick;
+                table.CellEditUseWholeCell = false;
+                table.Columns.AddRange(new ColumnHeader[]
                 {
-                    table.Rows.Add(item.Item.Name, item.Quantity, item.Value * item.Quantity);
-                }
+                    colImage,
+                    colName,
+                    colQuantity,
+                    colValue
+                });
+                table.Cursor = Cursors.Default;
 
-                int height = 0;
-                foreach (var r in table.Rows.Cast<DataGridViewRow>())
-                    height += r.Height;
+                table.DataSource = null;
+                table.EmptyListMsg = Language.EmptyPlayerItemList;
+                // todo: search for a better font lol
+                table.EmptyListMsgFont = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+                table.FullRowSelect = true;
+                table.GridLines = true;
+                table.GroupWithItemCountFormat = Language.XItems;
+                table.GroupWithItemCountSingularFormat = Language.OneItem;
+                table.HideSelection = false;
+                table.SelectedBackColor = Color.CornflowerBlue;
+                table.SelectedForeColor = Color.MidnightBlue;
+                table.Location = new Point(24, position + boxTableSeparator);
+                table.Name = "olvData" + position;
+                table.RowHeight = 32;
+                table.SelectColumnsOnRightClickBehaviour = ObjectListView.ColumnSelectBehaviour.Submenu;
+                table.ShowCommandMenuOnRightClick = true;
+                table.ShowGroups = false;
+                table.ShowImagesOnSubItems = true;
+                table.ShowItemToolTips = true;
+                table.TabIndex = 0;
+                table.UseCellFormatEvents = true;
+                table.UseCompatibleStateImageBehavior = false;
+                table.UseFilterIndicator = true;
+                table.UseFiltering = true;
+                table.UseHotItem = true;
+                table.UseTranslucentHotItem = true;
+                table.View = View.Details;
+                // 
+                // colImage
+                // 
+                colImage.AspectName = "colImage";
+                colImage.ButtonPadding = new Size(10, 10);
+                colImage.IsTileViewColumn = true;
+                colImage.Text = String.Empty;
+                colImage.UseInitialLetterForGroup = true;
+                colImage.Width = 32;
+                colImage.WordWrap = false;
+                colImage.IsEditable = false;
+                colImage.Searchable = false;
+                colImage.Sortable = false;
+                colImage.UseFiltering = false;
+                colImage.Groupable = false;
+                colImage.Renderer = imgRender;
+                tableWidth += 32;
+                //
+                // colName
+                //
+                colName.AspectName = "colName";
+                colName.ButtonPadding = new Size(10, 10);
+                colName.IsTileViewColumn = true;
+                colName.Text = Language.Name;
+                colName.Width = 230;
+                colName.IsEditable = false;
+                tableWidth += 230;
+                //
+                // colQuantity
+                //
+                colQuantity.AspectName = "colQuantity";
+                colQuantity.ButtonPadding = new Size(10, 10);
+                colQuantity.IsTileViewColumn = true;
+                colQuantity.Text = Language.Quantity;
+                colQuantity.Width = 70;
+                colQuantity.IsEditable = false;
+                tableWidth += 70;
+                //
+                // colValue
+                //
+                colValue.AspectName = "colValue";
+                colValue.ButtonPadding = new Size(10, 10);
+                colValue.IsTileViewColumn = true;
+                colValue.Text = Language.Value;
+                colValue.Width = 80;
+                colValue.IsEditable = false;
+                tableWidth += 80;
+                //
+                // Fill member table
+                //
+                var memberDataTable = DataTableByUnsplitted(data.ItemsUnsplited);
+                table.DataSource = memberDataTable;
+                //
+                // Finally
+                //
+                var tableHeight = memberDataTable.Rows.Count > 0
+                    ? ((memberDataTable.Rows.Count + 1) * 32) + 10
+                    : 64 + 10;
+                var groupBoxheight = tableHeight + 50;
+                position += groupBoxheight + 10;
 
-                table.Height += height;
-                position += height;
-
-                table.MinimumSize = new Size(400, height);
-                table.MaximumSize = new Size(400, height);
-                table.Size = new Size(400, height);
-                table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                table.ScrollBars = ScrollBars.None;
+                groupBoxPlayer.Size = new Size(400 + boxTableSeparator, groupBoxheight);
+                table.Size = new Size(tableWidth + 10, tableHeight);
+                this.Controls.Add(groupBoxPlayer);
+                this.Controls.Add(table);
+                groupBoxPlayer.ResumeLayout(false);
+                groupBoxPlayer.PerformLayout();
+                groupBoxPlayer.SendToBack();
+                ((System.ComponentModel.ISupportInitialize)(table)).EndInit();
             }
-
-            this.closeBtn = new System.Windows.Forms.Button();
-
+            //
+            // Close Btn
+            //
+            this.closeBtn = new Button();
             this.closeBtn.Location = new Point(335, 30);
             this.closeBtn.Name = "closeBtn";
-            this.closeBtn.Size = new System.Drawing.Size(75, 23);
+            this.closeBtn.Size = new Size(75, 23);
             this.closeBtn.TabIndex = 1;
             this.closeBtn.Text = "Close";
             this.closeBtn.UseVisualStyleBackColor = true;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-
+            //
+            // Window
+            //
             var YScreenSize = Math.Min(position + 10, 600);
             this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = AutoScaleMode.Font;
             this.Text = Language.LootSplitterResult;
             this.Controls.Add(closeBtn);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,5 +426,45 @@ namespace TibiaTools.Application.Forms.LootSplitter
         private System.Windows.Forms.Button closeBtn;
 
         #endregion
+
+        private static DataTable DataTableByMember(MemberDTO member)
+        {
+            var table = new DataTable("member");
+            table.Columns.Add("colImage");
+            table.Columns.Add("colName");
+            table.Columns.Add("colQuantity");
+            table.Columns.Add("colValue");
+
+            foreach (var item in member.Items)
+            {
+                table.Rows.Add(
+                    ".\\data\\Images\\default.png",
+                    item.Item.Name,
+                    item.Quantity,
+                    item.Value * item.Quantity);
+            }
+
+            return table;
+        }
+
+        private static DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
+        {
+            var table = new DataTable("unsplitted");
+            table.Columns.Add("colImage");
+            table.Columns.Add("colName");
+            table.Columns.Add("colQuantity");
+            table.Columns.Add("colValue");
+
+            foreach (var item in items)
+            {
+                table.Rows.Add(
+                    ".\\data\\Images\\default.png",
+                    item.Item.Name,
+                    item.Quantity,
+                    item.Value * item.Quantity);
+            }
+
+            return table;
+        }
     }
 }

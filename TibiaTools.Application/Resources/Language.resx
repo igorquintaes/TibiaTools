@@ -123,6 +123,9 @@
   <data name="AboutSourceCodeIn" xml:space="preserve">
     <value>Tibia Tools is an Open Source project. All the application and source code can be find in:</value>
   </data>
+  <data name="AditionalValueByUnsplitedItems" xml:space="preserve">
+    <value>Aditional gold by unsplited items</value>
+  </data>
   <data name="ButtonLastPlayersDeath" xml:space="preserve">
     <value>Last Players Deaths (soon!)</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="HuntPaid" xml:space="preserve">
     <value>Hunt PAID, but without profit or waste.</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
   </data>
   <data name="IndividualProfit" xml:space="preserve">
     <value>Each member will recive {0} gps as individual profit.</value>
@@ -231,6 +237,9 @@ As does not be possible to split some items, this player need to reicive an addi
   </data>
   <data name="TotalWaste" xml:space="preserve">
     <value>WASTE! Total waste was {0} gps!</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
   </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Value of each {0}:</value>

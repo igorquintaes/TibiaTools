@@ -123,6 +123,9 @@
   <data name="AboutSourceCodeIn" xml:space="preserve">
     <value>Tibia Tools é um projeto Open Source. Toda a aplicação e seu respectivo código fonde pode ser encontrado em:</value>
   </data>
+  <data name="AditionalValueByUnsplitedItems" xml:space="preserve">
+    <value>Valor adicional por itens não divididos</value>
+  </data>
   <data name="ButtonLastPlayersDeath" xml:space="preserve">
     <value>Últimas Mortes de Jogadores (Em breve!)</value>
   </data>
@@ -152,6 +155,9 @@
   </data>
   <data name="HuntPaid" xml:space="preserve">
     <value>O loot PAGOU. Não ouve nem lucro nem prejuízo.</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Imagem</value>
   </data>
   <data name="IndividualProfit" xml:space="preserve">
     <value>O lucro de cada membro foi de {0} gps.</value>
@@ -231,6 +237,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   </data>
   <data name="TotalWaste" xml:space="preserve">
     <value>PREJUÍZO! O prejuízo total foi de {0} gps.</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valor</value>
   </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Valor de cada {0}:</value>
