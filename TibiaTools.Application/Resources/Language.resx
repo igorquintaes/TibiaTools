@@ -123,6 +123,9 @@
   <data name="AboutSourceCodeIn" xml:space="preserve">
     <value>Tibia Tools is an Open Source project. All the application and source code can be find in:</value>
   </data>
+  <data name="AditionalValueByUnsplitedItems" xml:space="preserve">
+    <value>Aditional gold by unsplited items</value>
+  </data>
   <data name="ButtonLastPlayersDeath" xml:space="preserve">
     <value>Last Players Deaths (soon!)</value>
   </data>
@@ -141,6 +144,9 @@
   <data name="Continue" xml:space="preserve">
     <value>Continue</value>
   </data>
+  <data name="EmptyPlayerItemList" xml:space="preserve">
+    <value>This list is empty.</value>
+  </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
@@ -149,6 +155,9 @@
   </data>
   <data name="HuntPaid" xml:space="preserve">
     <value>Hunt PAID, but without profit or waste.</value>
+  </data>
+  <data name="Image" xml:space="preserve">
+    <value>Image</value>
   </data>
   <data name="IndividualProfit" xml:space="preserve">
     <value>Each member will recive {0} gps as individual profit.</value>
@@ -193,6 +202,9 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="Ok" xml:space="preserve">
     <value>Ok</value>
   </data>
+  <data name="OneItem" xml:space="preserve">
+    <value>{0} (1 Item)</value>
+  </data>
   <data name="Options" xml:space="preserve">
     <value>Options</value>
   </data>
@@ -226,7 +238,13 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="TotalWaste" xml:space="preserve">
     <value>WASTE! Total waste was {0} gps!</value>
   </data>
+  <data name="Value" xml:space="preserve">
+    <value>Value</value>
+  </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Value of each {0}:</value>
+  </data>
+  <data name="XItems" xml:space="preserve">
+    <value>{0} ({1} Items)</value>
   </data>
 </root>
