@@ -22,18 +22,19 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             for (var i = 0; i < listItems.Count; i++)
             {
-                var textBoxItem = new System.Windows.Forms.TextBox();
+                var numericBoxItem = new System.Windows.Forms.NumericUpDown();
                 var labelItem = new System.Windows.Forms.Label();
                 this.SuspendLayout();
 
                 // todo: add item image
-
-                textBoxItem.Location = new System.Drawing.Point(12, (i * 50) + 30);
-                textBoxItem.Name = listItems[i].Item.Name.Replace(" ", "");
-                textBoxItem.Size = new System.Drawing.Size(100, 20);
-                textBoxItem.TabIndex = 0;
+                numericBoxItem.Minimum = 0;
+                numericBoxItem.Maximum = int.MaxValue;
+                numericBoxItem.Location = new System.Drawing.Point(12, (i * 50) + 30);
+                numericBoxItem.Name = listItems[i].Item.Name.Replace(" ", "");
+                numericBoxItem.Size = new System.Drawing.Size(100, 20);
+                numericBoxItem.TabIndex = 0;
                 if (listItems[i].Value.HasValue && listItems[i].Value.Value != 0)
-                    textBoxItem.Text = listItems[i].Value.Value.ToString();
+                    numericBoxItem.Text = listItems[i].Value.Value.ToString();
 
                 UpdatedItemList.Add(listItems[i]);
 
@@ -44,7 +45,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 labelItem.TabIndex = 1;
                 labelItem.Text = String.Format(Language.ValueOfItem, listItems[i].Item.Name);
 
-                this.Controls.Add(textBoxItem);
+                this.Controls.Add(numericBoxItem);
                 this.Controls.Add(labelItem);
 
                 this.ResumeLayout(false);
@@ -57,14 +58,16 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 var member = new MemberDTO();
                 UpdatedMemberList.Add(member);
 
-                var textBoxPlayer = new System.Windows.Forms.TextBox();
+                var numericBoxItem = new System.Windows.Forms.NumericUpDown();
                 var labelPlayer = new System.Windows.Forms.Label();
                 this.SuspendLayout();
-
-                textBoxPlayer.Location = new System.Drawing.Point(253, (countplayers * 50) + 30);
-                textBoxPlayer.Name = "member" + countplayers.ToString();
-                textBoxPlayer.Size = new System.Drawing.Size(100, 20);
-                textBoxPlayer.TabIndex = 3;
+                
+                numericBoxItem.Minimum = 0;
+                numericBoxItem.Maximum = int.MaxValue;
+                numericBoxItem.Location = new System.Drawing.Point(253, (countplayers * 50) + 30);
+                numericBoxItem.Name = "member" + countplayers.ToString();
+                numericBoxItem.Size = new System.Drawing.Size(100, 20);
+                numericBoxItem.TabIndex = 3;
 
                 labelPlayer.AutoSize = true;
                 labelPlayer.Location = new System.Drawing.Point(250, (countplayers * 50) + 14);
@@ -73,7 +76,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 labelPlayer.TabIndex = 2;
                 labelPlayer.Text = String.Format(Language.MoneySpentPlayerNun, (countplayers + 1).ToString());
 
-                this.Controls.Add(textBoxPlayer);
+                this.Controls.Add(numericBoxItem);
                 this.Controls.Add(labelPlayer);
 
                 this.ResumeLayout(false);

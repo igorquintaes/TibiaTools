@@ -398,7 +398,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
             // Close Btn
             //
             this.closeBtn = new Button();
-            this.closeBtn.Location = new Point(335, 30);
+            this.closeBtn.Anchor = (AnchorStyles.Top | AnchorStyles.Right);
+            this.closeBtn.Location = new Point(385, 30);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new Size(75, 23);
             this.closeBtn.TabIndex = 1;
@@ -415,7 +416,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             this.Controls.Add(closeBtn);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(500, YScreenSize);
+            this.ClientSize = new System.Drawing.Size(470, YScreenSize);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "LootSplitterResult";
 
