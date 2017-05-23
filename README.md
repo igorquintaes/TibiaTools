@@ -1,6 +1,6 @@
 # Tibia Tools
 
-This applications provides usefull tools to any Tibia Player. Some of these tools, that requires an external data, requires a internet connection, buy overall it is not necessary. Also, Tibia Tools is a open source C# Windows Forms Project, that provides to everyone see all the application code and runs it safely. Remember only to download Tibia Tools in this project page on GitHub. 
+This applications provides usefull tools to any Tibia Player. Some of these tools, that requires an external data, requires a internet connection, buy overall it is not necessary. Also, Tibia Tools is a open source C# Windows Forms Project, that provides to everyone see all the application code and runs it safely. Remember only to download Tibia Tools in this project page on GitHub, and to run this tool on a Windows computer with at least .NET Framework 4.
 
 - Multi-language support
 
