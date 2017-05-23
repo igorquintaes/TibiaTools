@@ -79,7 +79,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                     "\r\n" + textTotalWaste;
 
             this.Controls.Add(labelItem);
-
+            
             foreach (var member in data.Members)
             {
                 var groupBoxPlayer = new GroupBox();
@@ -211,7 +211,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 // Fill member table
                 //
                 var memberDataTable = DataTableByMember(member);
-                if (data.ItemsUnsplited != null && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
+                // unsplitted items
+                if (data.ItemsUnsplited != null && data.ItemsUnsplited.Any() && member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
                 {
                     var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
 
@@ -221,6 +222,30 @@ namespace TibiaTools.Application.Forms.LootSplitter
                         1,
                         value);
                 }
+                // if the waste is so large that a member needs to pay to another
+                else if (data.Members.Any(x => x.MoneyRecived < 0))
+                {
+                    if (member.MoneyRecived < 0)
+                    {
+                        memberDataTable.Rows.Add(
+                        ".\\data\\Images\\default.png",
+                        Language.ValueMemberNeedToPayToAnother,
+                        1,
+                        member.MoneyRecived);
+                    }
+                    else if (member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum() > 0)
+                    {
+                        var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
+
+                        memberDataTable.Rows.Add(
+                        ".\\data\\Images\\default.png",
+                        Language.ValueMemberNeedToReciveAnother,
+                        1,
+                        value);
+                    }
+                }
+
+
                 table.DataSource = memberDataTable;
                 //
                 // Finally

@@ -244,6 +244,12 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="Value" xml:space="preserve">
     <value>Value</value>
   </data>
+  <data name="ValueMemberNeedToPayToAnother" xml:space="preserve">
+    <value>Value to pay to another player</value>
+  </data>
+  <data name="ValueMemberNeedToReciveAnother" xml:space="preserve">
+    <value>Value to recive from another player</value>
+  </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Value of each {0}:</value>
   </data>

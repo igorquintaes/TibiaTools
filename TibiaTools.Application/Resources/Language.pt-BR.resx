@@ -244,6 +244,12 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="Value" xml:space="preserve">
     <value>Valor</value>
   </data>
+  <data name="ValueMemberNeedToPayToAnother" xml:space="preserve">
+    <value>Valor para pagar a outro membro</value>
+  </data>
+  <data name="ValueMemberNeedToReciveAnother" xml:space="preserve">
+    <value>Valor para receber de outro membro</value>
+  </data>
   <data name="ValueOfItem" xml:space="preserve">
     <value>Valor de cada {0}:</value>
   </data>

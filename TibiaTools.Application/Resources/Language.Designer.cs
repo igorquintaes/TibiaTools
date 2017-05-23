@@ -440,6 +440,24 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Value to pay to another player.
+        /// </summary>
+        internal static string ValueMemberNeedToPayToAnother {
+            get {
+                return ResourceManager.GetString("ValueMemberNeedToPayToAnother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Value to recive from another player.
+        /// </summary>
+        internal static string ValueMemberNeedToReciveAnother {
+            get {
+                return ResourceManager.GetString("ValueMemberNeedToReciveAnother", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Value of each {0}:.
         /// </summary>
         internal static string ValueOfItem {
