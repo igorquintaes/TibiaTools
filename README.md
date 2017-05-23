@@ -20,7 +20,7 @@ Provides a powerfull calculator to split a list of items to a number of players,
 
 - Player1 wasted 5k and Player2 wasted 10k, total loot value was 11k. So, Player1 will recive 3k (3k to pay supplies, 2k waste) and Player2 will reicive 8k (8k to pay supplies, 2k waste). Each player wasted 2k;
 
-- Player1 wasted 5k and Player2 wasted 10k, total loot value was 2k. So, Player1 will recive nothing (5k waste) and Player2 will reicive 2k (2k to pay supplies, 8k waste). Player1 will recive nothing and wasted 5k, and Player2 wasted 8k and reicived all the loot, there is nothing to do in this case.
+- Player1 wasted 5k and Player2 wasted 10k, total loot value was 2k. So, Player1 will recive nothing and need to pay 1.5k to Player2 to compensate his waste (5k waste + 1.5k to Player2, 6.5k total) and Player2 will reicive 2k from loot and 1.5 from Player1 (2k + 1.5k to pay supplies, 6.5k waste total). Player1 and Player2 will waste the same amount.
 
 - This case is a little complex: Player1 wasted 5k and Player2 wasted 10k, and just looted 1 item in all hunt, that the value is 45k. Is impossible to break the item in the middle to split it, so in these cases the calculator do a recomendation: to sell all the itens that are showed into a table of items impossible to split and split the money result to the indicated players. In this case, selling the 45k item, Player1 will recive 20k (5k to pay supplies and a 15k profit) and Player2 will reicive 25k (10k to pay supplies and a 15k profit). Each player will earn 15k as profit.
 
