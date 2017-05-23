@@ -169,6 +169,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please, check the readme file on project GitHub page:.
+        /// </summary>
+        internal static string HowToUseReadMe {
+            get {
+                return ResourceManager.GetString("HowToUseReadMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hunt PAID, but without profit or waste..
         /// </summary>
         internal static string HuntPaid {

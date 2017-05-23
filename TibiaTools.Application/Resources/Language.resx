@@ -153,6 +153,9 @@
   <data name="HowToUse" xml:space="preserve">
     <value>How to use</value>
   </data>
+  <data name="HowToUseReadMe" xml:space="preserve">
+    <value>Please, check the readme file on project GitHub page:</value>
+  </data>
   <data name="HuntPaid" xml:space="preserve">
     <value>Hunt PAID, but without profit or waste.</value>
   </data>

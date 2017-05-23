@@ -153,6 +153,9 @@
   <data name="HowToUse" xml:space="preserve">
     <value>Como utilizar</value>
   </data>
+  <data name="HowToUseReadMe" xml:space="preserve">
+    <value>Por favor, leia o arquivo readme que pode ser encontrado na página do projeto no GitHub: </value>
+  </data>
   <data name="HuntPaid" xml:space="preserve">
     <value>O loot PAGOU. Não ouve nem lucro nem prejuízo.</value>
   </data>
