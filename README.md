@@ -1,6 +1,14 @@
 # Tibia Tools
 
-This applications provides usefull tools to any Tibia Player. Some of these tools, that requires an external data, requires a internet connection, buy overall it is not necessary. Also, Tibia Tools is a open source C# Windows Forms Project, that provides to everyone see all the application code and runs it safely. Remember only to download Tibia Tools in this project page on GitHub.
+This applications provides usefull tools to any Tibia Player. Some of these tools, that requires an external data, requires a internet connection, buy overall it is not necessary. Also, Tibia Tools is a open source C# Windows Forms Project, that provides to everyone see all the application code and runs it safely. Remember only to download Tibia Tools in this project page on GitHub. 
+
+- Multi-language support
+
+- Safe (Open Source)
+
+- Loot Splitter Calculator works offline (uses a internal database file, updated on 22/05/2017)
+
+- Does not break Tibia rules
 
 **#1 Tool: Loot Splitter Calculator**
 
