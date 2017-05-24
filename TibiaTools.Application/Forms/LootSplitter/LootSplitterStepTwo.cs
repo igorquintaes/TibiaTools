@@ -72,7 +72,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             foreach (var item in UpdatedItemList)
             {
-                // todo make it number textbox
                 item.Value = Convert.ToInt32(((NumericUpDown)this.Controls.Find(item.Item.Name.Replace(" ", ""), true)[0]).Text);
                 newItemResultList.Add(item);
             }
@@ -87,7 +86,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
             var count = 0;
             foreach (var member in UpdatedMemberList)
             {
-                // todo make it number textbox
                 member.Waste = Convert.ToInt32(((NumericUpDown)this.Controls.Find("member" + count, true)[0]).Text);
                 newMemberList.Add(member);
                 count++;

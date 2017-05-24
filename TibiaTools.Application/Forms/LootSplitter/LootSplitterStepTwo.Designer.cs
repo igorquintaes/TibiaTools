@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 using TibiaTools.Application.Resources;
+using TibiaTools.Application.Resources.Database;
 using TibiaTools.Core.DTO;
 
 namespace TibiaTools.Application.Forms.LootSplitter
@@ -24,12 +28,22 @@ namespace TibiaTools.Application.Forms.LootSplitter
             {
                 var numericBoxItem = new System.Windows.Forms.NumericUpDown();
                 var labelItem = new System.Windows.Forms.Label();
+                var itemImage = new System.Windows.Forms.PictureBox();
                 this.SuspendLayout();
 
-                // todo: add item image
+                //
+                // Item Image
+                //
+                itemImage.ImageLocation = GetItemImagePath(listItems[i]);
+                itemImage.SizeMode = PictureBoxSizeMode.AutoSize;
+                itemImage.Location = new System.Drawing.Point(8, (i * 50) + 14);
+
+                //
+                // Numeric Up Down Item Value
+                //
                 numericBoxItem.Minimum = 0;
                 numericBoxItem.Maximum = int.MaxValue;
-                numericBoxItem.Location = new System.Drawing.Point(12, (i * 50) + 30);
+                numericBoxItem.Location = new System.Drawing.Point(53, (i * 50) + 30);
                 numericBoxItem.Name = listItems[i].Item.Name.Replace(" ", "");
                 numericBoxItem.Size = new System.Drawing.Size(100, 20);
                 numericBoxItem.TabIndex = 0;
@@ -38,13 +52,17 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
                 UpdatedItemList.Add(listItems[i]);
 
+                // 
+                // label Item
+                //
                 labelItem.AutoSize = true;
-                labelItem.Location = new System.Drawing.Point(9, (i * 50) + 14);
+                labelItem.Location = new System.Drawing.Point(50, (i * 50) + 14);
                 labelItem.Name = i.ToString() + "in";
                 labelItem.Size = new System.Drawing.Size(30, 13);
                 labelItem.TabIndex = 1;
                 labelItem.Text = String.Format(Language.ValueOfItem, listItems[i].Item.Name);
 
+                this.Controls.Add(itemImage);
                 this.Controls.Add(numericBoxItem);
                 this.Controls.Add(labelItem);
 
@@ -64,13 +82,13 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 
                 numericBoxItem.Minimum = 0;
                 numericBoxItem.Maximum = int.MaxValue;
-                numericBoxItem.Location = new System.Drawing.Point(253, (countplayers * 50) + 30);
+                numericBoxItem.Location = new System.Drawing.Point(303, (countplayers * 50) + 30);
                 numericBoxItem.Name = "member" + countplayers.ToString();
                 numericBoxItem.Size = new System.Drawing.Size(100, 20);
                 numericBoxItem.TabIndex = 3;
 
                 labelPlayer.AutoSize = true;
-                labelPlayer.Location = new System.Drawing.Point(250, (countplayers * 50) + 14);
+                labelPlayer.Location = new System.Drawing.Point(300, (countplayers * 50) + 14);
                 labelPlayer.Name = countplayers.ToString() + "lp";
                 labelPlayer.Size = new System.Drawing.Size(35, 13);
                 labelPlayer.TabIndex = 2;
@@ -89,7 +107,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             var higherYSize = Math.Max(countplayers + 1, listItems.Count); //+1 button, same column
             var YScreenSize = Math.Min(higherYSize * 50 + 15, 600);
 
-            continueBtn.Location = new System.Drawing.Point(253, (countplayers * 50) + 28);
+            continueBtn.Location = new System.Drawing.Point(303, (countplayers * 50) + 28);
             continueBtn.Name = "continueBtn";
             continueBtn.Size = new System.Drawing.Size(75, 23);
             continueBtn.TabIndex = 0;
@@ -99,11 +117,33 @@ namespace TibiaTools.Application.Forms.LootSplitter
             this.Controls.Add(continueBtn);
 
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(410, YScreenSize);
+            this.ClientSize = new System.Drawing.Size(460, YScreenSize);
             this.Name = "Form2";
 
             this.ResumeLayout(false);
             this.PerformLayout();
+        }
+
+        private static string GetItemImagePath(ItemResultDTO item)
+        {
+            try
+            {
+                var imgName = "_" + item.Item.Id.ToString();
+                var itemImg = Images.ResourceManager.GetObject(imgName) as Bitmap;
+                if (itemImg == null) return string.Empty;
+
+                var imgPath = Path.Combine(Path.GetTempPath(), imgName + ".png");
+
+                if (File.Exists(imgPath))
+                    File.Delete(imgPath);
+
+                itemImg.Save(imgPath);
+                return imgPath;
+            }
+            catch
+            {
+                return string.Empty;
+            }
         }
     }
 }
