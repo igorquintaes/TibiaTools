@@ -22,13 +22,16 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private readonly IGroupCalculatorService _groupCalculatorService;
         private readonly IFormOpener _formOpener;
+        private readonly IPathHelper _pathHelper;
 
         public LootSplitterStepTwo(
             IGroupCalculatorService groupCalculatorService,
-            IFormOpener formOpener)
+            IFormOpener formOpener,
+            IPathHelper pathHelper)
         {
             _groupCalculatorService = groupCalculatorService;
             _formOpener = formOpener;
+            _pathHelper = pathHelper;
         }
 
         public void InitializeForm(List<ItemResultDTO> itemResult, int playerQuantity)

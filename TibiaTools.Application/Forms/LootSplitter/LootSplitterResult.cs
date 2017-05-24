@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Application.ProjectSettings;
 using TibiaTools.Application.Resources;
 using TibiaTools.Application.Resources.Database;
@@ -17,19 +18,11 @@ namespace TibiaTools.Application.Forms.LootSplitter
 {
     public partial class LootSplitterResult : Form
     {
-        public LootSplitterResult()
+        private readonly IPathHelper _pathHelper;
+
+        public LootSplitterResult(IPathHelper pathHelper)
         {
-            // load and update _default image;
-            if (String.IsNullOrEmpty(defaultImgPath))
-            {
-                var defaultImg = Images._default;
-                defaultImgPath = Path.Combine(Path.GetTempPath(), "_default.png");
-
-                if (File.Exists(defaultImgPath))
-                    File.Delete(defaultImgPath);
-
-                defaultImg.Save(defaultImgPath);
-            }
+            _pathHelper = pathHelper;
         }
 
         public void InitializeForm(GroupCalculatorResultDTO resultData)

@@ -34,7 +34,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 //
                 // Item Image
                 //
-                itemImage.ImageLocation = GetItemImagePath(listItems[i]);
+                itemImage.ImageLocation = _pathHelper.GetItemImagePath(listItems[i]);
                 itemImage.SizeMode = PictureBoxSizeMode.AutoSize;
                 itemImage.Location = new System.Drawing.Point(8, (i * 50) + 14);
 
@@ -122,28 +122,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             this.ResumeLayout(false);
             this.PerformLayout();
-        }
-
-        private static string GetItemImagePath(ItemResultDTO item)
-        {
-            try
-            {
-                var imgName = "_" + item.Item.Id.ToString();
-                var itemImg = Images.ResourceManager.GetObject(imgName) as Bitmap;
-                if (itemImg == null) return string.Empty;
-
-                var imgPath = Path.Combine(Path.GetTempPath(), imgName + ".png");
-
-                if (File.Exists(imgPath))
-                    File.Delete(imgPath);
-
-                itemImg.Save(imgPath);
-                return imgPath;
-            }
-            catch
-            {
-                return string.Empty;
-            }
         }
     }
 }

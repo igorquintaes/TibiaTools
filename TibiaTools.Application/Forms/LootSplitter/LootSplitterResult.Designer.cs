@@ -14,8 +14,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
 {
     partial class LootSplitterResult
     {
-        private static string defaultImgPath;
-
         private System.ComponentModel.IContainer components = null;
         private int position = 0;
 
@@ -221,7 +219,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                     var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
 
                     memberDataTable.Rows.Add(
-                        defaultImgPath,
+                        _pathHelper.DefaultImgPath,
                         Language.AditionalValueByUnsplitedItems,
                         1,
                         value);
@@ -232,7 +230,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                     if (member.MoneyRecived < 0)
                     {
                         memberDataTable.Rows.Add(
-                        defaultImgPath,
+                        _pathHelper.DefaultImgPath,
                         Language.ValueMemberNeedToPayToAnother,
                         1,
                         member.MoneyRecived);
@@ -242,7 +240,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                         var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
 
                         memberDataTable.Rows.Add(
-                        defaultImgPath,
+                        _pathHelper.DefaultImgPath,
                         Language.ValueMemberNeedToReciveAnother,
                         1,
                         value);
@@ -457,7 +455,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         #endregion
 
-        private static DataTable DataTableByMember(MemberDTO member)
+        private DataTable DataTableByMember(MemberDTO member)
         {
 
             var table = new DataTable("member");
@@ -469,7 +467,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             foreach (var item in member.Items)
             {
                 table.Rows.Add(
-                    GetItemImagePath(item),
+                    _pathHelper.GetItemImagePath(item),
                     item.Item.Name,
                     item.Quantity,
                     item.Value * item.Quantity);
@@ -478,7 +476,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             return table;
         }
 
-        private static DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
+        private DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
         {
             var table = new DataTable("unsplitted");
             table.Columns.Add("colImage");
@@ -489,35 +487,13 @@ namespace TibiaTools.Application.Forms.LootSplitter
             foreach (var item in items)
             {
                 table.Rows.Add(
-                    GetItemImagePath(item),
+                    _pathHelper.GetItemImagePath(item),
                     item.Item.Name,
                     item.Quantity,
                     item.Value * item.Quantity);
             }
 
             return table;
-        }
-
-        private static string GetItemImagePath(ItemResultDTO item)
-        {
-            try
-            {
-                var imgName = "_" + item.Item.Id.ToString();
-                var itemImg = Images.ResourceManager.GetObject(imgName) as Bitmap;
-                if (itemImg == null) return defaultImgPath;
-
-                var imgPath = Path.Combine(Path.GetTempPath(), imgName + ".png");
-
-                if (File.Exists(imgPath))
-                    File.Delete(imgPath);
-
-                itemImg.Save(imgPath);
-                return imgPath;
-            }
-            catch
-            {
-                return defaultImgPath;
-            }
         }
     }
 }
