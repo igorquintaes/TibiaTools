@@ -28,9 +28,11 @@ namespace TibiaTools.Application.Forms.Options
 
         private void LoadTexts()
         {
-            this.closeBtn.Text = Language.Close;
-            this.Text = Language.Saved;
-            this.savedSuccefull.Text = Language.SuccefullSavedConfig;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.closeBtn.Text = resources.GetString("Close");
+            this.Text = resources.GetString("Saved");
+            this.savedSuccefull.Text = resources.GetString("SuccefullSavedConfig");
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

@@ -51,8 +51,10 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private void LoadTexts()
         {
-            this.continueBtn.Text = Language.Continue;
-            this.Text = Language.LootSplitterStepTwo;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.continueBtn.Text = resources.GetString("Continue");
+            this.Text = resources.GetString("LootSplitterStepTwo");
         }
 
 

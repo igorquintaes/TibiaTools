@@ -42,8 +42,10 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private void LoadTexts()
         {
-            this.closeBtn.Text = Language.Close;
-            this.Text = Language.LootSplitterResult;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.closeBtn.Text = resources.GetString("Close");
+            this.Text = resources.GetString("LootSplitterResult");
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

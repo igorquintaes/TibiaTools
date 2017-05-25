@@ -23,6 +23,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
         private void InitializeComponent(List<ItemResultDTO> listItems, int players)
         {
             UpdatedItemList = new List<ItemResultDTO>();
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
 
             for (var i = 0; i < listItems.Count; i++)
             {
@@ -60,7 +61,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 labelItem.Name = i.ToString() + "in";
                 labelItem.Size = new System.Drawing.Size(30, 13);
                 labelItem.TabIndex = 1;
-                labelItem.Text = String.Format(Language.ValueOfItem, listItems[i].Item.Name);
+                labelItem.Text = String.Format(resources.GetString("ValueOfItem"), listItems[i].Item.Name);
 
                 this.Controls.Add(itemImage);
                 this.Controls.Add(numericBoxItem);
@@ -92,7 +93,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 labelPlayer.Name = countplayers.ToString() + "lp";
                 labelPlayer.Size = new System.Drawing.Size(35, 13);
                 labelPlayer.TabIndex = 2;
-                labelPlayer.Text = String.Format(Language.MoneySpentPlayerNun, (countplayers + 1).ToString());
+                labelPlayer.Text = String.Format(resources.GetString("MoneySpentPlayerNun"), (countplayers + 1).ToString());
 
                 this.Controls.Add(numericBoxItem);
                 this.Controls.Add(labelPlayer);
@@ -111,7 +112,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             continueBtn.Name = "continueBtn";
             continueBtn.Size = new System.Drawing.Size(75, 23);
             continueBtn.TabIndex = 0;
-            continueBtn.Text = Language.Continue;
+            continueBtn.Text = resources.GetString("Continue");
             continueBtn.UseVisualStyleBackColor = true;
             continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             this.Controls.Add(continueBtn);

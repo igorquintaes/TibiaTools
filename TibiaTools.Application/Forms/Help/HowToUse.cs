@@ -28,9 +28,11 @@ namespace TibiaTools.Application.Forms.Help
 
         private void LoadTexts()
         {
-            this.closeBtn.Text = Language.Close;
-            this.labelHowToUse.Text = Language.HowToUseReadMe;
-            this.Text = Language.HowToUse;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.closeBtn.Text = resources.GetString("Close");
+            this.labelHowToUse.Text = resources.GetString("HowToUseReadMe");
+            this.Text = resources.GetString("HowToUse");
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

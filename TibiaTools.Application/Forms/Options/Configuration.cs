@@ -29,10 +29,12 @@ namespace TibiaTools.Application.Forms.Options
 
         private void LoadTexts()
         {
-            this.language.Text = Language.LanguageStr;
-            this.saveConfiguration.Text = Language.Save;
-            this.cancelButton.Text = Language.Cancel;
-            this.Text = Language.Settings;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.language.Text = resources.GetString("LanguageStr");
+            this.saveConfiguration.Text = resources.GetString("Save");
+            this.cancelButton.Text = resources.GetString("Cancel");
+            this.Text = resources.GetString("Settings");
         }
 
         private void ManageEvents()

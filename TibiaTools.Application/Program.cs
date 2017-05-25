@@ -1,5 +1,6 @@
 ﻿using SimpleInjector;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 using TibiaTools.Application.Forms;
 using TibiaTools.Application.Forms.LootSplitter;
