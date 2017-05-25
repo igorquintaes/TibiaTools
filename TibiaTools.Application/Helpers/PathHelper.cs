@@ -19,17 +19,10 @@ namespace TibiaTools.Application.Helpers
 
         public PathHelper()
         {
-            // load and update _default image;
-            if (String.IsNullOrEmpty(DefaultImgPath))
-            {
-                var defaultImg = Images._default;
-                DefaultImgPath = Path.Combine(Path.GetTempPath(), "_default.png");
+            var defaultImg = Images._default;
+            DefaultImgPath = Path.Combine(Path.GetTempPath(), "_default.png");
 
-                if (File.Exists(DefaultImgPath))
-                    File.Delete(DefaultImgPath);
-
-                defaultImg.Save(DefaultImgPath);
-            }
+            ImgUpdater(DefaultImgPath, defaultImg);
         }
 
         public string GetItemImagePath(ItemResultDTO item)
@@ -49,21 +42,7 @@ namespace TibiaTools.Application.Helpers
                     if (itemImg == null) return DefaultImgPath;
 
                     imgPath = Path.Combine(Path.GetTempPath(), imgName + ".gif");
-
-                    if (File.Exists(imgPath))
-                    {
-                        var existImg = new Bitmap(imgPath);
-
-                        if (!CompareMemCmp(itemImg, existImg))
-                        {
-                            File.Delete(imgPath);
-                            itemImg.Save(imgPath);
-                        }
-                    }
-                    else
-                    {
-                        itemImg.Save(imgPath);
-                    }
+                    ImgUpdater(imgPath, itemImg);
                 }
 
                 return imgPath;
@@ -71,6 +50,24 @@ namespace TibiaTools.Application.Helpers
             catch
             {
                 return DefaultImgPath;
+            }
+        }
+
+        private static void ImgUpdater(string imgPath, Bitmap img)
+        {
+            if (File.Exists(imgPath))
+            {
+                var existImg = new Bitmap(imgPath);
+
+                if (!CompareMemCmp(img, existImg))
+                {
+                    File.Delete(imgPath);
+                    img.Save(imgPath);
+                }
+            }
+            else
+            {
+                img.Save(imgPath);
             }
         }
 
