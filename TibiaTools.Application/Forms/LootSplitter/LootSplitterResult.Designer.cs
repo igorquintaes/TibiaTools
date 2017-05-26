@@ -457,28 +457,12 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private DataTable DataTableByMember(MemberDTO member)
         {
-
-            var table = new DataTable("member");
-            table.Columns.Add("colImage");
-            table.Columns.Add("colName");
-            table.Columns.Add("colQuantity");
-            table.Columns.Add("colValue");
-
-            foreach (var item in member.Items)
-            {
-                table.Rows.Add(
-                    _pathHelper.GetItemImagePath(item),
-                    item.Item.Name,
-                    item.Quantity,
-                    item.Value * item.Quantity);
-            }
-
-            return table;
+            return DataTableByUnsplitted(member.Items, "member");
         }
 
-        private DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
+        private DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items, string tableName = "unsplitted")
         {
-            var table = new DataTable("unsplitted");
+            var table = new DataTable(tableName);
             table.Columns.Add("colImage");
             table.Columns.Add("colName");
             table.Columns.Add("colQuantity");
