@@ -23,6 +23,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
             InitializeComponent();
             LoadTexts();
             ManageEvents();
+            ManageWorlds();
         }
 
         private void ManageEvents()
@@ -39,6 +40,17 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
             this.tableDeath.EmptyListMsg = resources.GetString("SelectWorldAndStart");
             this.ButtonSearch.Text = resources.GetString("Search");
             this.Text = resources.GetString("LastPlayersDeaths");
+        }
+
+        private void ManageWorlds()
+        {
+            object[] worlds = _requestService
+                .GetAllWorlds()
+                .Select(x => new { Text = x , Value = x } )
+                .ToArray();
+
+            this.comboBoxWorlds.DataSource = worlds;
+            this.comboBoxWorlds.SelectedIndex = 0;
         }
     }
 }

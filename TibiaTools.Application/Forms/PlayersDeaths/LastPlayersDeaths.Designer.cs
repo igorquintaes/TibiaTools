@@ -62,6 +62,7 @@
             this.comboBoxWorlds.Name = "comboBoxWorlds";
             this.comboBoxWorlds.Size = new System.Drawing.Size(195, 21);
             this.comboBoxWorlds.TabIndex = 1;
+            this.comboBoxWorlds.ValueMember = "Value";
             // 
             // ButtonSearch
             // 

@@ -131,7 +131,7 @@ namespace TibiaTools.Core.Services
 
             var worlds = new List<string>();
 
-            var worldsNodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//div[@class='BoxContent']//table[@class='TableContent']/tbody/tr[@class!='LabelH']");
+            var worldsNodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//table[@class='TableContent']//tr[@class!='LabelH']");
             foreach (var node in worldsNodes)
             {
                 worlds.Add(GetHtmlString(node, "td[1]/a"));
