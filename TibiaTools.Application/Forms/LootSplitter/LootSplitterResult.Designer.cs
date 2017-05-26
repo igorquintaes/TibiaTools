@@ -46,26 +46,24 @@ namespace TibiaTools.Application.Forms.LootSplitter
                    textTotalValueObtained,
                    textTotalWaste;
 
-            var profit = (data.Members.Select(x => x.Items.Select(y => y.Value * y.Quantity).Sum()).Sum() + data.ItemsUnsplited.Select(y => y.Quantity * y.Value).Sum()) - data.Members.Select(x => x.Waste).Sum();
-            if (profit > 0)
+            switch(data.TotalBalance)
             {
-                textHeader = String.Format(resources.GetString("TotalProfit"), profit.ToString());
-                textIndividualProfit = String.Format(resources.GetString("IndividualProfit"), (profit / data.Members.Count).ToString());
-            }
-            else if (profit == 0)
-            {
-
-                textHeader = resources.GetString("HuntPaid");
-                textIndividualProfit = string.Empty;
-            }
-            else
-            {
-                textHeader = String.Format(resources.GetString("TotalWaste"), profit.ToString());
-                textIndividualProfit = String.Format(resources.GetString("IndividualWaste"), (profit / data.Members.Count).ToString());
+                case Domain.Enums.TotalBalance.Profit:
+                    textHeader = String.Format(resources.GetString("TotalProfit"), data.TotalBalanceValue.ToString());
+                    textIndividualProfit = String.Format(resources.GetString("IndividualProfit"), data.MemberBalanceValue.ToString());
+                    break;
+                case Domain.Enums.TotalBalance.Waste:
+                    textHeader = String.Format(resources.GetString("TotalWaste"), data.TotalBalanceValue.ToString());
+                    textIndividualProfit = String.Format(resources.GetString("IndividualWaste"), data.MemberBalanceValue.ToString());
+                    break;
+                default:
+                    textHeader = resources.GetString("HuntPaid");
+                    textIndividualProfit = string.Empty;
+                    break;
             }
 
-            textTotalValueObtained = String.Format(resources.GetString("TotalValueObtained"), (data.Members.Select(x => x.Items.Select(y => y.Value * y.Quantity).Sum()).Sum() + data.ItemsUnsplited.Select(y => y.Quantity * y.Value).Sum()).ToString());
-            textTotalWaste = String.Format(resources.GetString("TotalValueSpent"), data.Members.Select(x => x.Waste).Sum().ToString());
+            textTotalValueObtained = String.Format(resources.GetString("TotalValueObtained"), data.TotalValue);
+            textTotalWaste = String.Format(resources.GetString("TotalValueSpent"), data.TotalWaste);
 
 
             var labelItem = new Label();
