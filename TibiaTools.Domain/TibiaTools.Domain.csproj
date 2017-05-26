@@ -44,7 +44,10 @@
     <Compile Include="Contracts\Repositories\IItemRepository.cs" />
     <Compile Include="Entities\Abstractions\Entitybase.cs" />
     <Compile Include="Entities\Item.cs" />
+    <Compile Include="Enums\AccountStatus.cs" />
+    <Compile Include="Enums\Sex.cs" />
     <Compile Include="Enums\TotalBalance.cs" />
+    <Compile Include="Enums\Vocation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
