@@ -33,13 +33,15 @@ namespace TibiaTools.Application.Forms
 
         private void LoadTexts()
         {
-            this.helpToolStripMenuItem.Text = Language.Help;
-            this.aboutToolStripMenuItem.Text = Language.About;
-            this.howToUseToolStripMenuItem.Text = Language.HowToUse;
-            this.optionsToolStripMenuItem.Text = Language.Options;
-            this.labelChooseOption.Text = Language.ChooseOneBellowTools;
-            this.buttonLootSplitter.Text = Language.ButtonLootSplitter;
-            this.buttonPlayersDeaths.Text = Language.ButtonLastPlayersDeath;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.helpToolStripMenuItem.Text = resources.GetString("Help");
+            this.aboutToolStripMenuItem.Text = resources.GetString("About");
+            this.howToUseToolStripMenuItem.Text = resources.GetString("HowToUse");
+            this.optionsToolStripMenuItem.Text = resources.GetString("Options");
+            this.labelChooseOption.Text = resources.GetString("ChooseOneBellowTools");
+            this.buttonLootSplitter.Text = resources.GetString("ButtonLootSplitter");
+            this.buttonPlayersDeaths.Text = resources.GetString("ButtonLastPlayersDeath");
         }
 
         private void ManageEvents()

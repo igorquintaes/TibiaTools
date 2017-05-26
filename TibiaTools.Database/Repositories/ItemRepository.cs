@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using TibiaTools.Domain.Contracts.Repositories;
@@ -14,12 +16,10 @@ namespace TibiaTools.Database.Repositories
         public List<Item> GetAll()
         {
             var allItems = new List<Item>();
-            var path = Environment.CurrentDirectory + "\\ItemDatabase.csv";
-
-            string line;
-            System.IO.StreamReader file = new System.IO.StreamReader(path);
-            while ((line = file.ReadLine()) != null)
-            {
+            var database = TibiaDatabase.ResourceManager.GetObject("ItemDatabase").ToString();
+            
+            foreach(var line in database.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries))
+            { 
                 var lineSpl = line.Split(',');
                 var item = new Item();
                 item.Id = Convert.ToInt32(lineSpl[0]);
@@ -30,8 +30,6 @@ namespace TibiaTools.Database.Repositories
 
                 allItems.Add(item);
             }
-
-            file.Close();
 
             return allItems; 
         }

@@ -28,9 +28,11 @@ namespace TibiaTools.Application.Forms.Help
 
         private void LoadTexts()
         {
-            this.sourceCodeIn.Text = Language.AboutSourceCodeIn;
-            this.closeBtn.Text = Language.Close;
-            this.Text = Language.About;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.sourceCodeIn.Text = resources.GetString("AboutSourceCodeIn");
+            this.closeBtn.Text = resources.GetString("Close");
+            this.Text = resources.GetString("About");
         }
 
         private void label1_Click(object sender, EventArgs e)

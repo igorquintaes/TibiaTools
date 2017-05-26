@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Application.ProjectSettings;
 using TibiaTools.Application.Resources;
+using TibiaTools.Application.Resources.Database;
 using TibiaTools.Core.DTO;
 
 namespace TibiaTools.Application.Forms.LootSplitter
 {
     public partial class LootSplitterResult : Form
     {
-        public LootSplitterResult()
+        private readonly IPathHelper _pathHelper;
+
+        public LootSplitterResult(IPathHelper pathHelper)
         {
+            _pathHelper = pathHelper;
         }
 
         public void InitializeForm(GroupCalculatorResultDTO resultData)
@@ -36,8 +42,10 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private void LoadTexts()
         {
-            this.closeBtn.Text = Language.Close;
-            this.Text = Language.LootSplitterResult;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.closeBtn.Text = resources.GetString("Close");
+            this.Text = resources.GetString("LootSplitterResult");
         }
 
         private void closeBtn_Click(object sender, EventArgs e)

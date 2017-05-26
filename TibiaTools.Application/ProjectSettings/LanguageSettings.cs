@@ -38,7 +38,8 @@ namespace TibiaTools.Application.ProjectSettings
             Thread.CurrentThread.CurrentUICulture = _currentCulture;
             Thread.CurrentThread.CurrentCulture = _currentCulture;
 
-            LanguageChanged?.Invoke();
+            if (LanguageChanged != null)
+                LanguageChanged.Invoke();
         }
 
         public static void Initialize()

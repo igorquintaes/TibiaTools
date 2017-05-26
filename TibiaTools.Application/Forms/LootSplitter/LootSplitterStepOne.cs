@@ -39,11 +39,13 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private void LoadTexts()
         {
-            this.cancelBtn.Text = Language.Cancel;
-            this.continueBtn.Text = Language.Continue;
-            this.labelPlayerQuantity.Text = Language.InsertPlayerQuantity;
-            this.labelInsertLootText.Text = Language.InsertPlayerLoot;
-            this.Text = Language.LootSplitterStepOne;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.cancelBtn.Text = resources.GetString("Cancel");
+            this.continueBtn.Text = resources.GetString("Continue");
+            this.labelPlayerQuantity.Text = resources.GetString("InsertPlayerQuantity");
+            this.labelInsertLootText.Text = resources.GetString("InsertPlayerLoot");
+            this.Text = resources.GetString("LootSplitterStepOne");
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)

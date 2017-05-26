@@ -43,13 +43,26 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="TibiaDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TibiaDatabase.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="TibiaDatabase.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TibiaDatabase.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TibiaTools.Domain\TibiaTools.Domain.csproj">
       <Project>{03025e84-ef64-4bf4-af54-427541d0c26e}</Project>
       <Name>TibiaTools.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ItemDatabase.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

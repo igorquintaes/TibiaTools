@@ -22,13 +22,16 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private readonly IGroupCalculatorService _groupCalculatorService;
         private readonly IFormOpener _formOpener;
+        private readonly IPathHelper _pathHelper;
 
         public LootSplitterStepTwo(
             IGroupCalculatorService groupCalculatorService,
-            IFormOpener formOpener)
+            IFormOpener formOpener,
+            IPathHelper pathHelper)
         {
             _groupCalculatorService = groupCalculatorService;
             _formOpener = formOpener;
+            _pathHelper = pathHelper;
         }
 
         public void InitializeForm(List<ItemResultDTO> itemResult, int playerQuantity)
@@ -48,8 +51,10 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         private void LoadTexts()
         {
-            this.continueBtn.Text = Language.Continue;
-            this.Text = Language.LootSplitterStepTwo;
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+
+            this.continueBtn.Text = resources.GetString("Continue");
+            this.Text = resources.GetString("LootSplitterStepTwo");
         }
 
 
@@ -72,7 +77,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
             foreach (var item in UpdatedItemList)
             {
-                // todo make it number textbox
                 item.Value = Convert.ToInt32(((NumericUpDown)this.Controls.Find(item.Item.Name.Replace(" ", ""), true)[0]).Text);
                 newItemResultList.Add(item);
             }
@@ -87,7 +91,6 @@ namespace TibiaTools.Application.Forms.LootSplitter
             var count = 0;
             foreach (var member in UpdatedMemberList)
             {
-                // todo make it number textbox
                 member.Waste = Convert.ToInt32(((NumericUpDown)this.Controls.Find("member" + count, true)[0]).Text);
                 newMemberList.Add(member);
                 count++;

@@ -126,6 +126,7 @@ namespace TibiaTools.Core.Services
         /// In this case, the loot value is VERY FUCKING low and impossible to balance the waste. 
         /// So the member who wasted more in supplies will reicive the loot just to pay the most expansive waste
         /// memberA will reicive 1k (total waste = 4k), while memberB will reicive nothing (total waste = 2k)
+        /// Others players can support paying the waste to memberst with higher waste in others methods
         /// </summary>
         /// <param name="itemsResult">Item list with value and quantity updated</param>
         /// <param name="members">List of members and updated wasted value</param>

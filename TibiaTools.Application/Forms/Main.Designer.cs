@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using TibiaTools.Application.Resources;
 
 namespace TibiaTools.Application.Forms
 {

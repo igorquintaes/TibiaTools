@@ -3,9 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using TibiaTools.Application.Resources;
+using TibiaTools.Application.Resources.Database;
 using TibiaTools.Core.DTO;
 
 namespace TibiaTools.Application.Forms.LootSplitter
@@ -36,6 +38,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
         /// </summary>
         private void InitializeComponent(GroupCalculatorResultDTO data)
         {
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
             const int boxTableSeparator = 50;
 
             string textHeader,
@@ -46,24 +49,25 @@ namespace TibiaTools.Application.Forms.LootSplitter
             var profit = (data.Members.Select(x => x.Items.Select(y => y.Value * y.Quantity).Sum()).Sum() + data.ItemsUnsplited.Select(y => y.Quantity * y.Value).Sum()) - data.Members.Select(x => x.Waste).Sum();
             if (profit > 0)
             {
-                textHeader = String.Format(Language.TotalProfit, profit.ToString());
-                textIndividualProfit = String.Format(Language.IndividualProfit, (profit / data.Members.Count).ToString());
+                textHeader = String.Format(resources.GetString("TotalProfit"), profit.ToString());
+                textIndividualProfit = String.Format(resources.GetString("IndividualProfit"), (profit / data.Members.Count).ToString());
             }
             else if (profit == 0)
             {
 
-                textHeader = Language.HuntPaid;
+                textHeader = resources.GetString("HuntPaid");
                 textIndividualProfit = string.Empty;
             }
             else
             {
-                textHeader = String.Format(Language.TotalWaste, profit.ToString());
-                textIndividualProfit = String.Format(Language.IndividualWaste, (profit / data.Members.Count).ToString());
+                textHeader = String.Format(resources.GetString("TotalWaste"), profit.ToString());
+                textIndividualProfit = String.Format(resources.GetString("IndividualWaste"), (profit / data.Members.Count).ToString());
             }
 
-            textTotalValueObtained = String.Format(Language.TotalValueObtained, (data.Members.Select(x => x.Items.Select(y => y.Value * y.Quantity).Sum()).Sum() + data.ItemsUnsplited.Select(y => y.Quantity * y.Value).Sum()).ToString());
-            textTotalWaste = String.Format(Language.TotalValueSpent, data.Members.Select(x => x.Waste).Sum().ToString());
-            
+            textTotalValueObtained = String.Format(resources.GetString("TotalValueObtained"), (data.Members.Select(x => x.Items.Select(y => y.Value * y.Quantity).Sum()).Sum() + data.ItemsUnsplited.Select(y => y.Quantity * y.Value).Sum()).ToString());
+            textTotalWaste = String.Format(resources.GetString("TotalValueSpent"), data.Members.Select(x => x.Waste).Sum().ToString());
+
+
             var labelItem = new Label();
             this.SuspendLayout();
 
@@ -106,7 +110,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 groupBoxPlayer.Name = "groupBoxPlayer";
                 groupBoxPlayer.TabIndex = 20;
                 groupBoxPlayer.TabStop = false;
-                groupBoxPlayer.Text = String.Format(Language.ItensToPlayerWasted, member.Waste.ToString());
+                groupBoxPlayer.Text = String.Format(resources.GetString("ItensToPlayerWasted"), member.Waste.ToString());
                 groupBoxPlayer.Controls.Add(table);
 
                 //
@@ -134,13 +138,13 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 table.Cursor = Cursors.Default;
 
                 table.DataSource = null;
-                table.EmptyListMsg = Language.EmptyPlayerItemList;
+                table.EmptyListMsg = resources.GetString("EmptyPlayerItemList");
                 // todo: search for a better font lol
                 table.EmptyListMsgFont = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 table.FullRowSelect = true;
                 table.GridLines = true;
-                table.GroupWithItemCountFormat = Language.XItems;
-                table.GroupWithItemCountSingularFormat = Language.OneItem;
+                table.GroupWithItemCountFormat = resources.GetString("XItems");
+                table.GroupWithItemCountSingularFormat = resources.GetString("OneItem");
                 table.HideSelection = false;
                 table.SelectedBackColor = Color.CornflowerBlue;
                 table.SelectedForeColor = Color.MidnightBlue;
@@ -183,7 +187,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colName.AspectName = "colName";
                 colName.ButtonPadding = new Size(10, 10);
                 colName.IsTileViewColumn = true;
-                colName.Text = Language.Name;
+                colName.Text = resources.GetString("Name");
                 colName.Width = 230;
                 colName.IsEditable = false;
                 tableWidth += 230;
@@ -193,7 +197,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colQuantity.AspectName = "colQuantity";
                 colQuantity.ButtonPadding = new Size(10, 10);
                 colQuantity.IsTileViewColumn = true;
-                colQuantity.Text = Language.Quantity;
+                colQuantity.Text = resources.GetString("Quantity");
                 colQuantity.Width = 70;
                 colQuantity.IsEditable = false;
                 tableWidth += 70;
@@ -203,7 +207,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colValue.AspectName = "colValue";
                 colValue.ButtonPadding = new Size(10, 10);
                 colValue.IsTileViewColumn = true;
-                colValue.Text = Language.Value;
+                colValue.Text = resources.GetString("Value");
                 colValue.Width = 80;
                 colValue.IsEditable = false;
                 tableWidth += 80;
@@ -217,8 +221,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
                     var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
 
                     memberDataTable.Rows.Add(
-                        ".\\data\\Images\\default.png",
-                        Language.AditionalValueByUnsplitedItems,
+                        _pathHelper.DefaultImgPath,
+                        resources.GetString("AditionalValueByUnsplitedItems"),
                         1,
                         value);
                 }
@@ -228,8 +232,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
                     if (member.MoneyRecived < 0)
                     {
                         memberDataTable.Rows.Add(
-                        ".\\data\\Images\\default.png",
-                        Language.ValueMemberNeedToPayToAnother,
+                        _pathHelper.DefaultImgPath,
+                        resources.GetString("ValueMemberNeedToPayToAnother"),
                         1,
                         member.MoneyRecived);
                     }
@@ -238,8 +242,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
                         var value = member.MoneyRecived - member.Items.Select(y => y.Value * y.Quantity).Sum();
 
                         memberDataTable.Rows.Add(
-                        ".\\data\\Images\\default.png",
-                        Language.ValueMemberNeedToReciveAnother,
+                        _pathHelper.DefaultImgPath,
+                        resources.GetString("ValueMemberNeedToReciveAnother"),
                         1,
                         value);
                     }
@@ -295,7 +299,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 groupBoxPlayer.Name = "groupBoxPlayer";
                 groupBoxPlayer.TabIndex = 20;
                 groupBoxPlayer.TabStop = false;
-                groupBoxPlayer.Text = Language.ItemsUnsplited;
+                groupBoxPlayer.Text = resources.GetString("ItemsUnsplited");
                 groupBoxPlayer.Controls.Add(table);
 
                 //
@@ -323,13 +327,13 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 table.Cursor = Cursors.Default;
 
                 table.DataSource = null;
-                table.EmptyListMsg = Language.EmptyPlayerItemList;
+                table.EmptyListMsg = resources.GetString("EmptyPlayerItemList");
                 // todo: search for a better font lol
                 table.EmptyListMsgFont = new Font("Comic Sans MS", 14.25F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
                 table.FullRowSelect = true;
                 table.GridLines = true;
-                table.GroupWithItemCountFormat = Language.XItems;
-                table.GroupWithItemCountSingularFormat = Language.OneItem;
+                table.GroupWithItemCountFormat = resources.GetString("XItems");
+                table.GroupWithItemCountSingularFormat = resources.GetString("OneItem");
                 table.HideSelection = false;
                 table.SelectedBackColor = Color.CornflowerBlue;
                 table.SelectedForeColor = Color.MidnightBlue;
@@ -372,7 +376,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colName.AspectName = "colName";
                 colName.ButtonPadding = new Size(10, 10);
                 colName.IsTileViewColumn = true;
-                colName.Text = Language.Name;
+                colName.Text = resources.GetString("Name");
                 colName.Width = 230;
                 colName.IsEditable = false;
                 tableWidth += 230;
@@ -382,7 +386,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colQuantity.AspectName = "colQuantity";
                 colQuantity.ButtonPadding = new Size(10, 10);
                 colQuantity.IsTileViewColumn = true;
-                colQuantity.Text = Language.Quantity;
+                colQuantity.Text = resources.GetString("Quantity");
                 colQuantity.Width = 70;
                 colQuantity.IsEditable = false;
                 tableWidth += 70;
@@ -392,7 +396,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
                 colValue.AspectName = "colValue";
                 colValue.ButtonPadding = new Size(10, 10);
                 colValue.IsTileViewColumn = true;
-                colValue.Text = Language.Value;
+                colValue.Text = resources.GetString("Value");
                 colValue.Width = 80;
                 colValue.IsEditable = false;
                 tableWidth += 80;
@@ -437,7 +441,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             var YScreenSize = Math.Min(position + 10, 600);
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = AutoScaleMode.Font;
-            this.Text = Language.LootSplitterResult;
+            this.Text = resources.GetString("LootSplitterResult");
             this.Controls.Add(closeBtn);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScroll = true;
@@ -453,8 +457,9 @@ namespace TibiaTools.Application.Forms.LootSplitter
 
         #endregion
 
-        private static DataTable DataTableByMember(MemberDTO member)
+        private DataTable DataTableByMember(MemberDTO member)
         {
+
             var table = new DataTable("member");
             table.Columns.Add("colImage");
             table.Columns.Add("colName");
@@ -464,7 +469,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             foreach (var item in member.Items)
             {
                 table.Rows.Add(
-                    ".\\data\\Images\\default.png",
+                    _pathHelper.GetItemImagePath(item),
                     item.Item.Name,
                     item.Quantity,
                     item.Value * item.Quantity);
@@ -473,7 +478,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             return table;
         }
 
-        private static DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
+        private DataTable DataTableByUnsplitted(IEnumerable<ItemResultDTO> items)
         {
             var table = new DataTable("unsplitted");
             table.Columns.Add("colImage");
@@ -484,7 +489,7 @@ namespace TibiaTools.Application.Forms.LootSplitter
             foreach (var item in items)
             {
                 table.Rows.Add(
-                    ".\\data\\Images\\default.png",
+                    _pathHelper.GetItemImagePath(item),
                     item.Item.Name,
                     item.Quantity,
                     item.Value * item.Quantity);

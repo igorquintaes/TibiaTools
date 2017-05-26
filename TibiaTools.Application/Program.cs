@@ -1,5 +1,6 @@
 ﻿using SimpleInjector;
 using System;
+using System.Reflection;
 using System.Windows.Forms;
 using TibiaTools.Application.Forms;
 using TibiaTools.Application.Forms.LootSplitter;
@@ -31,6 +32,7 @@ namespace TibiaTools.Application
             _container = new Container();
             _container.RegisterSingleton<Main>();
             _container.RegisterSingleton<IFormOpener, FormOpener>();
+            _container.RegisterSingleton<IPathHelper, PathHelper>();
             _container.RegisterSingleton<IGroupCalculatorService, GroupCalculatorService>();
             _container.RegisterSingleton<IItemRepository, ItemRepository>();
             _container.Verify();
