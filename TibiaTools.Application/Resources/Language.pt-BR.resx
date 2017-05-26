@@ -150,8 +150,13 @@
   <data name="Help" xml:space="preserve">
     <value>Ajuda</value>
   </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>Como funciona:
+
+A ferramenta é baseada apenas em jogadores online. É realizada uma busca das últimas mortes de players online e exibe o resultado em uma tabela com base nas últimas 3 horas. Ela pode ser útil para ver se o servidor está com freezer ou kicks.</value>
+  </data>
   <data name="HowToUse" xml:space="preserve">
-    <value>Como utilizar</value>
+    <value>Como utilizar:</value>
   </data>
   <data name="HowToUseReadMe" xml:space="preserve">
     <value>Por favor, leia o arquivo readme que pode ser encontrado na página do projeto no GitHub: </value>
@@ -187,6 +192,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="LanguageStr" xml:space="preserve">
     <value>Idioma:</value>
   </data>
+  <data name="LastPlayersDeaths" xml:space="preserve">
+    <value>Últimas Mortes de Jogadores</value>
+  </data>
   <data name="LootSplitterResult" xml:space="preserve">
     <value>Divisor e Contador de Loot - Resultado</value>
   </data>
@@ -219,6 +227,15 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   </data>
   <data name="Saved" xml:space="preserve">
     <value>Salvo</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Buscar</value>
+  </data>
+  <data name="SelectWorld" xml:space="preserve">
+    <value>Selecione o mundo:</value>
+  </data>
+  <data name="SelectWorldAndStart" xml:space="preserve">
+    <value>Selecione um mundo e procure</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Configurações</value>

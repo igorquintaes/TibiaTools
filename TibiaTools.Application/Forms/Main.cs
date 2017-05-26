@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TibiaTools.Application.Forms.Help;
 using TibiaTools.Application.Forms.LootSplitter;
 using TibiaTools.Application.Forms.Options;
+using TibiaTools.Application.Forms.PlayersDeaths;
 using TibiaTools.Application.Helpers.Contracts;
 using TibiaTools.Application.ProjectSettings;
 using TibiaTools.Application.Resources;
@@ -61,7 +62,7 @@ namespace TibiaTools.Application.Forms
 
         private void lastDeathsBtn_Click(object sender, EventArgs e)
         {
-
+            _formOpener.ShowModelessForm<LastPlayersDeaths>();
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)

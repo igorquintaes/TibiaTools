@@ -160,7 +160,18 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to How to use.
+        ///   Looks up a localized string similar to How it works:
+        ///
+        ///This funcionality is based on online players, so it search player by player and returns all player deaths of the selected world in the last 3 hours. This tool can be useful to check if there are kicks or freezes on server.
+        /// </summary>
+        internal static string HowItWorks {
+            get {
+                return ResourceManager.GetString("HowItWorks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to How to use:.
         /// </summary>
         internal static string HowToUse {
             get {
@@ -269,6 +280,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Players Deaths.
+        /// </summary>
+        internal static string LastPlayersDeaths {
+            get {
+                return ResourceManager.GetString("LastPlayersDeaths", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loot Counter and Splitter - Result.
         /// </summary>
         internal static string LootSplitterResult {
@@ -364,6 +384,33 @@ namespace TibiaTools.Application.Resources {
         internal static string Saved {
             get {
                 return ResourceManager.GetString("Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        internal static string Search {
+            get {
+                return ResourceManager.GetString("Search", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select game world:.
+        /// </summary>
+        internal static string SelectWorld {
+            get {
+                return ResourceManager.GetString("SelectWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select a game world and start.
+        /// </summary>
+        internal static string SelectWorldAndStart {
+            get {
+                return ResourceManager.GetString("SelectWorldAndStart", resourceCulture);
             }
         }
         

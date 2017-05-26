@@ -123,6 +123,23 @@ namespace TibiaTools.Core.Services
             return characters;
         }
 
+        public IEnumerable<string> GetAllWorlds()
+        {
+            // todo create a world DTO with world informations
+            var web = new HtmlWeb();
+            var document = web.Load(TibiaLinks.WorldPage);
+
+            var worlds = new List<string>();
+
+            var worldsNodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//div[@class='BoxContent']//table[@class='TableContent']/tbody/tr[@class!='LabelH']");
+            foreach (var node in worldsNodes)
+            {
+                worlds.Add(GetHtmlString(node, "td[1]/a"));
+            }
+
+            return worlds;
+        }
+
         #region Helpers
 
         private string GetHtmlString(HtmlNodeCollection nodes, string xpath)

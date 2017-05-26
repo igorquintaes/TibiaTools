@@ -150,8 +150,13 @@
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
+  <data name="HowItWorks" xml:space="preserve">
+    <value>How it works:
+
+This funcionality is based on online players, so it search player by player and returns all player deaths of the selected world in the last 3 hours. This tool can be useful to check if there are kicks or freezes on server</value>
+  </data>
   <data name="HowToUse" xml:space="preserve">
-    <value>How to use</value>
+    <value>How to use:</value>
   </data>
   <data name="HowToUseReadMe" xml:space="preserve">
     <value>Please, check the readme file on project GitHub page:</value>
@@ -187,6 +192,9 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="LanguageStr" xml:space="preserve">
     <value>Language:</value>
   </data>
+  <data name="LastPlayersDeaths" xml:space="preserve">
+    <value>Last Players Deaths</value>
+  </data>
   <data name="LootSplitterResult" xml:space="preserve">
     <value>Loot Counter and Splitter - Result</value>
   </data>
@@ -219,6 +227,15 @@ As does not be possible to split some items, this player need to reicive an addi
   </data>
   <data name="Saved" xml:space="preserve">
     <value>Saved</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SelectWorld" xml:space="preserve">
+    <value>Select game world:</value>
+  </data>
+  <data name="SelectWorldAndStart" xml:space="preserve">
+    <value>Select a game world and start</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>

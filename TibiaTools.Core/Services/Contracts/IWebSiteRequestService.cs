@@ -15,6 +15,8 @@ namespace TibiaTools.Core.Services.Contracts
 
         IEnumerable<GuildDTO> GetAllGuilds(string world);
 
+        IEnumerable<string> GetAllWorlds();
+
         GuildDTO GetGuildInformation(string guildName);
     }
 }

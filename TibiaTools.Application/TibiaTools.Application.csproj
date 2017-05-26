@@ -121,6 +121,12 @@
     <Compile Include="Forms\Options\Saved.Designer.cs">
       <DependentUpon>Saved.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayersDeaths\LastPlayersDeaths.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayersDeaths\LastPlayersDeaths.Designer.cs">
+      <DependentUpon>LastPlayersDeaths.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\Contracts\IFormOpener.cs" />
     <Compile Include="Helpers\Contracts\IPathHelper.cs" />
     <Compile Include="Helpers\FormOpener.cs" />
@@ -146,9 +152,6 @@
     <EmbeddedResource Include="Forms\Help\HowToUse.resx">
       <DependentUpon>HowToUse.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\LootSplitter\LootSplitterStepOne.resx">
-      <DependentUpon>LootSplitterStepOne.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Options\Saved.resx">
       <DependentUpon>Saved.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayersDeaths\LastPlayersDeaths.resx">
+      <DependentUpon>LastPlayersDeaths.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
