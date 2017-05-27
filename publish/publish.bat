@@ -1,6 +1,5 @@
 cd %~dp0
 
-
 @echo clean TibiaTools bin folder
 
 set TibiaToolsFolder=..\TibiaTools.Application\bin\
@@ -34,6 +33,9 @@ mkdir %TibiaToolsFolder%
 set TibiaToolsFolder=..\TibiaTools.Domain\obj\
 RD /S /Q %TibiaToolsFolder%
 mkdir %TibiaToolsFolder%
+
+@echo NugetRestore CORE
+"nuget.exe" restore "..\TibiaTools.sln"
 
 @echo build TibiaTools
 
