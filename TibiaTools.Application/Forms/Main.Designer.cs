@@ -133,6 +133,8 @@ namespace TibiaTools.Application.Forms
             // 
             this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 220);
             this.Controls.Add(this.buttonPlayersDeaths);

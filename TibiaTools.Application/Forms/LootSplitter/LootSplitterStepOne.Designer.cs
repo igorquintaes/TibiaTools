@@ -110,6 +110,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 210);
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Controls.Add(this.boxPlayerQuantity);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.continueBtn);

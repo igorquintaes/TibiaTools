@@ -204,6 +204,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(763, 311);
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Controls.Add(this.splitContainer1);
             this.Name = "LastPlayersDeaths";
             this.Text = "PlayersDeaths";

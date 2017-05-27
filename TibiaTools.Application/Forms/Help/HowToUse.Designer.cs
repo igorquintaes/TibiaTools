@@ -73,6 +73,9 @@ namespace TibiaTools.Application.Forms.Help
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.closeBtn);
             this.Controls.Add(this.linkSource);

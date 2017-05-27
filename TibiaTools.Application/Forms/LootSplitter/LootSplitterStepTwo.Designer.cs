@@ -117,6 +117,8 @@ namespace TibiaTools.Application.Forms.LootSplitter
             continueBtn.Click += new System.EventHandler(this.continueBtn_Click);
             this.Controls.Add(continueBtn);
 
+            this.MaximizeBox = false;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(460, YScreenSize);
             this.Name = "Form2";
