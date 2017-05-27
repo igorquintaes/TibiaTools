@@ -127,7 +127,7 @@
     <value>Valor adicional por itens não divididos</value>
   </data>
   <data name="ButtonLastPlayersDeath" xml:space="preserve">
-    <value>Últimas Mortes de Jogadores (Em breve!)</value>
+    <value>Últimas Mortes de Jogadores</value>
   </data>
   <data name="ButtonLootSplitter" xml:space="preserve">
     <value>Divisor e Contador de Loot</value>
@@ -195,6 +195,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="LastPlayersDeaths" xml:space="preserve">
     <value>Últimas Mortes de Jogadores</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Carregando</value>
+  </data>
   <data name="LootSplitterResult" xml:space="preserve">
     <value>Divisor e Contador de Loot - Resultado</value>
   </data>
@@ -231,6 +234,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="Search" xml:space="preserve">
     <value>Buscar</value>
   </data>
+  <data name="SelectedWorldIsOffline" xml:space="preserve">
+    <value>O mundo selecionado está offline.</value>
+  </data>
   <data name="SelectWorld" xml:space="preserve">
     <value>Selecione o mundo:</value>
   </data>
@@ -257,6 +263,9 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   </data>
   <data name="TotalWaste" xml:space="preserve">
     <value>PREJUÍZO! O prejuízo total foi de {0} gps.</value>
+  </data>
+  <data name="UnableToConnectInternet" xml:space="preserve">
+    <value>Não foi possível conectar-se ao tibia.com</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Valor</value>

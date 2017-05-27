@@ -88,7 +88,7 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Last Players Deaths (soon!).
+        ///   Looks up a localized string similar to Last Players Deaths.
         /// </summary>
         internal static string ButtonLastPlayersDeath {
             get {
@@ -289,6 +289,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Loading.
+        /// </summary>
+        internal static string Loading {
+            get {
+                return ResourceManager.GetString("Loading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Loot Counter and Splitter - Result.
         /// </summary>
         internal static string LootSplitterResult {
@@ -397,6 +406,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The selected world is offline..
+        /// </summary>
+        internal static string SelectedWorldIsOffline {
+            get {
+                return ResourceManager.GetString("SelectedWorldIsOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Select game world:.
         /// </summary>
         internal static string SelectWorld {
@@ -474,6 +492,15 @@ namespace TibiaTools.Application.Resources {
         internal static string TotalWaste {
             get {
                 return ResourceManager.GetString("TotalWaste", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to connect tibia.com.
+        /// </summary>
+        internal static string UnableToConnectInternet {
+            get {
+                return ResourceManager.GetString("UnableToConnectInternet", resourceCulture);
             }
         }
         

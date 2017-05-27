@@ -16,10 +16,14 @@ namespace TibiaTools.Core.Services
     public class WebSiteRequestService : IWebSiteRequestService
     {
         private readonly IWebSiteConvertService _convertService;
+        private readonly int _localOffset;
+        private readonly int _tibiaOffset;
 
         public WebSiteRequestService(IWebSiteConvertService convertService)
         {
             _convertService = convertService;
+            _localOffset = TimeZoneInfo.Local.BaseUtcOffset.Hours;
+            _tibiaOffset = TimeZoneInfo.FindSystemTimeZoneById("Central European Standard Time").BaseUtcOffset.Hours;
         }
 
         public IEnumerable<GuildDTO> GetAllGuilds(string world)
@@ -53,7 +57,7 @@ namespace TibiaTools.Core.Services
 
             var character = new CharacterDTO();
 
-            var characterInformationNodes = document.DocumentNode.SelectNodes("(//*[@id='characters']//div[@class='BoxContent']/table[.//b[contains(text(), 'Character Information')]])//tr[@bgcolor!='#505050']");
+            var characterInformationNodes = document.DocumentNode.SelectNodes("(//table[.//b[contains(text(), 'Character Information')]])//tr[@bgcolor!='#505050']");
             var informatonXpath = "td[1][contains(text(), '{0}')]/../td[2]";
             var informatonXpathAch = "td[1]/nobr[contains(text(), '{0}')]/../../td[2]";
             character.Name = GetHtmlString(characterInformationNodes, String.Format(informatonXpath, "Name:"));
@@ -106,6 +110,10 @@ namespace TibiaTools.Core.Services
 
             if (document.DocumentNode.Descendants().Any(x => x.InnerText.Contains((ErrorMessages.InvalidWorldName))))
                 throw new InvalidWorldException("Invalid world: " + world);
+            
+            if (document.DocumentNode.SelectNodes("//*[@class='Table1']//table//tr[1]/td[@class='LabelV200']/../td[2]")
+                .Any(x => x.InnerText.Contains("Offline")))
+                throw new OfflineWorldException();
 
             var nodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//table//tr[@class != 'LabelH']").Where(x => x.Attributes["class"].Value == "Odd" || x.Attributes["class"].Value == "Even");
 
@@ -153,7 +161,7 @@ namespace TibiaTools.Core.Services
             var value = xpathNode.SelectNodes(xpath).First().InnerText;
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
+            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
         }
 
         private string GetHtmlString(HtmlNode node, string xpath)
@@ -167,7 +175,7 @@ namespace TibiaTools.Core.Services
             var value = nodes.First().InnerText;
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
+            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
         }
 
         private int GetHtmlInt(HtmlNodeCollection node, string xpath)
@@ -213,37 +221,38 @@ namespace TibiaTools.Core.Services
         private DateTime GetHtmlDateTime(HtmlNodeCollection node, string xpath, string format = "MMM dd yyyy, HH:mm:ss CET")
         {
             var value = GetHtmlString(node, xpath);
-            if (String.IsNullOrEmpty(value)) return DateTime.MinValue;
+            return GetHtmlDateTime(value, xpath, format);
 
-            if (value == ErrorMessages.NeverLogedIn) return DateTime.MinValue;
-
-            var hourDifference = TimeZoneInfo.Local.BaseUtcOffset.Hours;
-
-            if (value.Contains("CEST"))
-            {
-                format = format.Replace("CET", "CEST");
-                hourDifference -= 1;
-            }
-
-            var date = DateTime.ParseExact(value, format, new CultureInfo("en-US"));
-            return date.AddHours(hourDifference);
         }
 
         private DateTime GetHtmlDateTime(HtmlNode node, string xpath, string format = "MMM dd yyyy, HH:mm:ss CET")
         {
             var value = GetHtmlString(node, xpath);
+            return GetHtmlDateTime(value, xpath, format);
+        }
+
+        private DateTime GetHtmlDateTime(string value, string xpath, string format = "MMM dd yyyy, HH:mm:ss CET")
+        {
             if (String.IsNullOrEmpty(value)) return DateTime.MinValue;
 
-            var hourDifference = TimeZoneInfo.Local.BaseUtcOffset.Hours;
+            if (value == ErrorMessages.NeverLogedIn) return DateTime.MinValue;
+
 
             if (value.Contains("CEST"))
             {
+                var updatedHourDifference = _localOffset - _tibiaOffset - 1;
                 format = format.Replace("CET", "CEST");
-                hourDifference -= 1;
-            }
 
-            var date = DateTime.ParseExact(value, format, new CultureInfo("en-US"));
-            return date.AddHours(hourDifference);
+                var date = DateTime.ParseExact(value, format, new CultureInfo("en-US"));
+                return date.AddHours(updatedHourDifference);
+            }
+            else
+            {
+                var date = DateTime.ParseExact(value, format, new CultureInfo("en-US"));
+                var updatedHourDifference = _localOffset - _tibiaOffset;
+
+                return date.AddHours(updatedHourDifference);
+            }
         }
 
         private AccountStatus GetHtmlAccountStatus(HtmlNodeCollection node, string xpath)

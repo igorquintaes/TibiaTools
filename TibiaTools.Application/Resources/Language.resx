@@ -127,7 +127,7 @@
     <value>Aditional gold by unsplited items</value>
   </data>
   <data name="ButtonLastPlayersDeath" xml:space="preserve">
-    <value>Last Players Deaths (soon!)</value>
+    <value>Last Players Deaths</value>
   </data>
   <data name="ButtonLootSplitter" xml:space="preserve">
     <value>Loot Counter and Splitter</value>
@@ -195,6 +195,9 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="LastPlayersDeaths" xml:space="preserve">
     <value>Last Players Deaths</value>
   </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading</value>
+  </data>
   <data name="LootSplitterResult" xml:space="preserve">
     <value>Loot Counter and Splitter - Result</value>
   </data>
@@ -231,6 +234,9 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="Search" xml:space="preserve">
     <value>Search</value>
   </data>
+  <data name="SelectedWorldIsOffline" xml:space="preserve">
+    <value>The selected world is offline.</value>
+  </data>
   <data name="SelectWorld" xml:space="preserve">
     <value>Select game world:</value>
   </data>
@@ -257,6 +263,9 @@ As does not be possible to split some items, this player need to reicive an addi
   </data>
   <data name="TotalWaste" xml:space="preserve">
     <value>WASTE! Total waste was {0} gps!</value>
+  </data>
+  <data name="UnableToConnectInternet" xml:space="preserve">
+    <value>Unable to connect tibia.com</value>
   </data>
   <data name="Value" xml:space="preserve">
     <value>Value</value>

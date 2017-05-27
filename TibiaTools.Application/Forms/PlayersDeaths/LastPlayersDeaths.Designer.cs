@@ -57,6 +57,7 @@
             // 
             // comboBoxWorlds
             // 
+            this.comboBoxWorlds.DisplayMember = "Value";
             this.comboBoxWorlds.FormattingEnabled = true;
             this.comboBoxWorlds.Location = new System.Drawing.Point(6, 27);
             this.comboBoxWorlds.Name = "comboBoxWorlds";
@@ -72,6 +73,7 @@
             this.ButtonSearch.TabIndex = 2;
             this.ButtonSearch.Text = "Search!";
             this.ButtonSearch.UseVisualStyleBackColor = true;
+            this.ButtonSearch.Click += new System.EventHandler(this.ButtonSearch_Click);
             // 
             // splitContainer1
             // 
@@ -142,7 +144,7 @@
             this.tableDeath.RowHeight = 32;
             this.tableDeath.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.Submenu;
             this.tableDeath.SelectedBackColor = System.Drawing.Color.CornflowerBlue;
-            this.tableDeath.SelectedForeColor = System.Drawing.Color.CornflowerBlue;
+            this.tableDeath.SelectedForeColor = System.Drawing.Color.MidnightBlue;
             this.tableDeath.ShowCommandMenuOnRightClick = true;
             this.tableDeath.ShowGroups = false;
             this.tableDeath.ShowImagesOnSubItems = true;
@@ -174,7 +176,7 @@
             this.colPlayerVocation.IsTileViewColumn = true;
             this.colPlayerVocation.Text = "Voc";
             this.colPlayerVocation.UseInitialLetterForGroup = true;
-            this.colPlayerVocation.Width = 40;
+            this.colPlayerVocation.Width = 50;
             this.colPlayerVocation.WordWrap = true;
             // 
             // colPlayerDeathDate
@@ -194,7 +196,7 @@
             this.colPlayerDeathMessage.IsTileViewColumn = true;
             this.colPlayerDeathMessage.Text = "Message";
             this.colPlayerDeathMessage.UseInitialLetterForGroup = true;
-            this.colPlayerDeathMessage.Width = 295;
+            this.colPlayerDeathMessage.Width = 285;
             this.colPlayerDeathMessage.WordWrap = true;
             // 
             // LastPlayersDeaths

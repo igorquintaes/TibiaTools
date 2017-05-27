@@ -80,12 +80,16 @@ namespace TibiaTools.Core.Services
                     return Vocation.Paladin;
                 case "knight":
                     return Vocation.Knight;
+                case "master sorcerer":
                 case "master sorcerer":
                     return Vocation.MasterSorcerer;
+                case "elder druid":
                 case "elder druid":
                     return Vocation.ElderDruid;
+                case "royal paladin":
                 case "royal paladin":
                     return Vocation.RoyalPaladin;
+                case "elite knight":
                 case "elite knight":
                     return Vocation.EliteKnight;
                 default:
