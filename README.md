@@ -1,5 +1,7 @@
 # Tibia Tools
 
+![Main Program Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/mainForm.png)
+
 This applications provides usefull tools to any Tibia Player. Some of these tools, that requires an external data, requires a internet connection, buy overall it is not necessary. Also, Tibia Tools is a open source C# Windows Forms Project, that provides to everyone see all the application code and runs it safely. Remember only to download Tibia Tools in this project page on GitHub, and to run this tool on a Windows computer with at least .NET Framework 4.
 
 - Multi-language support
@@ -11,6 +13,8 @@ This applications provides usefull tools to any Tibia Player. Some of these tool
 - Does not break Tibia rules
 
 **#1 Tool: Loot Splitter Calculator**
+
+![Main Program Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lootSplitterForm.png)
 
 Provides a powerfull calculator to split a list of items to a number of players, and calculte all the waste and profit for each player. The player just need to input all Tibia look texts about the itemt that want to count the loot and split to all the players, also input the players quantity and how much each player spent to obtain the loot. Providing these informations, the calculator will split all the itens to player in order to all have the same profit or waste. So, there are some scenarios:
 
@@ -26,4 +30,7 @@ Provides a powerfull calculator to split a list of items to a number of players,
 
 **#2 Tool: Last Deaths**
 
-Soon! This tool will provide the user check all last deaths based a world. It uses the online player lists of Tibia official website to check the last deaths, so, it only will show the deaths of online players. It was not implemented yet.
+![Main Program Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lastPlayersDeathsForm.png)
+
+This tool will provide the user check all last deaths based a world. It uses the online player lists of Tibia official website to check the last deaths, so, it only will show the deaths of online players, not from players that are offline. This can be usefull to players know if server is with freezes (Check if people died in the same minute) or if someone want to search dead bodies and grab some loot.
+The display time on Last Deaths screen is based on your computer datetime, not from server datetime, this way is easy to know when the players died.
