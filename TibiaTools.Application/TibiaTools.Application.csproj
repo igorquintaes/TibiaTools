@@ -1787,6 +1787,7 @@
       <InputAssemblies Include="$(OutputPath)\ObjectListView.dll" />
       <InputAssemblies Include="$(OutputPath)\SimpleInjector.dll" />
       <InputAssemblies Include="$(OutputPath)\System.Net.Http.dll" />
+      <InputAssemblies Include="$(OutputPath)\HtmlAgilityPack.dll" />
       <InputAssemblies Include="$(OutputPath)\TibiaTools.Core.dll" />
       <InputAssemblies Include="$(OutputPath)\TibiaTools.Database.dll" />
       <InputAssemblies Include="$(OutputPath)\TibiaTools.Domain.dll" />
