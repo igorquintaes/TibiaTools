@@ -6,6 +6,7 @@ using TibiaTools.Domain.Enums;
 
 namespace TibiaTools.Core.DTO.WebSiteDTO
 {
+    [Serializable()]
     public class CharacterDTO
     {
         private List<AchievementDTO> _achievements { get; set; }

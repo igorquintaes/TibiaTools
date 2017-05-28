@@ -5,6 +5,7 @@ using System.Text;
 
 namespace TibiaTools.Core.DTO.WebSiteDTO
 {
+    [Serializable()]
     public class GuildMembershipDTO
     {
         public CharacterDTO Character { get; set; }

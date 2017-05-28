@@ -14,12 +14,14 @@ using TibiaTools.Core.DTO.WebSiteDTO;
 using TibiaTools.Core.Exceptions;
 using TibiaTools.Core.Services.Contracts;
 using TibiaTools.Domain.Enums;
+using TibiaTools.Core.Extensions;
 
 namespace TibiaTools.Application.Forms.PlayerAlert
 {
     public partial class PlayerAlert : Form
     {
         private readonly IWebSiteRequestService _requestService;
+        private List<CharacterDTO> _charactersOnTableOld;
         private List<CharacterDTO> _charactersOnTable;
 
         private Thread addCharacterThread;
@@ -64,7 +66,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             if (String.IsNullOrEmpty(this.textBoxPlayerName.Text))
                 return;
 
-            if (_charactersOnTable.Any(x => x.Name.ToLower().Trim() == this.textBoxPlayerName.Text.ToLower().Trim()))
+            if (_charactersOnTable.Any(x => x.Name.ToLower() == this.textBoxPlayerName.Text.ToLower()))
             {
                 MessageBox.Show(resources.GetString("CharacterIsAlreadyInTable"));
                 return;
@@ -102,7 +104,9 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             lock (stateLock)
             {
                 // does not allow add a character on table when refresh list
-                while (updateTableThread.ThreadState != ThreadState.Stopped && updateTableThread.ThreadState != ThreadState.Unstarted)
+                while (updateTableThread != null && 
+                    updateTableThread.ThreadState != ThreadState.Stopped && 
+                    updateTableThread.ThreadState != ThreadState.Unstarted)
                 {
                     Thread.Sleep(1000);
                 }
@@ -112,7 +116,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                 try
                 {
                     character = _requestService.GetCharacterInformation(this.textBoxPlayerName.Text);
-                    character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower().Trim() == character.Name.ToLower().Trim());
+                    character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower() == character.Name.ToLower());
                 }
                 catch (OfflineWorldException)
                 {
@@ -148,21 +152,44 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
         private void TableRefresh()
         {
+            _charactersOnTableOld = _charactersOnTable.DeepClone();
+
             lock (stateLock)
             {
                 for (var i = 0; i < _charactersOnTable.Count; i++)
                 {
                     try
                     {
-                        _charactersOnTable[i].IsOnline = _requestService.GetOnlineCharacters(_charactersOnTable[i].World).Any(x => x.Name.ToLower().Trim() == _charactersOnTable[i].Name.ToLower().Trim());
+                        _charactersOnTable[i].IsOnline = _requestService.GetOnlineCharacters(_charactersOnTable[i].World).Any(x => x.Name.ToLower() == _charactersOnTable[i].Name.ToLower());
                     }
                     catch (OfflineWorldException)
                     {
                         _charactersOnTable[i].IsOnline = false;
                     }
                 }
+            }
 
-                UpdatePlayerTable();
+            Invoke(new MethodInvoker(TableRefreshFinish));
+        }
+
+        private void TableRefreshFinish()
+        {
+            tablePlayers.DataSource = UpdatePlayerTable();
+
+            foreach(var updatedCharacter in _charactersOnTable)
+            {
+                if (_charactersOnTableOld.Single(x => x.Name == updatedCharacter.Name).IsOnline != updatedCharacter.IsOnline)
+                {
+                    // todo: create an alert
+                    if (updatedCharacter.IsOnline)
+                    {
+                        MessageBox.Show("O personagem " + updatedCharacter.Name + " Ficou online");
+                    }
+                    else
+                    {
+                        MessageBox.Show("O personagem " + updatedCharacter.Name + " Ficou offline");
+                    }
+                }
             }
         }
 

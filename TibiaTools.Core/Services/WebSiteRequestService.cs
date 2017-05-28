@@ -174,7 +174,7 @@ namespace TibiaTools.Core.Services
             var value = xpathNode.SelectNodes(xpath).First().InnerText;
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
+            return HtmlEntity.DeEntitize(value).Replace(" ", " ").Trim(); // removes special space
         }
 
         private string GetHtmlString(HtmlNode node, string xpath)
@@ -188,7 +188,7 @@ namespace TibiaTools.Core.Services
             var value = nodes.First().InnerText;
             if (String.IsNullOrEmpty(value)) return String.Empty;
 
-            return HtmlEntity.DeEntitize(value).Replace(" ", " "); // removes special space
+            return HtmlEntity.DeEntitize(value).Replace(" ", " ").Trim(); // removes special space
         }
 
         private int GetHtmlInt(HtmlNodeCollection node, string xpath)
