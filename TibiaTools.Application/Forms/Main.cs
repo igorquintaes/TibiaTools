@@ -43,6 +43,7 @@ namespace TibiaTools.Application.Forms
             this.labelChooseOption.Text = resources.GetString("ChooseOneBellowTools");
             this.buttonLootSplitter.Text = resources.GetString("ButtonLootSplitter");
             this.buttonPlayersDeaths.Text = resources.GetString("ButtonLastPlayersDeath");
+            this.buttonPlayersAlert.Text = resources.GetString("PlayerAlert");
         }
 
         private void ManageEvents()
@@ -63,6 +64,11 @@ namespace TibiaTools.Application.Forms
         private void lastDeathsBtn_Click(object sender, EventArgs e)
         {
             _formOpener.ShowModelessForm<LastPlayersDeaths>();
+        }
+
+        private void playersAlertBtn_Click(object sender, EventArgs e)
+        {
+            _formOpener.ShowModelessForm<PlayerAlert.PlayerAlert>();
         }
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)

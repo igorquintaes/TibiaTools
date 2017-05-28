@@ -150,7 +150,7 @@
   <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
-  <data name="HowItWorks" xml:space="preserve">
+  <data name="HowItWorksLastDeaths" xml:space="preserve">
     <value>How it works:
 
 This funcionality is based on online players, so it search player by player and returns all player deaths of the selected world in the last 3 hours. This tool can be useful to check if there are kicks or freezes on server</value>
@@ -264,7 +264,7 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="TotalWaste" xml:space="preserve">
     <value>WASTE! Total waste was {0} gps!</value>
   </data>
-  <data name="UnableToConnectInternet" xml:space="preserve">
+  <data name="UnableToConnectTibiaWebsite" xml:space="preserve">
     <value>Unable to connect tibia.com</value>
   </data>
   <data name="Value" xml:space="preserve">
@@ -281,5 +281,23 @@ As does not be possible to split some items, this player need to reicive an addi
   </data>
   <data name="XItems" xml:space="preserve">
     <value>{0} ({1} Items)</value>
+  </data>
+  <data name="AddPlayer" xml:space="preserve">
+    <value>Add player</value>
+  </data>
+  <data name="InsertPlayerName" xml:space="preserve">
+    <value>Insert player name:</value>
+  </data>
+  <data name="InvalidCharacterName" xml:space="preserve">
+    <value>Invalid character name</value>
+  </data>
+  <data name="PlayerAlert" xml:space="preserve">
+    <value>Players Alert</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Now</value>
+  </data>
+  <data name="CharacterIsAlreadyInTable" xml:space="preserve">
+    <value>The specified character is already in the table</value>
   </data>
 </root>

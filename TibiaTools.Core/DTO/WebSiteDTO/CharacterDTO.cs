@@ -31,6 +31,7 @@ namespace TibiaTools.Core.DTO.WebSiteDTO
         public Sex Sex { get; set; }
         public Vocation Vocation { get; set; }
         public string World { get; set; }
+        public bool IsOnline { get; set; }
 
         public CharacterDTO()
         {

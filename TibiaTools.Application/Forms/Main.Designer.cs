@@ -40,6 +40,7 @@ namespace TibiaTools.Application.Forms
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buttonPlayersAlert = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,11 +81,11 @@ namespace TibiaTools.Application.Forms
             // 
             // buttonPlayersDeaths
             // 
-            this.buttonPlayersDeaths.Location = new System.Drawing.Point(11, 164);
+            this.buttonPlayersDeaths.Location = new System.Drawing.Point(11, 163);
             this.buttonPlayersDeaths.Name = "buttonPlayersDeaths";
-            this.buttonPlayersDeaths.Size = new System.Drawing.Size(261, 45);
+            this.buttonPlayersDeaths.Size = new System.Drawing.Size(127, 45);
             this.buttonPlayersDeaths.TabIndex = 3;
-            this.buttonPlayersDeaths.Text = "Last Players Deaths (soon!)";
+            this.buttonPlayersDeaths.Text = "Last Players Deaths";
             this.buttonPlayersDeaths.UseVisualStyleBackColor = true;
             this.buttonPlayersDeaths.Click += new System.EventHandler(this.lastDeathsBtn_Click);
             // 
@@ -118,32 +119,43 @@ namespace TibiaTools.Application.Forms
             // howToUseToolStripMenuItem
             // 
             this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.howToUseToolStripMenuItem.Text = "How to use";
             this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
+            // button1
+            // 
+            this.buttonPlayersAlert.Location = new System.Drawing.Point(144, 163);
+            this.buttonPlayersAlert.Name = "button1";
+            this.buttonPlayersAlert.Size = new System.Drawing.Size(128, 45);
+            this.buttonPlayersAlert.TabIndex = 3;
+            this.buttonPlayersAlert.Text = "Players Alert";
+            this.buttonPlayersAlert.UseVisualStyleBackColor = true;
+            this.buttonPlayersAlert.Click += new System.EventHandler(this.playersAlertBtn_Click);
+            // 
             // Main
             // 
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.MaximizeBox = false;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 220);
+            this.Controls.Add(this.buttonPlayersAlert);
             this.Controls.Add(this.buttonPlayersDeaths);
             this.Controls.Add(this.buttonLootSplitter);
             this.Controls.Add(this.labelChooseOption);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.Load += new System.EventHandler(this.Main_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -164,5 +176,6 @@ namespace TibiaTools.Application.Forms
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem howToUseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private Button buttonPlayersAlert;
     }
 }

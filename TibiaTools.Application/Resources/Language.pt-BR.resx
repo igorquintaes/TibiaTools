@@ -150,7 +150,7 @@
   <data name="Help" xml:space="preserve">
     <value>Ajuda</value>
   </data>
-  <data name="HowItWorks" xml:space="preserve">
+  <data name="HowItWorksLastDeaths" xml:space="preserve">
     <value>Como funciona:
 
 A ferramenta é baseada apenas em jogadores online. É realizada uma busca das últimas mortes de players online e exibe o resultado em uma tabela com base nas últimas 3 horas. Ela pode ser útil para ver se o servidor está com freezer ou kicks.</value>
@@ -264,7 +264,7 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="TotalWaste" xml:space="preserve">
     <value>PREJUÍZO! O prejuízo total foi de {0} gps.</value>
   </data>
-  <data name="UnableToConnectInternet" xml:space="preserve">
+  <data name="UnableToConnectTibiaWebsite" xml:space="preserve">
     <value>Não foi possível conectar-se ao tibia.com</value>
   </data>
   <data name="Value" xml:space="preserve">
@@ -281,5 +281,23 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   </data>
   <data name="XItems" xml:space="preserve">
     <value>{0} ({1} Itens)</value>
+  </data>
+  <data name="AddPlayer" xml:space="preserve">
+    <value>Adicionar jogador</value>
+  </data>
+  <data name="InsertPlayerName" xml:space="preserve">
+    <value>Insira o nome do jogador:</value>
+  </data>
+  <data name="InvalidCharacterName" xml:space="preserve">
+    <value>Nome de personagem inválido</value>
+  </data>
+  <data name="PlayerAlert" xml:space="preserve">
+    <value>Alerta de Jogadores</value>
+  </data>
+  <data name="Now" xml:space="preserve">
+    <value>Agora</value>
+  </data>
+  <data name="CharacterIsAlreadyInTable" xml:space="preserve">
+    <value>O personagem digitado já se encontra na tabela</value>
   </data>
 </root>

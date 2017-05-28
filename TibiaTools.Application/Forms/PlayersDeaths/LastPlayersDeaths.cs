@@ -14,6 +14,7 @@ using TibiaTools.Application.Resources;
 using TibiaTools.Core.DTO.WebSiteDTO;
 using TibiaTools.Core.Exceptions;
 using TibiaTools.Core.Services.Contracts;
+using TibiaTools.Domain.Enums;
 
 namespace TibiaTools.Application.Forms.PlayersDeaths
 {
@@ -41,7 +42,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
         {
             var resources = new SingleAssemblyResourceManager(typeof(Language));
 
-            this.labelHowItWorks.Text = resources.GetString("HowItWorks");
+            this.labelHowItWorks.Text = resources.GetString("HowItWorksLastDeaths");
             this.labelSelectWorld.Text = resources.GetString("SelectWorld");
             this.tableDeath.EmptyListMsg = resources.GetString("SelectWorldAndStart");
             this.ButtonSearch.Text = resources.GetString("Search");
@@ -84,7 +85,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
                 var t = new Thread(GetCharacterDeaths) { IsBackground = true };
                 t.Start();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show(resources.GetString("UnableToConnectInternet"));
 
@@ -108,7 +109,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
                 {
                     table.Rows.Add(
                         character.Name,
-                        Regex.Replace(character.Vocation.ToString(), "([A-Z])", " $1", RegexOptions.Compiled).Trim(),
+                        character.Vocation.GetVocationName(),
                         death.Date,
                         death.Message);
                 }
@@ -134,7 +135,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
                 {
                     characters = _requestService.GetOnlineCharacters(selectedWorld).ToList();
                 }
-                catch (OfflineWorldException ex)
+                catch (OfflineWorldException)
                 {
                     var resources = new SingleAssemblyResourceManager(typeof(Language));
                     MessageBox.Show(resources.GetString("SelectedWorldIsOffline"));
@@ -151,12 +152,7 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
             {
                 lock (stateLock)
                 {
-                    var charName = characters[i].Name;
-                    do
-                    {
-                        characters[i] = _requestService.GetCharacterInformation(charName);
-                    }
-                    while (String.IsNullOrEmpty(characters[i].Name));
+                    characters[i] = _requestService.GetCharacterInformation(characters[i].Name);
                     numPlayerCount++;
                 }
 

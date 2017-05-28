@@ -79,6 +79,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add player.
+        /// </summary>
+        internal static string AddPlayer {
+            get {
+                return ResourceManager.GetString("AddPlayer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aditional gold by unsplited items.
         /// </summary>
         internal static string AditionalValueByUnsplitedItems {
@@ -111,6 +120,15 @@ namespace TibiaTools.Application.Resources {
         internal static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The specified character is already in the table.
+        /// </summary>
+        internal static string CharacterIsAlreadyInTable {
+            get {
+                return ResourceManager.GetString("CharacterIsAlreadyInTable", resourceCulture);
             }
         }
         
@@ -164,9 +182,9 @@ namespace TibiaTools.Application.Resources {
         ///
         ///This funcionality is based on online players, so it search player by player and returns all player deaths of the selected world in the last 3 hours. This tool can be useful to check if there are kicks or freezes on server.
         /// </summary>
-        internal static string HowItWorks {
+        internal static string HowItWorksLastDeaths {
             get {
-                return ResourceManager.GetString("HowItWorks", resourceCulture);
+                return ResourceManager.GetString("HowItWorksLastDeaths", resourceCulture);
             }
         }
         
@@ -234,11 +252,29 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insert player name:.
+        /// </summary>
+        internal static string InsertPlayerName {
+            get {
+                return ResourceManager.GetString("InsertPlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Insert the player quantity:.
         /// </summary>
         internal static string InsertPlayerQuantity {
             get {
                 return ResourceManager.GetString("InsertPlayerQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Invalid character name.
+        /// </summary>
+        internal static string InvalidCharacterName {
+            get {
+                return ResourceManager.GetString("InvalidCharacterName", resourceCulture);
             }
         }
         
@@ -343,6 +379,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Now.
+        /// </summary>
+        internal static string Now {
+            get {
+                return ResourceManager.GetString("Now", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         internal static string Ok {
@@ -366,6 +411,15 @@ namespace TibiaTools.Application.Resources {
         internal static string Options {
             get {
                 return ResourceManager.GetString("Options", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Players Alert.
+        /// </summary>
+        internal static string PlayerAlert {
+            get {
+                return ResourceManager.GetString("PlayerAlert", resourceCulture);
             }
         }
         
@@ -498,9 +552,9 @@ namespace TibiaTools.Application.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Unable to connect tibia.com.
         /// </summary>
-        internal static string UnableToConnectInternet {
+        internal static string UnableToConnectTibiaWebsite {
             get {
-                return ResourceManager.GetString("UnableToConnectInternet", resourceCulture);
+                return ResourceManager.GetString("UnableToConnectTibiaWebsite", resourceCulture);
             }
         }
         
