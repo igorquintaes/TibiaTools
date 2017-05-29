@@ -15,11 +15,13 @@ using TibiaTools.Core.Exceptions;
 using TibiaTools.Core.Services.Contracts;
 using TibiaTools.Domain.Enums;
 using TibiaTools.Core.Extensions;
+using TibiaTools.Application.Helpers.Contracts;
 
 namespace TibiaTools.Application.Forms.PlayerAlert
 {
     public partial class PlayerAlert : Form
     {
+        private readonly IFormOpener _formOpener;
         private readonly IWebSiteRequestService _requestService;
         private List<CharacterDTO> _charactersOnTableOld;
         private List<CharacterDTO> _charactersOnTable;
@@ -28,9 +30,11 @@ namespace TibiaTools.Application.Forms.PlayerAlert
         private Thread updateTableThread;
         private System.Threading.Timer updateTableTimer;
 
-        public PlayerAlert(IWebSiteRequestService requestService)
+        public PlayerAlert(IFormOpener formOpener, 
+            IWebSiteRequestService requestService)
         {
             _charactersOnTable = new List<CharacterDTO>();
+            _formOpener = formOpener;
             _requestService = requestService;
 
             InitializeComponent();
@@ -180,15 +184,8 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             {
                 if (_charactersOnTableOld.Single(x => x.Name == updatedCharacter.Name).IsOnline != updatedCharacter.IsOnline)
                 {
-                    // todo: create an alert
-                    if (updatedCharacter.IsOnline)
-                    {
-                        MessageBox.Show("O personagem " + updatedCharacter.Name + " Ficou online");
-                    }
-                    else
-                    {
-                        MessageBox.Show("O personagem " + updatedCharacter.Name + " Ficou offline");
-                    }
+                    var playerDetectedForm = _formOpener.GetModelessForm<PlayerDetected>();
+                    playerDetectedForm.InitializeForm(updatedCharacter);
                 }
             }
         }

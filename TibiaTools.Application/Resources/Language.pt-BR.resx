@@ -300,4 +300,10 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="CharacterIsAlreadyInTable" xml:space="preserve">
     <value>O personagem digitado já se encontra na tabela</value>
   </data>
+  <data name="PlayerDetectedOffline" xml:space="preserve">
+    <value>O jogador {0} está offline!</value>
+  </data>
+  <data name="PlayerDetectedOnline" xml:space="preserve">
+    <value>O jogador {0} está online!</value>
+  </data>
 </root>

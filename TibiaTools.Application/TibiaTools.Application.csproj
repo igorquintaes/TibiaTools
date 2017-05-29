@@ -127,6 +127,12 @@
     <Compile Include="Forms\PlayerAlert\PlayerAlert.Designer.cs">
       <DependentUpon>PlayerAlert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PlayerAlert\PlayerDetected.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PlayerAlert\PlayerDetected.Designer.cs">
+      <DependentUpon>PlayerDetected.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PlayersDeaths\LastPlayersDeaths.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +143,7 @@
     <Compile Include="Helpers\Contracts\IPathHelper.cs" />
     <Compile Include="Helpers\FormOpener.cs" />
     <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Objects\FlashWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectSettings\LanguageSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -169,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayerAlert\PlayerAlert.resx">
       <DependentUpon>PlayerAlert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PlayerAlert\PlayerDetected.resx">
+      <DependentUpon>PlayerDetected.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PlayersDeaths\LastPlayersDeaths.resx">
       <DependentUpon>LastPlayersDeaths.cs</DependentUpon>

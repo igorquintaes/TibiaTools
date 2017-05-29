@@ -300,4 +300,10 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="CharacterIsAlreadyInTable" xml:space="preserve">
     <value>The specified character is already in the table</value>
   </data>
+  <data name="PlayerDetectedOffline" xml:space="preserve">
+    <value>Player {0} is Offline!</value>
+  </data>
+  <data name="PlayerDetectedOnline" xml:space="preserve">
+    <value>Player {0} is Online!</value>
+  </data>
 </root>

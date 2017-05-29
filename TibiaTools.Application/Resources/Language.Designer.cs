@@ -424,6 +424,24 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Player {0} is Offline!.
+        /// </summary>
+        internal static string PlayerDetectedOffline {
+            get {
+                return ResourceManager.GetString("PlayerDetectedOffline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player {0} is Online!.
+        /// </summary>
+        internal static string PlayerDetectedOnline {
+            get {
+                return ResourceManager.GetString("PlayerDetectedOnline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Quantity.
         /// </summary>
         internal static string Quantity {
