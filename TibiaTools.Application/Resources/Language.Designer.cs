@@ -160,6 +160,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Empty List.
+        /// </summary>
+        internal static string EmptyList {
+            get {
+                return ResourceManager.GetString("EmptyList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This list is empty..
         /// </summary>
         internal static string EmptyPlayerItemList {
@@ -388,6 +397,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Offline.
+        /// </summary>
+        internal static string Offline {
+            get {
+                return ResourceManager.GetString("Offline", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ok.
         /// </summary>
         internal static string Ok {
@@ -402,6 +420,15 @@ namespace TibiaTools.Application.Resources {
         internal static string OneItem {
             get {
                 return ResourceManager.GetString("OneItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Online.
+        /// </summary>
+        internal static string Online {
+            get {
+                return ResourceManager.GetString("Online", resourceCulture);
             }
         }
         
@@ -447,6 +474,15 @@ namespace TibiaTools.Application.Resources {
         internal static string Quantity {
             get {
                 return ResourceManager.GetString("Quantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove.
+        /// </summary>
+        internal static string Remove {
+            get {
+                return ResourceManager.GetString("Remove", resourceCulture);
             }
         }
         

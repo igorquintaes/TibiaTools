@@ -22,19 +22,23 @@ namespace TibiaTools.Application.Forms.PlayerAlert
     public partial class PlayerAlert : Form
     {
         private readonly IFormOpener _formOpener;
+        private readonly ITimerHelper _timerHelper;
         private readonly IWebSiteRequestService _requestService;
         private List<CharacterDTO> _charactersOnTableOld;
         private List<CharacterDTO> _charactersOnTable;
+        private List<CharacterDTO> _charactersToRemove; // need it to remotion be safe between threads
 
         private Thread addCharacterThread;
         private Thread updateTableThread;
-        private System.Threading.Timer updateTableTimer;
 
-        public PlayerAlert(IFormOpener formOpener, 
+        public PlayerAlert(IFormOpener formOpener,
+            ITimerHelper timerHelper,
             IWebSiteRequestService requestService)
         {
             _charactersOnTable = new List<CharacterDTO>();
+            _charactersToRemove = new List<CharacterDTO>();
             _formOpener = formOpener;
+            _timerHelper = timerHelper;
             _requestService = requestService;
 
             InitializeComponent();
@@ -50,7 +54,8 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
         private void ManageTableRefresh()
         {
-            updateTableTimer = new System.Threading.Timer(TableRefreshTimer, null, 0, 30000);
+            _timerHelper.TimerEvent += (timer, state) => TableRefreshTimer();
+            _timerHelper.Start(20000, true);
         }
 
         private void LoadTexts()
@@ -59,6 +64,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
             this.labelHowItWorks.Text = resources.GetString("HowItWorksLastDeaths");
             this.labelInsertPlayerName.Text = resources.GetString("InsertPlayerName");
+            this.tablePlayers.EmptyListMsg = resources.GetString("EmptyList");
             this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
             this.Text = resources.GetString("PlayerAlert");
         }
@@ -88,14 +94,14 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             {
                 MessageBox.Show(resources.GetString("InvalidCharacterName"));
 
-                this.buttonAddPlayer.Enabled = false;
+                this.buttonAddPlayer.Enabled = true;
                 this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
             }
             catch (Exception)
             {
                 MessageBox.Show(resources.GetString("UnableToConnectTibiaWebsite"));
 
-                this.buttonAddPlayer.Enabled = false;
+                this.buttonAddPlayer.Enabled = true;
                 this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
             }
         }
@@ -145,9 +151,15 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
         #region TableRefreshThread
 
-        private void TableRefreshTimer(object stat)
+        private void TableRefreshTimer()
         {
-            if (updateTableThread == null || updateTableThread.ThreadState == ThreadState.Stopped || updateTableThread.ThreadState == ThreadState.Unstarted)
+            if ((updateTableThread == null || 
+                updateTableThread.ThreadState == ThreadState.Stopped || 
+                updateTableThread.ThreadState == ThreadState.Unstarted) //run only one time per timer
+                &&
+                (addCharacterThread == null || 
+                addCharacterThread.ThreadState == ThreadState.Stopped || 
+                addCharacterThread.ThreadState == ThreadState.Unstarted)) // does not run with add character thread
             {
                 updateTableThread = new Thread(TableRefresh) { IsBackground = true };
                 updateTableThread.Start();
@@ -173,13 +185,22 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                 }
             }
 
+            if (this == null || this.IsDisposed)
+            {
+                _timerHelper.Stop();
+                updateTableThread.Abort();
+                return;
+            }
+
             Invoke(new MethodInvoker(TableRefreshFinish));
         }
 
         private void TableRefreshFinish()
         {
+            // update players value on table
             tablePlayers.DataSource = UpdatePlayerTable();
 
+            // alert user if a player online status changed
             foreach(var updatedCharacter in _charactersOnTable)
             {
                 if (_charactersOnTableOld.Single(x => x.Name == updatedCharacter.Name).IsOnline != updatedCharacter.IsOnline)
@@ -206,6 +227,19 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             table.Columns.Add("LastOnlineDate");
             table.Columns.Add("RemovePlayer");
 
+            // remove undesired players
+            if (_charactersToRemove.Any())
+            {
+                foreach (var characterToRemove in _charactersToRemove)
+                {
+                    _charactersOnTable.RemoveAll(x => x.Name == characterToRemove.Name);
+                    _charactersOnTableOld.RemoveAll(x => x.Name == characterToRemove.Name);
+                }
+
+                _charactersToRemove = new List<CharacterDTO>();
+            }
+            
+            // update table
             foreach (var character in _charactersOnTable)
             {
                 if (character.IsOnline)
@@ -214,9 +248,9 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                         character.Name,
                         character.World,
                         character.Vocation.GetVocationName(),
-                        "Online",
+                        resources.GetString("Online"),
                         resources.GetString("Now"),
-                        "todo");
+                        resources.GetString("Remove"));
                 }
                 else
                 {
@@ -224,9 +258,9 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                         character.Name,
                         character.World,
                         character.Vocation.GetVocationName(),
-                        "Offline",
+                        resources.GetString("Offline"),
                         character.LastLogin,
-                        "todo");
+                        resources.GetString("Remove"));
                 }
             }
 

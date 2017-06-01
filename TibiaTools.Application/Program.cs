@@ -33,6 +33,7 @@ namespace TibiaTools.Application
             _container.RegisterSingleton<Main>();
             _container.RegisterSingleton<IFormOpener, FormOpener>();
             _container.RegisterSingleton<IPathHelper, PathHelper>();
+            _container.RegisterSingleton<ITimerHelper, TimerHelper>();
             _container.RegisterSingleton<IGroupCalculatorService, GroupCalculatorService>();
             _container.RegisterSingleton<IWebSiteConvertService, WebSiteConvertService>();
             _container.RegisterSingleton<IWebSiteRequestService, WebSiteRequestService>();

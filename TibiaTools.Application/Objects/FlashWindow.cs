@@ -7,6 +7,9 @@ using System.Windows.Forms;
 
 namespace TibiaTools.Application.Objects
 {
+    /// <summary>
+    /// http://pietschsoft.com/post/2009/01/26/CSharp-Flash-Window-in-Taskbar-via-Win32-FlashWindowEx
+    /// </summary>
     public static class FlashWindow
     {
         [DllImport("user32.dll")]

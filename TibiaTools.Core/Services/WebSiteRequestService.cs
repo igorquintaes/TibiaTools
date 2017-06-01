@@ -50,21 +50,15 @@ namespace TibiaTools.Core.Services
             characterName = _convertService.ToCharacterNameLink(characterName);
             var character = new CharacterDTO();
             var web = new HtmlWeb();
-            var document = default(HtmlDocument);
+            var document = web.Load(TibiaLinks.CharacterPage + characterName);
 
-            // prevents a empty page from tibia.com (DDoS security tool)
-            do
-            {
-                document = web.Load(TibiaLinks.CharacterPage + characterName);
-                if (document.DocumentNode.Descendants().Any(x => x.InnerText.Contains((ErrorMessages.InvalidCharacter))))
-                    throw new InvalidCharacterException("Invalid character: " + characterName);
+            // tibia.com DDoS protection
+            if (document.DocumentNode.InnerHtml.Contains("<title>403 Forbidden</title>"))
+                return GetCharacterInformation(characterName);
 
-                var characterInformationNodesCheck = document.DocumentNode.SelectNodes("(//table[.//b[contains(text(), 'Character Information')]])//tr[@bgcolor!='#505050']");
-                var informatonXpathCheck = "td[1][contains(text(), '{0}')]/../td[2]";
-                character.Name = GetHtmlString(characterInformationNodesCheck, String.Format(informatonXpathCheck, "Name:"));
+            if (document.DocumentNode.Descendants().Any(x => x.InnerText.Contains((ErrorMessages.InvalidCharacter))))
+                throw new InvalidCharacterException("Invalid character: " + characterName);
 
-            } while (String.IsNullOrEmpty(character.Name));
-            
             var characterInformationNodes = document.DocumentNode.SelectNodes("(//table[.//b[contains(text(), 'Character Information')]])//tr[@bgcolor!='#505050']");
             var informatonXpath = "td[1][contains(text(), '{0}')]/../td[2]";
             var informatonXpathAch = "td[1]/nobr[contains(text(), '{0}')]/../../td[2]";
@@ -115,30 +109,29 @@ namespace TibiaTools.Core.Services
 
             var web = new HtmlWeb();
             var characters = new List<CharacterDTO>();
+            var document = web.Load(TibiaLinks.WorldPage + world);
 
-            // prevents a empty page from tibia.com (DDoS security tool)
-            while (!characters.Any())
-            {
-                var document = web.Load(TibiaLinks.WorldPage + world);
+            // tibia.com DDoS protection
+            if (document.DocumentNode.InnerHtml.Contains("<title>403 Forbidden</title>"))
+                return GetOnlineCharacters(world);
 
-                if (document.DocumentNode.Descendants().Any(x => x.InnerText.Contains((ErrorMessages.InvalidWorldName))))
-                    throw new InvalidWorldException("Invalid world: " + world);
+            if (document.DocumentNode.Descendants().Any(x => x.InnerText.Contains((ErrorMessages.InvalidWorldName))))
+                throw new InvalidWorldException("Invalid world: " + world);
             
-                if (document.DocumentNode.SelectNodes("//*[@class='Table1']//table//tr[1]/td[@class='LabelV200']/../td[2]")
-                    .Any(x => x.InnerText.Contains("Offline")))
-                    throw new OfflineWorldException();
+            if (document.DocumentNode.SelectNodes("//*[@class='Table1']//table//tr[1]/td[@class='LabelV200']/../td[2]")
+                .Any(x => x.InnerText.Contains("Offline")))
+                throw new OfflineWorldException();
 
-                var nodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//table//tr[@class != 'LabelH']").Where(x => x.Attributes["class"].Value == "Odd" || x.Attributes["class"].Value == "Even");
+            var nodes = document.DocumentNode.SelectNodes("//*[@id='worlds']//table//tr[@class != 'LabelH']").Where(x => x.Attributes["class"].Value == "Odd" || x.Attributes["class"].Value == "Even");
 
-                foreach (var node in nodes)
-                {
-                    var character = new CharacterDTO();
-                    character.Name = GetHtmlString(node, "td[1]/a[last()]");
-                    character.Level = GetHtmlInt(node, "td[2]");
-                    character.Vocation = GetHtmlVocation(node, "td[3]");
+            foreach (var node in nodes)
+            {
+                var character = new CharacterDTO();
+                character.Name = GetHtmlString(node, "td[1]/a[last()]");
+                character.Level = GetHtmlInt(node, "td[2]");
+                character.Vocation = GetHtmlVocation(node, "td[3]");
 
-                    characters.Add(character);
-                }
+                characters.Add(character);
             }
 
             return characters;
@@ -149,6 +142,10 @@ namespace TibiaTools.Core.Services
             // todo create a world DTO with world informations
             var web = new HtmlWeb();
             var document = web.Load(TibiaLinks.WorldPage);
+            
+            // tibia.com DDoS protection
+            if (document.DocumentNode.InnerHtml.Contains("<title>403 Forbidden</title>"))
+                return GetAllWorlds();
 
             var worlds = new List<string>();
 

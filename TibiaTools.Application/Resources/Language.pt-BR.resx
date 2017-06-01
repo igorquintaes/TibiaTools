@@ -306,4 +306,16 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="PlayerDetectedOnline" xml:space="preserve">
     <value>O jogador {0} está online!</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remover</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>A lista está vazia</value>
+  </data>
 </root>

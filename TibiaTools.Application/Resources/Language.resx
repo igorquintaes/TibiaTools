@@ -306,4 +306,16 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="PlayerDetectedOnline" xml:space="preserve">
     <value>Player {0} is Online!</value>
   </data>
+  <data name="Offline" xml:space="preserve">
+    <value>Offline</value>
+  </data>
+  <data name="Online" xml:space="preserve">
+    <value>Online</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="EmptyList" xml:space="preserve">
+    <value>Empty List</value>
+  </data>
 </root>

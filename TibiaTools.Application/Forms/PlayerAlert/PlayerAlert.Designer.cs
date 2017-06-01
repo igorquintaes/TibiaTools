@@ -1,4 +1,9 @@
-﻿namespace TibiaTools.Application.Forms.PlayerAlert
+﻿using BrightIdeasSoftware;
+using System.Data;
+using System.Linq;
+using System.Threading;
+
+namespace TibiaTools.Application.Forms.PlayerAlert
 {
     partial class PlayerAlert
     {
@@ -208,10 +213,15 @@
             this.colRemovePlayer.AspectName = "RemovePlayer";
             this.colRemovePlayer.ButtonPadding = new System.Drawing.Size(10, 10);
             this.colRemovePlayer.IsTileViewColumn = true;
+            this.colRemovePlayer.IsButton = true;
             this.colRemovePlayer.Text = "Remove Player";
             this.colRemovePlayer.UseInitialLetterForGroup = true;
             this.colRemovePlayer.Width = 155;
             this.colRemovePlayer.WordWrap = true;
+            this.tablePlayers.ButtonClick += delegate (object sender, CellClickEventArgs e) {
+                _charactersToRemove.Add(_charactersOnTable.Single(x => x.Name == e.Item.SubItems[0].Text));
+                e.Item.Remove();
+            };
             // 
             // PlayerAlert
             // 

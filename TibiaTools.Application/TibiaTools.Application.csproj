@@ -141,8 +141,10 @@
     </Compile>
     <Compile Include="Helpers\Contracts\IFormOpener.cs" />
     <Compile Include="Helpers\Contracts\IPathHelper.cs" />
+    <Compile Include="Helpers\Contracts\ITimerHelper.cs" />
     <Compile Include="Helpers\FormOpener.cs" />
     <Compile Include="Helpers\PathHelper.cs" />
+    <Compile Include="Helpers\TimerHelper.cs" />
     <Compile Include="Objects\FlashWindow.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProjectSettings\LanguageSettings.cs" />
