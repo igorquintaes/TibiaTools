@@ -318,4 +318,25 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="EmptyList" xml:space="preserve">
     <value>Empty List</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>Last Login</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+  <data name="RemovePlayer" xml:space="preserve">
+    <value>Remove Player</value>
+  </data>
+  <data name="Voc" xml:space="preserve">
+    <value>Voc</value>
+  </data>
+  <data name="World" xml:space="preserve">
+    <value>World</value>
+  </data>
 </root>

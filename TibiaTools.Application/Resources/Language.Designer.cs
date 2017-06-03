@@ -160,6 +160,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        internal static string Date {
+            get {
+                return ResourceManager.GetString("Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Empty List.
         /// </summary>
         internal static string EmptyList {
@@ -325,6 +334,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Last Login.
+        /// </summary>
+        internal static string LastLogin {
+            get {
+                return ResourceManager.GetString("LastLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Last Players Deaths.
         /// </summary>
         internal static string LastPlayersDeaths {
@@ -366,6 +384,15 @@ namespace TibiaTools.Application.Resources {
         internal static string LootSplitterStepTwo {
             get {
                 return ResourceManager.GetString("LootSplitterStepTwo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Message.
+        /// </summary>
+        internal static string Message {
+            get {
+                return ResourceManager.GetString("Message", resourceCulture);
             }
         }
         
@@ -442,6 +469,15 @@ namespace TibiaTools.Application.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Player.
+        /// </summary>
+        internal static string Player {
+            get {
+                return ResourceManager.GetString("Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Players Alert.
         /// </summary>
         internal static string PlayerAlert {
@@ -483,6 +519,15 @@ namespace TibiaTools.Application.Resources {
         internal static string Remove {
             get {
                 return ResourceManager.GetString("Remove", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remove Player.
+        /// </summary>
+        internal static string RemovePlayer {
+            get {
+                return ResourceManager.GetString("RemovePlayer", resourceCulture);
             }
         }
         
@@ -645,6 +690,24 @@ namespace TibiaTools.Application.Resources {
         internal static string ValueOfItem {
             get {
                 return ResourceManager.GetString("ValueOfItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Voc.
+        /// </summary>
+        internal static string Voc {
+            get {
+                return ResourceManager.GetString("Voc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to World.
+        /// </summary>
+        internal static string World {
+            get {
+                return ResourceManager.GetString("World", resourceCulture);
             }
         }
         

@@ -46,6 +46,10 @@ namespace TibiaTools.Application.Forms.PlayersDeaths
             this.labelSelectWorld.Text = resources.GetString("SelectWorld");
             this.tableDeath.EmptyListMsg = resources.GetString("SelectWorldAndStart");
             this.ButtonSearch.Text = resources.GetString("Search");
+            this.colPlayerName.Text = resources.GetString("Player");
+            this.colPlayerVocation.Text = resources.GetString("Voc");
+            this.colPlayerDeathDate.Text = resources.GetString("Date");
+            this.colPlayerDeathMessage.Text = resources.GetString("Message");
             this.Text = resources.GetString("LastPlayersDeaths");
         }
 

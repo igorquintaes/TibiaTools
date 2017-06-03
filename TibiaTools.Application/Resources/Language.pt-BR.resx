@@ -318,4 +318,25 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="EmptyList" xml:space="preserve">
     <value>A lista está vazia</value>
   </data>
+  <data name="Date" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="LastLogin" xml:space="preserve">
+    <value>Último Login</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Mensagem</value>
+  </data>
+  <data name="Player" xml:space="preserve">
+    <value>Jogador</value>
+  </data>
+  <data name="RemovePlayer" xml:space="preserve">
+    <value>Remover Jogador</value>
+  </data>
+  <data name="Voc" xml:space="preserve">
+    <value>Voc</value>
+  </data>
+  <data name="World" xml:space="preserve">
+    <value>Mundo</value>
+  </data>
 </root>

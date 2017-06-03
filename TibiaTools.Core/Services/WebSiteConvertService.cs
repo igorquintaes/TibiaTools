@@ -23,6 +23,7 @@ namespace TibiaTools.Core.Services
             switch (valueToCompare)
             {
                 case "free account":
+                case "free":
                     return AccountStatus.Free;
                 case "premium account":
                 case "premium":

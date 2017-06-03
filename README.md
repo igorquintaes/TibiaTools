@@ -14,7 +14,7 @@ This applications provides usefull tools to any Tibia Player. Some of these tool
 
 **#1 Tool: Loot Splitter Calculator**
 
-![Main Program Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lootSplitterForm.png)
+![Loot Splitter Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lootSplitterForm.png)
 
 Provides a powerfull calculator to split a list of items to a number of players, and calculte all the waste and profit for each player. The player just need to input all Tibia look texts about the itemt that want to count the loot and split to all the players, also input the players quantity and how much each player spent to obtain the loot. Providing these informations, the calculator will split all the itens to player in order to all have the same profit or waste. So, there are some scenarios:
 
@@ -30,7 +30,13 @@ Provides a powerfull calculator to split a list of items to a number of players,
 
 **#2 Tool: Last Deaths**
 
-![Main Program Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lastPlayersDeathsForm.png)
+![Last Deaths Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/lastPlayersDeathsForm.png)
 
 This tool will provide the user check all last deaths based a world. It uses the online player lists of Tibia official website to check the last deaths, so, it only will show the deaths of online players, not from players that are offline. This can be usefull to players know if server is with freezes (Check if people died in the same minute) or if someone want to search dead bodies and grab some loot.
 The display time on Last Deaths screen is based on your computer datetime, not from server datetime, this way is easy to know when the players died.
+
+**#3 Tool: Player Alert**
+
+![Player Alert Form Image](https://raw.githubusercontent.com/igorquintaes/TibiaTools/master/images/playerAlertForm.png)
+
+Provides a external VipList to know if a desired players logon or logoff in any world, based on that player status in tibia online players page. The list of imputed players is updated every 30 seconds and can be usefull if you are waiting for a player log on in another world, or even waiting if some players logout for you back to the resoective world to play (this way, you will ever know when that power abuse player is online or offline even playing in another world). The alert is a kind of yellow blink light on task bar and does not steal the focus of the gaming.

@@ -66,6 +66,12 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.labelInsertPlayerName.Text = resources.GetString("InsertPlayerName");
             this.tablePlayers.EmptyListMsg = resources.GetString("EmptyList");
             this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
+            this.colPlayerName.Text = resources.GetString("Player");
+            this.colWorld.Text = resources.GetString("World");
+            this.colPlayerVocation.Text = resources.GetString("Voc");
+            this.colIsOnline.Text = resources.GetString("Online");
+            this.colLastOnlineDate.Text = resources.GetString("LastLogin");
+            this.colRemovePlayer.Text = resources.GetString("RemovePlayer");
             this.Text = resources.GetString("PlayerAlert");
         }
 
