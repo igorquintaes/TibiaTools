@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,23 @@ namespace TibiaTools.Application.ProjectSettings
             return String.IsNullOrEmpty(Settings.Default.Language)
                 ? defaultCulture
                 : Settings.Default.Language;
+        }
+
+        internal static void RememberVipList(IEnumerable<string> players)
+        {
+            Settings.Default.VipList = new StringCollection();
+
+            if (players != null && players.Any())
+                Settings.Default.VipList.AddRange(players.ToArray());
+
+            Settings.Default.Save();
+        }
+
+        internal static List<String> RecoverVipList()
+        {
+            return (Settings.Default.VipList == null || Settings.Default.VipList.Count == 0)
+                ? new List<string>()
+                : Settings.Default.VipList.Cast<string>().ToList();
         }
     }
 }

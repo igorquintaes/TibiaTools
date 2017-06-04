@@ -339,4 +339,7 @@ As does not be possible to split some items, this player need to reicive an addi
   <data name="World" xml:space="preserve">
     <value>World</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Level</value>
+  </data>
 </root>

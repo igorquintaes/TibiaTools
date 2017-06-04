@@ -54,6 +54,11 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
         private void ManageTableRefresh()
         {
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+            this.buttonAddPlayer.Enabled = false;
+            this.buttonAddPlayer.Text = resources.GetString("Loading");
+            this.tablePlayers.EmptyListMsg = resources.GetString("Loading");
+
             _timerHelper.TimerEvent += (timer, state) => TableRefreshTimer();
             _timerHelper.Start(20000, true);
         }
@@ -67,6 +72,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.tablePlayers.EmptyListMsg = resources.GetString("EmptyList");
             this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
             this.colPlayerName.Text = resources.GetString("Player");
+            this.colLevel.Text = resources.GetString("Level");
             this.colWorld.Text = resources.GetString("World");
             this.colPlayerVocation.Text = resources.GetString("Voc");
             this.colIsOnline.Text = resources.GetString("Online");
@@ -84,8 +90,15 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
             if (_charactersOnTable.Any(x => x.Name.ToLower() == this.textBoxPlayerName.Text.ToLower()))
             {
-                MessageBox.Show(resources.GetString("CharacterIsAlreadyInTable"));
-                return;
+                if (_charactersToRemove.Any(x => x.Name.ToLower() == this.textBoxPlayerName.Text.ToLower()))
+                {
+                    _charactersToRemove.RemoveAll(x => x.Name.ToLower() == this.textBoxPlayerName.Text.ToLower());
+                }
+                else
+                {
+                    MessageBox.Show(resources.GetString("CharacterIsAlreadyInTable"));
+                    return;
+                }
             }
 
             try
@@ -129,17 +142,20 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
                 var character = default(CharacterDTO);
 
-                try
+                if (_charactersOnTable.All(x => x.Name.ToLower().Trim() != this.textBoxPlayerName.Text.ToLower().Trim()))
                 {
-                    character = _requestService.GetCharacterInformation(this.textBoxPlayerName.Text);
-                    character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower() == character.Name.ToLower());
-                }
-                catch (OfflineWorldException)
-                {
-                    character.IsOnline = false;
-                }
+                    try
+                    {
+                        character = _requestService.GetCharacterInformation(this.textBoxPlayerName.Text);
+                        character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower() == character.Name.ToLower());
+                    }
+                    catch (OfflineWorldException)
+                    {
+                        character.IsOnline = false;
+                    }
 
-                _charactersOnTable.Add(character);
+                    _charactersOnTable.Add(character);
+                }
             }
 
             Invoke(new MethodInvoker(InsertCharacterOnTableFinish));
@@ -172,21 +188,58 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             }
         }
 
+        private bool TableRefreshFirstTime = true;
         private void TableRefresh()
         {
-            _charactersOnTableOld = _charactersOnTable.DeepClone();
-
-            lock (stateLock)
+            if (TableRefreshFirstTime)
             {
-                for (var i = 0; i < _charactersOnTable.Count; i++)
+                var playersOnVip = UserSettings.RecoverVipList();
+
+                if (playersOnVip != null && playersOnVip.Any())
                 {
-                    try
+                    lock (stateLock)
                     {
-                        _charactersOnTable[i].IsOnline = _requestService.GetOnlineCharacters(_charactersOnTable[i].World).Any(x => x.Name.ToLower() == _charactersOnTable[i].Name.ToLower());
+                        foreach (var player in playersOnVip)
+                        {
+                            var character = default(CharacterDTO);
+                            try
+                            {
+                                character = _requestService.GetCharacterInformation(player);
+                                character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower() == character.Name.ToLower());
+                            }
+                            catch (OfflineWorldException)
+                            {
+                                character.IsOnline = false;
+                            }
+                            catch
+                            {
+                                continue;
+                            }
+
+                            _charactersOnTable.Add(character);
+                        }
                     }
-                    catch (OfflineWorldException)
+                }
+
+                _charactersOnTableOld = _charactersOnTable.DeepClone();
+                TableRefreshFirstTime = false;
+            }
+            else
+            {
+                _charactersOnTableOld = _charactersOnTable.DeepClone();
+
+                lock (stateLock)
+                {
+                    for (var i = 0; i < _charactersOnTable.Count; i++)
                     {
-                        _charactersOnTable[i].IsOnline = false;
+                        try
+                        {
+                            _charactersOnTable[i].IsOnline = _requestService.GetOnlineCharacters(_charactersOnTable[i].World).Any(x => x.Name.ToLower() == _charactersOnTable[i].Name.ToLower());
+                        }
+                        catch (OfflineWorldException)
+                        {
+                            _charactersOnTable[i].IsOnline = false;
+                        }
                     }
                 }
             }
@@ -215,6 +268,11 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                     playerDetectedForm.InitializeForm(updatedCharacter);
                 }
             }
+
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
+            this.buttonAddPlayer.Enabled = true;
+            this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
+            this.tablePlayers.EmptyListMsg = resources.GetString("EmptyList");
         }
 
         #endregion
@@ -227,6 +285,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
 
             var table = new DataTable("TablePlayers");
             table.Columns.Add("Player");
+            table.Columns.Add("Level");
             table.Columns.Add("World");
             table.Columns.Add("Voc");
             table.Columns.Add("IsOnline");
@@ -252,6 +311,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                 {
                     table.Rows.Add(
                         character.Name,
+                        character.Level,
                         character.World,
                         character.Vocation.GetVocationName(),
                         resources.GetString("Online"),
@@ -262,6 +322,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                 {
                     table.Rows.Add(
                         character.Name,
+                        character.Level,
                         character.World,
                         character.Vocation.GetVocationName(),
                         resources.GetString("Offline"),
@@ -269,6 +330,8 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                         resources.GetString("Remove"));
                 }
             }
+
+            UserSettings.RememberVipList(_charactersOnTable.Select(x => x.Name));
 
             return table;
         }

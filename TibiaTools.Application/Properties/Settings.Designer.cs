@@ -34,5 +34,16 @@ namespace TibiaTools.Application.Properties {
                 this["Language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.Collections.Specialized.StringCollection VipList {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["VipList"]));
+            }
+            set {
+                this["VipList"] = value;
+            }
+        }
     }
 }

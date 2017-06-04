@@ -2,6 +2,7 @@
 using System.Data;
 using System.Linq;
 using System.Threading;
+using TibiaTools.Application.ProjectSettings;
 
 namespace TibiaTools.Application.Forms.PlayerAlert
 {
@@ -45,6 +46,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.colIsOnline = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colLastOnlineDate = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.colRemovePlayer = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.colLevel = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -114,6 +116,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             // tablePlayers
             // 
             this.tablePlayers.AllColumns.Add(this.colPlayerName);
+            this.tablePlayers.AllColumns.Add(this.colLevel);
             this.tablePlayers.AllColumns.Add(this.colWorld);
             this.tablePlayers.AllColumns.Add(this.colPlayerVocation);
             this.tablePlayers.AllColumns.Add(this.colIsOnline);
@@ -124,6 +127,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.tablePlayers.CellEditUseWholeCell = false;
             this.tablePlayers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colPlayerName,
+            this.colLevel,
             this.colWorld,
             this.colPlayerVocation,
             this.colIsOnline,
@@ -167,6 +171,16 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.colPlayerName.UseInitialLetterForGroup = true;
             this.colPlayerName.Width = 120;
             this.colPlayerName.WordWrap = true;
+            // 
+            // colLevel
+            // 
+            this.colLevel.AspectName = "Level";
+            this.colLevel.ButtonPadding = new System.Drawing.Size(10, 10);
+            this.colLevel.IsTileViewColumn = true;
+            this.colLevel.Text = "Level";
+            this.colLevel.UseInitialLetterForGroup = true;
+            this.colLevel.Width = 55;
+            this.colLevel.WordWrap = true;
             // 
             // colWorld
             // 
@@ -216,11 +230,14 @@ namespace TibiaTools.Application.Forms.PlayerAlert
             this.colRemovePlayer.IsButton = true;
             this.colRemovePlayer.Text = "Remove Player";
             this.colRemovePlayer.UseInitialLetterForGroup = true;
-            this.colRemovePlayer.Width = 155;
+            this.colRemovePlayer.Width = 105;
             this.colRemovePlayer.WordWrap = true;
-            this.tablePlayers.ButtonClick += delegate (object sender, CellClickEventArgs e) {
+            this.tablePlayers.ButtonClick += delegate (object sender, CellClickEventArgs e)
+            {
                 _charactersToRemove.Add(_charactersOnTable.Single(x => x.Name == e.Item.SubItems[0].Text));
                 e.Item.Remove();
+
+                UserSettings.RememberVipList(_charactersOnTable.Except(_charactersToRemove).Select(x => x.Name));
             };
             // 
             // PlayerAlert
@@ -254,6 +271,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
         private System.Windows.Forms.Label labelHowItWorks;
         private BrightIdeasSoftware.DataListView tablePlayers;
         private BrightIdeasSoftware.OLVColumn colPlayerName;
+        private BrightIdeasSoftware.OLVColumn colLevel;
         private BrightIdeasSoftware.OLVColumn colWorld;
         private BrightIdeasSoftware.OLVColumn colPlayerVocation;
         private BrightIdeasSoftware.OLVColumn colIsOnline;

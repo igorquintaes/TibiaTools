@@ -339,4 +339,7 @@ Como houve itens impossíveis de dividir, sugere que este jogador receba adicion
   <data name="World" xml:space="preserve">
     <value>Mundo</value>
   </data>
+  <data name="Level" xml:space="preserve">
+    <value>Nível</value>
+  </data>
 </root>
