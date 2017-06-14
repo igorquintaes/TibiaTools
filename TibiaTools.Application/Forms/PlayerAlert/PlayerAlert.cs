@@ -123,6 +123,7 @@ namespace TibiaTools.Application.Forms.PlayerAlert
         readonly object stateLock = new object();
         private void InsertCharacterOnTable()
         {
+            var resources = new SingleAssemblyResourceManager(typeof(Language));
             lock (stateLock)
             {
                 // does not allow add a character on table when refresh list
@@ -152,13 +153,13 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                     }
                     catch (InvalidCharacterException)
                     {
-                        var resources = new SingleAssemblyResourceManager(typeof(Language));
-                        MessageBox.Show(resources.GetString("InvalidCharacterName"));
+                        var message = resources.GetString("InvalidCharacterName");
+                        MessageBox.Show(message);
                     }
                     catch (Exception)
                     {
-                        var resources = new SingleAssemblyResourceManager(typeof(Language));
-                        MessageBox.Show(resources.GetString("UnableToConnectTibiaWebsite"));
+                        var message = resources.GetString("UnableToConnectTibiaWebsite");
+                        MessageBox.Show(message);
                     }
                 }
             }

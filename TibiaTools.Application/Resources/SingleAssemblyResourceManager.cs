@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Threading;
+using TibiaTools.Application.ProjectSettings;
 
 namespace TibiaTools.Application.Resources
 {
@@ -24,6 +26,10 @@ namespace TibiaTools.Application.Resources
         protected override ResourceSet InternalGetResourceSet(CultureInfo culture,
             bool createIfNotExists, bool tryParents)
         {
+            // make the resource load the same language between threads
+            if (culture.Name != LanguageSettings.CurrentCulture.Name)
+                culture = LanguageSettings.CurrentCulture;
+
             ResourceSet rs = (ResourceSet)this.ResourceSets[culture];
             if (rs == null)
             {
