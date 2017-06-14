@@ -38,6 +38,7 @@ namespace TibiaTools.Application
             _container.RegisterSingleton<IWebSiteConvertService, WebSiteConvertService>();
             _container.RegisterSingleton<IWebSiteRequestService, WebSiteRequestService>();
             _container.RegisterSingleton<IItemRepository, ItemRepository>();
+            _container.RegisterSingleton<IBossRepository, BossRepository>();
             _container.Verify();
         }
     }

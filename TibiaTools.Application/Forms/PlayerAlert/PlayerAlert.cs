@@ -116,13 +116,6 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                 this.buttonAddPlayer.Enabled = true;
                 this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
             }
-            catch (Exception)
-            {
-                MessageBox.Show(resources.GetString("UnableToConnectTibiaWebsite"));
-
-                this.buttonAddPlayer.Enabled = true;
-                this.buttonAddPlayer.Text = resources.GetString("AddPlayer");
-            }
         }
 
         #region AddCharacterThread
@@ -148,13 +141,25 @@ namespace TibiaTools.Application.Forms.PlayerAlert
                     {
                         character = _requestService.GetCharacterInformation(this.textBoxPlayerName.Text);
                         character.IsOnline = _requestService.GetOnlineCharacters(character.World).Any(x => x.Name.ToLower() == character.Name.ToLower());
+
+                        _charactersOnTable.Add(character);
                     }
                     catch (OfflineWorldException)
                     {
                         character.IsOnline = false;
-                    }
 
-                    _charactersOnTable.Add(character);
+                        _charactersOnTable.Add(character);
+                    }
+                    catch (InvalidCharacterException)
+                    {
+                        var resources = new SingleAssemblyResourceManager(typeof(Language));
+                        MessageBox.Show(resources.GetString("InvalidCharacterName"));
+                    }
+                    catch (Exception)
+                    {
+                        var resources = new SingleAssemblyResourceManager(typeof(Language));
+                        MessageBox.Show(resources.GetString("UnableToConnectTibiaWebsite"));
+                    }
                 }
             }
 

@@ -37,6 +37,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +70,7 @@
     <Compile Include="Services\Contracts\IWebSiteConverterService.cs" />
     <Compile Include="Services\Contracts\IWebSiteRequestService.cs" />
     <Compile Include="Services\GroupCalculatorService.cs" />
+    <Compile Include="Services\TibiaBossesRequestService.cs" />
     <Compile Include="Services\WebSiteConvertService.cs" />
     <Compile Include="Services\WebSiteRequestService.cs" />
   </ItemGroup>
